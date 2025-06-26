@@ -1,0 +1,223 @@
+:root {
+  --verde: #28a745;
+  --verde-hover: #218838;
+  --gris-claro: #f4f4f4;
+  --gris-oscuro: #222;
+  --texto: #333;
+  --fuente: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente);
+  background: var(--gris-claro);
+  color: var(--texto);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 20px;
+}
+
+.site-header {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 80px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.menu a {
+  font-weight: 600;
+  padding: 8px 12px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.activo {
+  color: var(--verde);
+  border-bottom: 3px solid var(--verde);
+}
+
+/* Galería */
+.galeria h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--verde);
+  margin: 40px 0;
+}
+
+.grid-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.grid-galeria img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.grid-galeria img:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox (lupa efecto ampliar) */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 900px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  transition: 0.3s;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: var(--verde);
+  transform: scale(1.2);
+}
+
+/* Footer */
+.footer {
+  background: var(--gris-oscuro);
+  color: var(--gris-claro);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.footer p {
+  margin-bottom: 1rem;
+}
+
+.footer__social {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.footer__social a {
+  color: var(--gris-claro);
+  font-size: 2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer__social a:hover {
+  color: var(--verde);
+  transform: scale(1.2);
+}
+
+/* Botón hamburguesa */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav.activo {
+    display: block;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .galeria h2 {
+    font-size: 2rem;
+  }
+
+  .grid-galeria {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-galeria img {
+    height: 200px;
+  }
+
+  .footer__social a {
+    font-size: 1.5rem;
+  }
+}

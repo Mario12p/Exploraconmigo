@@ -1,0 +1,222 @@
+/* Variables */
+:root {
+  --verde: #28a745;
+  --verde-hover: #218838;
+  --gris-claro: #f4f4f4;
+  --gris-oscuro: #222;
+  --texto: #333;
+  --fuente: 'Poppins', sans-serif;
+}
+
+/* Reset base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente);
+  line-height: 1.6;
+  color: var(--texto);
+  background: var(--gris-claro);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Contenedor */
+.contenedor {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Header */
+.site-header {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 10px 0;
+}
+
+.logo {
+  max-height: 80px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.menu a {
+  font-weight: 600;
+  padding: .5rem;
+  transition: color .3s;
+}
+
+.menu a:hover,
+.menu .activo {
+  color: var(--verde);
+  border-bottom: 2px solid var(--verde);
+}
+
+/* Tours */
+#tours h1 {
+  font-size: 2.5rem;
+  color: var(--verde);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.grid-tours {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.tour-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+  text-align: center;
+  padding: 20px;
+}
+
+.tour-card:hover {
+  transform: translateY(-5px);
+}
+
+.tour-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.tour-card h3 {
+  font-size: 1.4rem;
+  color: var(--texto);
+  margin-bottom: 10px;
+}
+
+.tour-card p {
+  color: #666;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.precio {
+  display: block;
+  font-weight: bold;
+  color: var(--verde);
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.boton-secundario {
+  display: inline-block;
+  background: var(--verde);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.boton-secundario:hover {
+  background: var(--verde-hover);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.site-footer {
+  background: var(--gris-oscuro);
+  color: var(--gris-claro);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.redes-sociales {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.redes-sociales a {
+  font-size: 1.8rem;
+  transition: color 0.3s, transform 0.3s;
+  color: var(--gris-claro);
+}
+
+.redes-sociales a:hover {
+  color: var(--verde);
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .logo {
+    max-height: 70px;
+  }
+  #tours h1 {
+    font-size: 2rem;
+  }
+}
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav.activo {
+    display: block;
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+

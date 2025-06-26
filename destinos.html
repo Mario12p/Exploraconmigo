@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exploraconmigo</title>
+  <link rel="stylesheet" href="DESTINO.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="contenedor flex">
+    <img src="LOGOS/Logoprincipal.png" alt="Logo Exploraconmigo" class="logo" height="80">
+
+    <!-- Botón hamburguesa -->
+    <button class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <nav aria-label="Menú principal" id="menu">
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="destinos.html" class="activo">Destinos</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+
+
+    </nav>
+  </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+    <section id="destinos">
+      <div class="contenedor">
+        <h1>Destinos Recomendados</h1>
+        <p>Explora lugares mágicos y llenos de naturaleza para vivir experiencias inolvidables.</p>
+
+        <div class="grid-destinos">
+          <div class="destino-card">
+            <img src="IMAGENES/grupo.jpeg" alt="Parque Nacional" />
+            <h3>Parque Nacional Natural</h3>
+            <p>Explora la rica biodiversidad y senderos ocultos de este increíble lugar.</p>
+            <a href="#" class="boton-secundario">Ver Detalles</a>
+          </div>
+
+          <div class="destino-card">
+            <img src="IMAGENES/Personas_casca.JPG" alt="Antanquez - Ucrania" />
+            <h3>Antanquez - Ucrania</h3>
+            <p>Sumérgete en una experiencia cultural única rodeado de paisajes espectaculares.</p>
+            <a href="#" class="boton-secundario">Ver Detalles</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="contenedor">
+      <p>&copy; 2025 Turismo de Naturaleza. Todos los derechos reservados.</p>
+      <div class="redes-sociales">
+        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('menu');
+
+  hamburger.addEventListener('click', () => {
+    menu.classList.toggle('activo');
+  });
+</script>
+
+</body>
+</html>
