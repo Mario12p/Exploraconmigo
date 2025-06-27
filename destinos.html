@@ -18,7 +18,6 @@
         <img src="LOGOS/Logoprincipal.png" alt="Logo Exploraconmigo" class="logo" height="80" />
       </a>
 
-      <!-- Botón hamburguesa -->
       <button class="hamburger" id="hamburger">
         <i class="fas fa-bars"></i>
       </button>
@@ -43,18 +42,48 @@
         <p>Explora lugares mágicos y llenos de naturaleza para vivir experiencias inolvidables.</p>
 
         <div class="grid-destinos">
+          <!-- Destino 1 -->
           <div class="destino-card">
-            <img src="https://i.postimg.cc/XJ9Pz2hv/cascada.jpg" alt="cascada" />
+            <img src="https://i.postimg.cc/0y37J9NT/grupo.jpg" alt="Cascada" />
             <h3>Antanquez - Ucrania</h3>
             <p>Sumérgete en una experiencia cultural única rodeado de paisajes espectaculares.</p>
-            <a href="#" class="boton-secundario">Ver Detalles</a>
+            <a href="#" class="boton-secundario" onclick="mostrarDetalles(event, 'detalles1')">Ver Detalles</a>
+
+            <div class="detalles-destino" id="detalles1" style="display: none;">
+              <img src="https://i.postimg.cc/XJ9Pz2hv/cascada.jpg" alt="Foto adicional" class="foto-detalle" />
+              <p><strong>Incluye:</strong> Guía turístico, transporte, hospedaje 3 noches, alimentación.</p>
+              <p><strong>Precio:</strong> $1.200.000 COP</p>
+              <p><strong>Fechas disponibles:</strong> Julio y Agosto 2025</p>
+              <h4>Ubicación en el mapa:</h4>
+              <div class="mapa">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2925.3529384396184!2d24.03125031526259!3d49.84295797939638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add7095eb9971%3A0x902b084e1dd0b8d6!2sLviv%2C%20Ucrania!5e0!3m2!1ses-419!2sco!4v1719501254870!5m2!1ses-419!2sco"
+                  width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+              </div>
+            </div>
           </div>
 
+          <!-- Destino 2 -->
           <div class="destino-card">
-            <img src="IMAGENES/Personas_casca.JPG" alt="Antanquez - Ucrania" />
-            <h3></h3>
-            <p>Sumérgete en una experiencia cultural única rodeado de paisajes espectaculares.</p>
-            <a href="#" class="boton-secundario">Ver Detalles</a>
+            <img src="IMAGENES/Personas_casca.JPG" alt="Río Escondido" />
+            <h3>Río Escondido - Colombia</h3>
+            <p>Descubre un paraíso natural lleno de vida y aventura en el corazón del país.</p>
+            <a href="#" class="boton-secundario" onclick="mostrarDetalles(event, 'detalles2')">Ver Detalles</a>
+
+            <div class="detalles-destino" id="detalles2" style="display: none;">
+              <img src="IMAGENES/adicional2.jpg" alt="Foto Río Escondido" class="foto-detalle" />
+              <p><strong>Incluye:</strong> Caminatas ecológicas, hospedaje rural, seguros.</p>
+              <p><strong>Precio:</strong> $900.000 COP</p>
+              <p><strong>Fechas disponibles:</strong> Junio a Agosto 2025</p>
+              <h4>Ubicación en el mapa:</h4>
+              <div class="mapa">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.734207877725!2d-74.0836453847353!3d4.609710643143373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99c6634e5c65%3A0xf5b9d8a0a7e4a1fa!2sBogot%C3%A1!5e0!3m2!1ses-419!2sco!4v1719501254890!5m2!1ses-419!2sco"
+                  width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -66,27 +95,26 @@
     <div class="contenedor">
       <p>&copy; 2025 Turismo de Naturaleza. Todos los derechos reservados.</p>
       <div class="redes-sociales">
-        <a href="https://www.facebook.com/exploraconmigo" target="_blank" title="Facebook">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.instagram.com/exploraconmigo" target="_blank" title="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://wa.me/573001234567" target="_blank" title="WhatsApp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
+        <a href="https://www.facebook.com/exploraconmigo" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/exploraconmigo" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/573001234567" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </footer>
 
-  <!-- Script menú responsive -->
+  <!-- Scripts -->
   <script>
     const hamburger = document.getElementById('hamburger');
     const menu = document.getElementById('menu');
-
     hamburger.addEventListener('click', () => {
       menu.classList.toggle('activo');
     });
+
+    function mostrarDetalles(event, id) {
+      event.preventDefault();
+      const detalles = document.getElementById(id);
+      detalles.style.display = detalles.style.display === 'none' ? 'block' : 'none';
+    }
   </script>
 
 </body>
