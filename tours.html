@@ -6,36 +6,35 @@
   <title>Exploraconmigo - Tours</title>
 
   <link rel="stylesheet" href="TOURS.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
   <!-- Header -->
-<header class="site-header">
-  <div class="contenedor flex">
-    <img src="LOGOS/Logoprincipal.png" alt="Logo Exploraconmigo" class="logo" height="80">
+  <header class="site-header">
+    <div class="contenedor flex">
+      <a href="index.html">
+        <img src="LOGOS/Logoprincipal.png" alt="Logo Exploraconmigo" class="logo" height="80" />
+      </a>
 
-    <!-- Botón hamburguesa -->
-    <button class="hamburger" id="hamburger">
-      <i class="fas fa-bars"></i>
-    </button>
+      <!-- Botón hamburguesa -->
+      <button class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
 
-    <nav aria-label="Menú principal" id="menu">
-      <ul class="menu">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="destinos.html">Destinos</a></li>
-        <li><a href="tours.html" class="activo">Tours</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-
-
-    </nav>
-  </div>
-</header>
-
+      <nav aria-label="Menú principal" id="menu">
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="destinos.html">Destinos</a></li>
+          <li><a href="tours.html" class="activo">Tours</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <!-- Sección Tours -->
   <main>
@@ -44,7 +43,6 @@
         <h1>Tours de Aventura</h1>
 
         <div class="grid-tours">
-
           <div class="tour-card">
             <img src="IMAGENES/Manure.JPEG" alt="Senderismo" />
             <h3>Senderismo por la Sierra</h3>
@@ -76,7 +74,6 @@
             <span class="precio">$120 USD</span>
             <a href="#" class="boton-secundario">Reservar Ahora</a>
           </div>
-
         </div>
       </div>
     </section>
@@ -87,20 +84,22 @@
     <div class="contenedor">
       <p>&copy; 2025 Turismo de Naturaleza. Todos los derechos reservados.</p>
       <div class="redes-sociales">
-        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/exploraconmigo" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/exploraconmigo" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/573001234567" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </footer>
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const menu = document.getElementById('menu');
 
-  hamburger.addEventListener('click', () => {
-    menu.classList.toggle('activo');
-  });
-</script>
+  <!-- Script menú hamburguesa -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('activo');
+    });
+  </script>
 
 </body>
 </html>

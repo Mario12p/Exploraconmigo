@@ -141,33 +141,38 @@ img {
 }
 
 /* Footer */
-.footer {
+/* Footer actualizado */
+.site-footer {
   background: var(--gris-oscuro);
   color: var(--gris-claro);
   text-align: center;
   padding: 2rem 0;
 }
 
-.footer p {
-  margin-bottom: 1rem;
+.site-footer p {
+  margin: 0;
+  font-size: 0.9rem;
 }
 
-.footer__social {
+.redes-sociales {
+  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
-  gap: 40px;
+  align-items: center;
+  gap: 2rem;
 }
 
-.footer__social a {
+.redes-sociales a {
+  font-size: 1.8rem;
+  transition: color 0.3s, transform 0.3s;
   color: var(--gris-claro);
-  font-size: 2rem;
-  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.footer__social a:hover {
+.redes-sociales a:hover {
   color: var(--verde);
   transform: scale(1.2);
 }
+
 
 /* Botón hamburguesa */
 .hamburger {
