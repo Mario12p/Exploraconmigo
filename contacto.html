@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto - Senderos del Cesar</title>
+  <title>Inicio - Senderos del Cesar</title>
   <link rel="stylesheet" href="CONTACTO.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -20,13 +20,12 @@
 
     <nav id="menu">
       <ul class="menu">
-  <li><a href="index.html">Inicio</a></li>
-  <li><a href="destinos.html" class="activo">Destinos</a></li>
-  <li><a href="tours.html">Tours</a></li>
-  <li><a href="galeria.html">Galería</a></li>
-  <li><a href="contacto.html">Contacto</a></li>
-</ul>
-
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="destinos.html">Destinos</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
     </nav>
   </div>
 </header>
@@ -47,7 +46,7 @@
 </main>
 
 <footer class="footer">
-  <p>© 2025 Turismo de Naturaleza. Todos los derechos reservados.</p>
+  <p>©️ 2025 Turismo de Naturaleza. Todos los derechos reservados.</p>
   <div class="footer__social">
     <a href="#"><i class="fab fa-facebook-f"></i></a>
     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -60,6 +59,16 @@
   const menu = document.getElementById('menu');
   hamburger.addEventListener('click', () => {
     menu.classList.toggle('activo');
+  });
+
+  // Script para marcar el enlace activo automáticamente
+  const links = document.querySelectorAll('.menu a');
+  const current = window.location.pathname.split("/").pop();
+
+  links.forEach(link => {
+    if (link.getAttribute("href") === current) {
+      link.classList.add("activo");
+    }
   });
 </script>
 
