@@ -7,9 +7,7 @@
   --fuente: 'Poppins', sans-serif;
 }
 
-/* =======================
-   Reset y base
-======================= */
+/* ========== Reset & Base ========== */
 * {
   margin: 0;
   padding: 0;
@@ -30,7 +28,7 @@ a {
 
 .contenedor {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   padding: 20px;
 }
 
@@ -40,9 +38,33 @@ a {
   align-items: center;
 }
 
-/* =======================
-   Header
-======================= */
+/* ========== Idioma Selector ========== */
+.selector-idioma-menu {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.selector-idioma-icon {
+  width: 20px;
+  height: 20px;
+  content: url("https://i.postimg.cc/vTmjsWf6/tierra.png")
+}
+
+.selector-idioma {
+  font-family: var(--fuente);
+  font-size: 0.95rem;
+  background: transparent;
+  border: none;
+  color: var(--texto);
+  cursor: pointer;
+}
+
+.selector-idioma:focus {
+  outline: none;
+}
+
+/* ========== Header ========== */
 .site-header {
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -60,6 +82,7 @@ a {
   list-style: none;
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
 .menu a {
@@ -74,9 +97,7 @@ a {
   border-bottom: 2px solid var(--verde);
 }
 
-/* =======================
-   Sección Mapa con texto
-======================= */
+/* ========== Sección Mapa ========== */
 .seccion-mapa {
   background: white;
   padding: 60px 0;
@@ -112,12 +133,11 @@ a {
 }
 
 .mapa-embed {
-  flex: 2 1 700px; /* más espacio para mapa */
-  height: 450px;   /* más alto */
+  flex: 2 1 700px;
+  height: 450px;
   border-radius: 12px;
   overflow: hidden;
 }
-
 
 .mapa-embed iframe {
   width: 100%;
@@ -126,9 +146,7 @@ a {
   border-radius: 12px;
 }
 
-/* =======================
-   Sección Naturaleza
-======================= */
+/* ========== Naturaleza ========== */
 .seccion-naturaleza {
   background: white;
   padding: 40px 0 20px;
@@ -172,9 +190,7 @@ a {
 .img4 { grid-area: img4; }
 .img5 { grid-area: img5; }
 
-/* =======================
-   Footer
-======================= */
+/* ========== Footer ========== */
 .site-footer {
   background: var(--gris-oscuro);
   color: var(--gris-claro);
@@ -206,9 +222,7 @@ a {
   transform: scale(1.2);
 }
 
-/* =======================
-   Responsive
-======================= */
+/* ========== Responsive ========== */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -238,10 +252,6 @@ a {
   .menu {
     flex-direction: column;
     gap: 1rem;
-  }
-
-  .logo {
-    max-height: 70px;
   }
 
   .hamburger {
@@ -275,8 +285,12 @@ a {
 }
 
 @media (max-width: 480px) {
-  .boton-secundario {
+  .boton-primario {
     font-size: 0.95rem;
-    padding: 8px 12px;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .contenido-hero h1 {
+    font-size: 2rem;
   }
 }

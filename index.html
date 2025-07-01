@@ -11,30 +11,37 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="contenedor flex">
       <a href="index.html">
-        <img src="LOGOS/Logoprincipal.png" alt="Logo Exploraconmigo" class="logo" height="80" />
+        <img src="LOGOS/Logoprincipal.png" alt="Logo Exploraconmigo" class="logo" />
       </a>
 
       <button class="hamburger" id="hamburger">
         <i class="fas fa-bars"></i>
       </button>
 
-      <nav aria-label="Menú principal" id="menu">
+      <nav id="menu" aria-label="Menú principal">
         <ul class="menu">
           <li><a href="index.html" class="activo">Inicio</a></li>
           <li><a href="destinos.html">Destinos</a></li>
           <li><a href="tours.html">Tours</a></li>
           <li><a href="galeria.html">Galería</a></li>
           <li><a href="contacto.html">Contacto</a></li>
+          <li class="selector-idioma-menu">
+            <img src="LOGOS/idioma.png" alt="Idioma" class="selector-idioma-icon" />
+            <select id="selector-idioma" onchange="cambiarIdioma()" class="selector-idioma">
+              <option value="es">Español</option>
+              <option value="en">English</option>
+            </select>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Contenido principal -->
+  <!-- HERO / VIDEO -->
   <main>
     <section id="hero" aria-label="Presentación">
       <video autoplay muted loop playsinline class="video-hero">
@@ -43,15 +50,15 @@
       </video>
       <div class="overlay">
         <div class="contenido-hero">
-          <h1>Bienvenido <br> Explora conmigo</h1>
-          <p>Vive experiencias únicas en contacto con la naturaleza</p>
-          <a href="tours.html" class="boton-primario">Explorar</a>
+          <h1 id="titulo-hero">Bienvenido <br> Explora conmigo</h1>
+          <p id="parrafo-hero">Vive experiencias únicas en contacto con la naturaleza</p>
+          <a href="tours.html" class="boton-primario" id="boton-hero">Explorar</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="contenedor">
       <p>&copy; 2025 Turismo de Naturaleza. Todos los derechos reservados.</p>
@@ -63,15 +70,36 @@
     </div>
   </footer>
 
-  <!-- Script menú responsive -->
+  <!-- SCRIPTS -->
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const menu = document.getElementById('menu');
-
-    hamburger.addEventListener('click', () => {
-      menu.classList.toggle('activo');
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('menu').classList.toggle('activo');
     });
+
+    const textos = {
+      es: {
+        "titulo-hero": "Bienvenido <br> Explora conmigo",
+        "parrafo-hero": "Vive experiencias únicas en contacto con la naturaleza",
+        "boton-hero": "Explorar"
+      },
+      en: {
+        "titulo-hero": "Welcome <br> Explore with me",
+        "parrafo-hero": "Live unique experiences in contact with nature",
+        "boton-hero": "Explore"
+      }
+    };
+
+    function cambiarIdioma() {
+      const idioma = document.getElementById("selector-idioma").value;
+      const traducciones = textos[idioma];
+      for (const id in traducciones) {
+        const el = document.getElementById(id);
+        if (el) {
+          id === "titulo-hero" ? el.innerHTML = traducciones[id] : el.textContent = traducciones[id];
+        }
+      }
+    }
   </script>
-  
+
 </body>
 </html>
