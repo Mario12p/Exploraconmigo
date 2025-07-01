@@ -79,20 +79,25 @@ a {
 ======================= */
 .seccion-mapa {
   background: white;
-  padding: 40px 0;
+  padding: 60px 0;
 }
 
-.contenedor-mapa-doble {
+.mapa-box {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 40px;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 60px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  padding: 30px;
 }
 
 .info-mapa {
   flex: 1 1 400px;
-  padding-right: 20px;
 }
 
 .info-mapa h2 {
@@ -107,10 +112,18 @@ a {
 }
 
 .mapa-embed {
-  flex: 1 1 600px;
-  height: 400px;
+  flex: 1 1 500px;
+  min-width: 300px;
+  height: 350px;
   border-radius: 12px;
   overflow: hidden;
+}
+
+.mapa-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
 }
 
 /* =======================
@@ -204,6 +217,23 @@ a {
   cursor: pointer;
 }
 
+@media (max-width: 992px) {
+  .mapa-box {
+    flex-direction: column;
+  }
+
+  .mapa-embed {
+    width: 100%;
+    height: 300px;
+  }
+
+  .info-mapa {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .menu {
     flex-direction: column;
@@ -230,20 +260,6 @@ a {
     background: white;
     padding: 1rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  }
-
-  .contenedor-mapa-doble {
-    flex-direction: column;
-  }
-
-  .info-mapa,
-  .mapa-embed {
-    width: 100%;
-    padding: 0;
-  }
-
-  .mapa-embed {
-    height: 300px;
   }
 
   .collage-naturaleza {
