@@ -112,12 +112,12 @@ a {
 }
 
 .mapa-embed {
-  flex: 1 1 500px;
-  min-width: 300px;
-  height: 350px;
+  flex: 2 1 700px; /* más espacio para mapa */
+  height: 450px;   /* más alto */
   border-radius: 12px;
   overflow: hidden;
 }
+
 
 .mapa-embed iframe {
   width: 100%;
