@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Exploraconmigo - Tours</title>
-
   <link rel="stylesheet" href="TOURS.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -19,19 +18,23 @@
         <img src="LOGOS/Logoprincipal.png" alt="Logo Exploraconmigo" class="logo" height="80" />
       </a>
 
-      <!-- Botón hamburguesa -->
-      <button class="hamburger" id="hamburger">
-        <i class="fas fa-bars"></i>
-      </button>
+      <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
 
       <nav aria-label="Menú principal" id="menu">
         <ul class="menu">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="destinos.html">Destinos</a></li>
-          <li><a href="tours.html" class="activo">Tours</a></li>
-          <li><a href="galeria.html">Galería</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="index.html" data-key="inicio">Inicio</a></li>
+          <li><a href="destinos.html" data-key="destinos">Destinos</a></li>
+          <li><a href="tours.html" class="activo" data-key="tours">Tours</a></li>
+          <li><a href="galeria.html" data-key="galeria">Galería</a></li>
+          <li><a href="contacto.html" data-key="contacto">Contacto</a></li>
         </ul>
+        <div class="selector-idioma-menu">
+          <img src="https://i.postimg.cc/vTmjsWf6/tierra.png" alt="Idioma" class="selector-idioma-icon" />
+          <select class="selector-idioma" id="languageSelector">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+          </select>
+        </div>
       </nav>
     </div>
   </header>
@@ -40,56 +43,54 @@
   <main>
     <section id="tours">
       <div class="contenedor">
-        <h1>Tours de Aventura</h1>
-
+        <h1 data-key="titulo">Tours de Aventura</h1>
         <div class="grid-tours">
           <div class="tour-card">
-            <img src="https://i.postimg.cc/yNWLQVh7/cierra.jpg" alt="Senderismo" />
-            <h3>Senderismo por la Sierra</h3>
-            <p>Tour guiado de 3 horas por montañas, paisajes espectaculares y fauna silvestre.</p>
+            <img src="https://i.postimg.cc/yNWLQVh7/cierra.jpg" alt="" />
+            <h3 data-key="tour1_titulo">Senderismo por la Sierra</h3>
+            <p data-key="tour1_desc">Tour guiado de 3 horas por montañas, paisajes espectaculares y fauna silvestre.</p>
             <span class="precio">$120.000 COP</span>
-            <a href="#" class="boton-secundario">Reservar Ahora</a>
+            <a href="#" class="boton-secundario" data-key="reservar">Reservar Ahora</a>
           </div>
 
           <div class="tour-card">
-            <img src="https://i.postimg.cc/QdZ3p7hp/Whats-App-Image-2025-07-01-at-7-08-13-AM.jpg" alt="Parapente" />
-            <h3>Parapente</h3>
-            <p>Vuela sobre Manaure y disfruta una experiencia inolvidable desde las alturas.</p>
+            <img src="https://i.postimg.cc/QdZ3p7hp/Whats-App-Image-2025-07-01-at-7-08-13-AM.jpg" alt="" />
+            <h3 data-key="tour2_titulo">Parapente</h3>
+            <p data-key="tour2_desc">Vuela sobre Manaure y disfruta una experiencia inolvidable desde las alturas.</p>
             <span class="precio">$100.000 COP</span>
-            <a href="#" class="boton-secundario">Reservar Ahora</a>
+            <a href="#" class="boton-secundario" data-key="reservar">Reservar Ahora</a>
           </div>
-
 
           <div class="tour-card">
-            <img src="https://i.postimg.cc/MpYk2KjR/ave.jpg" alt="Avistamiento" />
-            <h3>Avistamiento de Aves</h3>
-            <p>Descubre especies únicas con guías expertos en ornitología.</p>
+            <img src="https://i.postimg.cc/MpYk2KjR/ave.jpg" alt="" />
+            <h3 data-key="tour3_titulo">Avistamiento de Aves</h3>
+            <p data-key="tour3_desc">Descubre especies únicas con guías expertos en ornitología.</p>
             <span class="precio">$50.000 COP</span>
-            <a href="" class="boton-secundario">Reservar Ahora</a>
+            <a href="#" class="boton-secundario" data-key="reservar">Reservar Ahora</a>
           </div>
 
-           <div class="tour-card">
-            <img src="https://i.postimg.cc/QMBqgfst/panela.jpg" alt="Avistamiento" />
-            <h3>Fabricación de Panela</h3>
-            <p>Vive la tradición de lo dulce: aprende, participa y elabora tu propia panela artesanal.</p>
+          <div class="tour-card">
+            <img src="https://i.postimg.cc/QMBqgfst/panela.jpg" alt="" />
+            <h3 data-key="tour4_titulo">Fabricación de Panela</h3>
+            <p data-key="tour4_desc">Vive la tradición de lo dulce: aprende, participa y elabora tu propia panela artesanal.</p>
             <span class="precio">$30.000 COP</span>
-            <a href="" class="boton-secundario">Reservar Ahora</a>
-          </div>
-
-            <div class="tour-card">
-            <img src="https://i.postimg.cc/NMB5G0Nc/exotico.jpg" alt="Avistamiento" />
-            <h3>Animales Exóticos</h3>
-            <p>Descubre de cerca la belleza y el misterio de los animales exóticos en su hábitat natural.</p>
-            <span class="precio">$50.000 COP</span>
-            <a href="" class="boton-secundario">Reservar Ahora</a>
+            <a href="#" class="boton-secundario" data-key="reservar">Reservar Ahora</a>
           </div>
 
           <div class="tour-card">
-            <img src="https://i.postimg.cc/VNBnYXL4/sicla.jpg"/>
-            <h3>ruta en cicla</h3>
-            <p>Recorre caminos inolvidables y respira la libertad en cada pedaleo.</p>
-            <span class="precio">50.000 COP</span>
-            <a href="" class="boton-secundario">Reservar Ahora</a>
+            <img src="https://i.postimg.cc/NMB5G0Nc/exotico.jpg" alt="" />
+            <h3 data-key="tour5_titulo">Animales Exóticos</h3>
+            <p data-key="tour5_desc">Descubre de cerca la belleza y el misterio de los animales exóticos en su hábitat natural.</p>
+            <span class="precio">$50.000 COP</span>
+            <a href="#" class="boton-secundario" data-key="reservar">Reservar Ahora</a>
+          </div>
+
+          <div class="tour-card">
+            <img src="https://i.postimg.cc/VNBnYXL4/sicla.jpg" alt="" />
+            <h3 data-key="tour6_titulo">Ruta en Cicla</h3>
+            <p data-key="tour6_desc">Recorre caminos inolvidables y respira la libertad en cada pedaleo.</p>
+            <span class="precio">$50.000 COP</span>
+            <a href="#" class="boton-secundario" data-key="reservar">Reservar Ahora</a>
           </div>
         </div>
       </div>
@@ -101,22 +102,56 @@
     <div class="contenedor">
       <p>&copy; 2025 Turismo de Naturaleza. Todos los derechos reservados.</p>
       <div class="redes-sociales">
-        <a href="https://www.facebook.com/exploraconmigo" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/exploraconmigo" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/573001234567" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/exploraconmigo" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/exploraconmigo" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/573001234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </footer>
 
-  <!-- Script menú hamburguesa -->
+  <!-- Script -->
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const menu = document.getElementById('menu');
+    const traducciones = {
+      en: {
+        inicio: "Home",
+        destinos: "Destinations",
+        tours: "Tours",
+        galeria: "Gallery",
+        contacto: "Contact",
+        titulo: "Adventure Tours",
+        tour1_titulo: "Hiking in the Mountains",
+        tour1_desc: "3-hour guided tour through mountains, scenic views and wildlife.",
+        tour2_titulo: "Paragliding",
+        tour2_desc: "Fly over Manaure and enjoy an unforgettable experience from above.",
+        tour3_titulo: "Birdwatching",
+        tour3_desc: "Discover unique species with expert ornithologist guides.",
+        tour4_titulo: "Panela Making",
+        tour4_desc: "Live the sweet tradition: learn and make your own artisan panela.",
+        tour5_titulo: "Exotic Animals",
+        tour5_desc: "Discover the beauty and mystery of exotic animals up close.",
+        tour6_titulo: "Bike Route",
+        tour6_desc: "Ride unforgettable roads and breathe freedom with every pedal.",
+        reservar: "Book Now"
+      },
+      es: {
+        // No es necesario, los textos por defecto ya están en español
+      }
+    };
 
-    hamburger.addEventListener('click', () => {
-      menu.classList.toggle('activo');
+    document.getElementById('languageSelector').addEventListener('change', function () {
+      const lang = this.value;
+      document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (traducciones[lang] && traducciones[lang][key]) {
+          el.textContent = traducciones[lang][key];
+        }
+      });
+    });
+
+    // Menú hamburguesa
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('menu').classList.toggle('activo');
     });
   </script>
-
 </body>
 </html>
