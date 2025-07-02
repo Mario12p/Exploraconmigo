@@ -51,6 +51,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -62,6 +63,7 @@ img {
   list-style: none;
   display: flex;
   gap: 40px;
+  flex-wrap: wrap;
 }
 
 .menu li {
@@ -94,6 +96,7 @@ img {
   height: 22px;
   vertical-align: middle;
 }
+
 .selector-idioma {
   font-family: var(--fuente);
   font-weight: normal;
@@ -103,17 +106,13 @@ img {
   background: transparent;
   cursor: pointer;
   padding: 8px 16px 8px 0px;
-
-  /* QUITAMOS la personalización */
-  appearance: auto; /* ← clave */
+  appearance: auto;
   -webkit-appearance: auto;
   -moz-appearance: auto;
-
-  background-image: none; /* ← clave */
+  background-image: none;
   background-repeat: no-repeat;
   background-position: right center;
 }
-
 
 .selector-idioma:focus {
   outline: none;
@@ -208,82 +207,30 @@ img {
   transform: scale(1.2);
 }
 
-/* MENÚ HAMBURGUESA */
+/* MENÚ HAMBURGUESA ELIMINADO */
 .hamburger {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--texto);
+  display: none !important;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  nav {
-    display: none;
-    width: auto;
-    position: static;
-    background: none;
-    padding: 0;
-    box-shadow: none;
-    border-radius: 0;
-  }
-
-  nav.activo {
-    display: block;
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    background: white;
-    padding: 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    width: 200px;
-  }
-
   .menu {
     flex-direction: column;
-    gap: 0;
-  }
-
-  .menu li {
-    width: 100%;
-  }
-
-  .menu a,
-  .selector-idioma-menu {
-    display: flex;
-    align-items: center;
-    padding: 10px 15px;
-    border-bottom: 1px solid var(--gris);
+    align-items: flex-start;
+    gap: 10px;
+    padding-top: 20px;
   }
 
   .selector-idioma-menu {
-    justify-content: flex-start;
-    gap: 8px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  .selector-idioma-menu:last-child {
-    border-bottom: none;
-  }
-
-  .selector-idioma {
-    border: none;
-    background: transparent;
-    padding: 8px 24px 8px 0px;
-    font-weight: normal;
-    font-size: 1em;
+    padding-left: 0;
   }
 
   #contacto h2 {
     font-size: 2rem;
+  }
+
+  .formulario-contacto {
+    padding: 30px;
   }
 }
 
