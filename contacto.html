@@ -121,6 +121,15 @@
       document.getElementById("selector-idioma").value = idiomaGuardado;
       aplicarTraduccion(idiomaGuardado);
     });
+
+    // Script para menú hamburguesa
+    document.addEventListener("DOMContentLoaded", () => {
+      const boton = document.getElementById("hamburger");
+      const menu = document.getElementById("menu");
+      boton.addEventListener("click", () => {
+        menu.classList.toggle("activo");
+      });
+    });
   </script>
 
 </body>

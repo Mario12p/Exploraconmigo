@@ -62,6 +62,7 @@ img {
   list-style: none;
   display: flex;
   gap: 40px;
+  margin-right: 30px;
 }
 
 .menu li {
@@ -76,9 +77,9 @@ img {
 }
 
 .menu a:hover,
-.menu .activo {
+.menu a.activo {
   color: var(--verde);
-  border-bottom: 2px solid var(--verde);
+  border-bottom: 3px solid var(--verde);
 }
 
 /* SELECTOR DE IDIOMA */
@@ -86,14 +87,14 @@ img {
   display: flex;
   align-items: center;
   gap: 8px;
-  position: relative;
+  margin-left: auto;
 }
 
 .selector-idioma-icon {
-  width: 22px;
-  height: 22px;
-  vertical-align: middle;
+  width: 20px;
+  height: 20px;
 }
+
 .selector-idioma {
   font-family: var(--fuente);
   font-weight: normal;
@@ -103,17 +104,12 @@ img {
   background: transparent;
   cursor: pointer;
   padding: 8px 16px 8px 0px;
-
-  /* QUITAMOS la personalización */
-  appearance: auto; /* ← clave */
-  -webkit-appearance: auto;
-  -moz-appearance: auto;
-
-  background-image: none; /* ← clave */
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg width="12" height="8" viewBox="0 0 12 8" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M1 1l5 5 5-5" stroke="%23333" stroke-width="2" fill="none" fill-rule="evenodd"/%3E%3C/svg%3E');
   background-repeat: no-repeat;
   background-position: right center;
+  background-size: 12px 8px;
 }
-
 
 .selector-idioma:focus {
   outline: none;
@@ -226,12 +222,6 @@ img {
 
   nav {
     display: none;
-    width: auto;
-    position: static;
-    background: none;
-    padding: 0;
-    box-shadow: none;
-    border-radius: 0;
   }
 
   nav.activo {
@@ -275,11 +265,7 @@ img {
   }
 
   .selector-idioma {
-    border: none;
-    background: transparent;
     padding: 8px 24px 8px 0px;
-    font-weight: normal;
-    font-size: 1em;
   }
 
   #contacto h2 {

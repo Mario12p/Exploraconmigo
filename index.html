@@ -25,10 +25,10 @@
       <nav id="menu" aria-label="Menú principal">
         <ul class="menu">
           <li><a href="index.html" class="activo" data-i18n="menu-inicio">Inicio</a></li>
-          <li><a href="destinos.html" data-i18n="menu-destinos">Destinos</a></li>
-          <li><a href="tours.html" data-i18n="menu-tours">Tours</a></li>
-          <li><a href="galeria.html" data-i18n="menu-galeria">Galería</a></li>
-          <li><a href="contacto.html" data-i18n="menu-contacto">Contacto</a></li>
+          <li><a href="./destinos.html" data-i18n="menu-destinos">Destinos</a></li>
+          <li><a href="./tours.html" data-i18n="menu-tours">Tours</a></li>
+          <li><a href="./galeria.html" data-i18n="menu-galeria">Galería</a></li>
+          <li><a href="./contacto.html" data-i18n="menu-contacto">Contacto</a></li>
           <li class="selector-idioma-menu">
             <img src="LOGOS/idioma.png" alt="Idioma" class="selector-idioma-icon" />
             <select id="selector-idioma" onchange="cambiarIdioma()" class="selector-idioma">
@@ -52,7 +52,7 @@
         <div class="contenido-hero">
           <h1 id="titulo-hero" data-i18n="titulo-hero">Bienvenido <br> Explora conmigo</h1>
           <p id="parrafo-hero" data-i18n="parrafo-hero">Vive experiencias únicas en contacto con la naturaleza</p>
-          <a href="tours.html" class="boton-primario" id="boton-hero" data-i18n="boton-hero">Explorar</a>
+          <a href="./tours.html" class="boton-primario" id="boton-hero" data-i18n="boton-hero">Explorar</a>
         </div>
       </div>
     </section>
@@ -72,8 +72,16 @@
 
   <!-- SCRIPTS -->
   <script>
+    // Abrir/cerrar menú hamburguesa
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('menu').classList.toggle('activo');
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll('#menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('menu').classList.remove('activo');
+      });
     });
 
     const textos = {
@@ -113,7 +121,7 @@
         const clave = el.getAttribute("data-i18n");
         if (clave in traducciones) {
           if (clave === "titulo-hero") {
-            el.innerHTML = traducciones[clave]; // conserva el <br>
+            el.innerHTML = traducciones[clave];
           } else {
             el.textContent = traducciones[clave];
           }

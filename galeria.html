@@ -7,35 +7,35 @@
   <link rel="stylesheet" href="GALERIA.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
   <header class="site-header">
     <div class="contenedor flex">
-      <a href="index.html">
+      <a href="index.html" class="logo-link">
         <img src="LOGOS/Logoprincipal.png" alt="Logo Exploraconmigo" class="logo" />
       </a>
 
-      <button class="hamburger" id="hamburger">
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
         <i class="fas fa-bars"></i>
       </button>
 
-      <nav id="menu" aria-label="Menú principal">
+      <nav aria-label="Menú principal" id="menu" class="nav">
         <ul class="menu">
           <li><a href="index.html" data-i18n="menu-inicio">Inicio</a></li>
           <li><a href="destinos.html" data-i18n="menu-destinos">Destinos</a></li>
           <li><a href="tours.html" data-i18n="menu-tours">Tours</a></li>
           <li><a href="galeria.html" class="activo" data-i18n="menu-galeria">Galería</a></li>
           <li><a href="contacto.html" data-i18n="menu-contacto">Contacto</a></li>
-          <li class="selector-idioma-menu">
-            <img src="https://i.postimg.cc/vTmjsWf6/tierra.png" alt="Idioma" class="selector-idioma-icon" />
-            <select id="selector-idioma" onchange="cambiarIdioma()" class="selector-idioma">
-              <option value="es">Español</option>
-              <option value="en">English</option>
-            </select>
-          </li>
         </ul>
+        <div class="selector-idioma-menu">
+          <img src="https://i.postimg.cc/vTmjsWf6/tierra.png" alt="Idioma" class="selector-idioma-icon" />
+          <select class="selector-idioma" id="selector-idioma" onchange="cambiarIdioma()">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+          </select>
+        </div>
       </nav>
     </div>
   </header>
@@ -67,44 +67,14 @@
     <div class="contenedor">
       <p data-i18n="footer-derechos">&copy; 2025 Turismo de Naturaleza. Todos los derechos reservados.</p>
       <div class="redes-sociales">
-        <a href="https://www.facebook.com/exploraconmigo" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/exploraconmigo" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/573001234567" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/exploraconmigo" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/exploraconmigo" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/573001234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </footer>
 
   <script>
-    // Menú hamburguesa
-    const hamburger = document.getElementById('hamburger');
-    const menu = document.getElementById('menu');
-    hamburger.addEventListener('click', () => {
-      menu.classList.toggle('activo');
-    });
-
-    // Lightbox
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const images = document.querySelectorAll('.grid-galeria img');
-    const close = document.querySelector('.close');
-
-    images.forEach(img => {
-      img.addEventListener('click', () => {
-        lightbox.style.display = 'block';
-        lightboxImg.src = img.src;
-      });
-    });
-
-    close.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-    });
-
-    lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-      }
-    });
-
     // Traducciones
     const textos = {
       es: {
@@ -147,6 +117,55 @@
       const idiomaGuardado = localStorage.getItem("idioma") || "es";
       document.getElementById("selector-idioma").value = idiomaGuardado;
       aplicarTraduccion(idiomaGuardado);
+
+      // Menú hamburguesa
+      const hamburgerButton = document.getElementById('hamburger');
+      const menu = document.getElementById('menu');
+
+      hamburgerButton.addEventListener('click', () => {
+        menu.classList.toggle('activo');
+        hamburgerButton.querySelector('i').classList.toggle('fa-bars');
+        hamburgerButton.querySelector('i').classList.toggle('fa-times');
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!menu.contains(event.target) && !hamburgerButton.contains(event.target) && menu.classList.contains('activo')) {
+          menu.classList.remove('activo');
+          hamburgerButton.querySelector('i').classList.add('fa-bars');
+          hamburgerButton.querySelector('i').classList.remove('fa-times');
+        }
+      });
+
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.remove('activo');
+          hamburgerButton.querySelector('i').classList.add('fa-bars');
+          hamburgerButton.querySelector('i').classList.remove('fa-times');
+        });
+      });
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const images = document.querySelectorAll('.grid-galeria img');
+    const close = document.querySelector('.close');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'block';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    close.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
     });
   </script>
 
