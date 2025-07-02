@@ -31,7 +31,6 @@ img {
   display: block;
 }
 
-/* CONTENEDOR */
 .contenedor {
   max-width: 1200px;
   margin: auto;
@@ -44,7 +43,7 @@ img {
   align-items: center;
 }
 
-/* HEADER */
+/* ========== HEADER ========== */
 .site-header {
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -58,7 +57,7 @@ img {
   max-height: 80px;
 }
 
-/* MENÚ */
+/* ========== MENÚ PRINCIPAL ========== */
 #menu {
   display: flex;
   align-items: center;
@@ -83,7 +82,7 @@ img {
   border-bottom: 2px solid var(--verde);
 }
 
-/* SELECTOR DE IDIOMA */
+/* ========== SELECTOR DE IDIOMA ========== */
 .selector-idioma-menu {
   display: flex;
   align-items: center;
@@ -97,21 +96,21 @@ img {
 }
 
 .selector-idioma {
-  padding: 0;
   font-size: 0.9rem;
   border: none;
   background: none;
   color: var(--texto);
   cursor: pointer;
   appearance: none;
-  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20512%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M192%20384c-8.188%200-16.38-3.125-22.62-9.375l-128-128c-12.5-12.5-12.5-32.75%200-45.25s32.75-12.5%2045.25%200L192%20306.8l105.4-105.4c12.5-12.5%2032.75-12.5%2045.25%200s12.5%2032.75%200%2045.25l-128%20128C208.4%20380.9%20200.2%20384%20192%20384z%22%2F%3E%3C%2Fsvg%3E');
+  font-weight: normal;
+  background-image: url("https://i.postimg.cc/4yN2kqj2/flecha-select.png");
   background-repeat: no-repeat;
   background-position: right 0.5rem center;
   background-size: 0.6rem;
   padding-right: 1.5rem;
 }
 
-/* HAMBURGUESA */
+/* ========== MENÚ HAMBURGUESA ========== */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -122,7 +121,7 @@ img {
   color: var(--texto);
 }
 
-/* SECCIÓN TOURS */
+/* ========== SECCIÓN TOURS ========== */
 #tours h1 {
   font-size: 2.5rem;
   color: var(--verde);
@@ -193,7 +192,7 @@ img {
   transform: translateY(-2px);
 }
 
-/* FOOTER */
+/* ========== FOOTER ========== */
 .site-footer {
   background: var(--gris-oscuro);
   color: var(--gris-claro);
@@ -224,7 +223,7 @@ img {
   transform: scale(1.2);
 }
 
-/* RESPONSIVE */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -232,7 +231,6 @@ img {
     top: 15px;
     right: 15px;
     font-size: 2.2rem;
-    color: var(--texto);
   }
 
   #menu {

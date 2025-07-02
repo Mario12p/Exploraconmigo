@@ -38,17 +38,17 @@ a {
   align-items: center;
 }
 
-/* ========== Idioma Selector ========== */
+/* ========== Selector de Idioma ========== */
 .selector-idioma-menu {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
 }
 
 .selector-idioma-icon {
   width: 20px;
   height: 20px;
-  content: url("https://i.postimg.cc/vTmjsWf6/tierra.png")
+  content: url("https://i.postimg.cc/vTmjsWf6/tierra.png");
 }
 
 .selector-idioma {
@@ -58,6 +58,14 @@ a {
   border: none;
   color: var(--texto);
   cursor: pointer;
+  padding-right: 24px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('https://i.postimg.cc/4yN2kqj2/flecha-select.png');
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  background-size: 12px;
 }
 
 .selector-idioma:focus {
@@ -111,10 +119,9 @@ a {
   justify-content: space-between;
   margin-bottom: 60px;
   border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   background: #fff;
   padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .info-mapa {
@@ -123,8 +130,8 @@ a {
 
 .info-mapa h2 {
   font-size: 2.2rem;
-  color: var(--texto);
   margin-bottom: 10px;
+  color: var(--texto);
 }
 
 .info-mapa p {
@@ -156,7 +163,6 @@ a {
   font-size: 2.8rem;
   font-weight: 700;
   text-align: center;
-  color: var(--texto);
   margin-bottom: 10px;
 }
 
@@ -207,7 +213,6 @@ a {
   margin-top: 1.5rem;
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 2rem;
 }
 
@@ -222,7 +227,7 @@ a {
   transform: scale(1.2);
 }
 
-/* ========== Hamburguesa ========== */
+/* ========== Menú Hamburguesa ========== */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -230,6 +235,10 @@ a {
   border: none;
   cursor: pointer;
   color: var(--texto);
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
   z-index: 1001;
 }
 
@@ -254,10 +263,6 @@ a {
 @media (max-width: 768px) {
   .hamburger {
     display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1001;
   }
 
   nav {
@@ -267,19 +272,18 @@ a {
   nav.activo {
     display: block;
     position: absolute;
-    top: 80px;
-    right: 15px;
+    top: 100%;
+    right: 0;
     background: white;
     padding: 1rem;
-    width: 220px;
-    border-radius: 8px;
+    width: 100%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 10px 10px;
     z-index: 1000;
   }
 
   .menu {
     flex-direction: column;
-    gap: 0;
     width: 100%;
   }
 
@@ -289,7 +293,7 @@ a {
 
   .menu a {
     display: block;
-    padding: 10px;
+    padding: 12px 10px;
     font-size: 0.95rem;
     border-bottom: 1px solid #eee;
   }
@@ -300,8 +304,9 @@ a {
 
   .selector-idioma-menu {
     padding-top: 10px;
-    width: 100%;
     border-top: 1px solid #eee;
+    justify-content: flex-start;
+    width: 100%;
   }
 
   .logo {
@@ -310,12 +315,22 @@ a {
 }
 
 @media (max-width: 480px) {
-  .boton-primario {
-    font-size: 0.95rem;
-    padding: 0.75rem 1.5rem;
+  .titulo-naturaleza {
+    font-size: 2rem;
   }
 
-  .contenido-hero h1 {
-    font-size: 2rem;
+  .descripcion-naturaleza {
+    font-size: 1rem;
+  }
+
+  .collage-naturaleza {
+    grid-template-areas:
+      "img1"
+      "img2"
+      "img3"
+      "img4"
+      "img5";
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 200px);
   }
 }

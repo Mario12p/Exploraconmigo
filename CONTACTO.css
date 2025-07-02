@@ -45,6 +45,7 @@ img {
   position: sticky;
   top: 0;
   z-index: 1000;
+  padding: 10px 0;
 }
 
 .flex {
@@ -58,35 +59,35 @@ img {
 }
 
 /* MENÚ DE NAVEGACIÓN */
+#menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .menu {
   list-style: none;
   display: flex;
-  gap: 40px;
-  margin-right: 30px;
-}
-
-.menu li {
-  display: flex;
-  align-items: center;
+  gap: 2rem;
 }
 
 .menu a {
   font-weight: 600;
-  padding: 8px 12px;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding: .5rem;
+  transition: color .3s;
 }
 
 .menu a:hover,
-.menu a.activo {
+.menu .activo {
   color: var(--verde);
-  border-bottom: 3px solid var(--verde);
+  border-bottom: 2px solid var(--verde);
 }
 
 /* SELECTOR DE IDIOMA */
 .selector-idioma-menu {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
   margin-left: auto;
 }
 
@@ -96,19 +97,21 @@ img {
 }
 
 .selector-idioma {
-  font-family: var(--fuente);
-  font-weight: normal;
-  font-size: 1em;
-  color: var(--texto);
+  padding: 0;
+  font-size: 0.9rem;
   border: none;
-  background: transparent;
+  background: none;
+  color: var(--texto);
   cursor: pointer;
-  padding: 8px 16px 8px 0px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
-  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg width="12" height="8" viewBox="0 0 12 8" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M1 1l5 5 5-5" stroke="%23333" stroke-width="2" fill="none" fill-rule="evenodd"/%3E%3C/svg%3E');
+  background-image: url('https://i.postimg.cc/4yN2kqj2/flecha-select.png');
   background-repeat: no-repeat;
-  background-position: right center;
-  background-size: 12px 8px;
+  background-position: right 0.5rem center;
+  background-size: 0.6rem;
+  padding-right: 1.5rem;
+  font-weight: normal;
 }
 
 .selector-idioma:focus {
@@ -212,68 +215,125 @@ img {
   border: none;
   cursor: pointer;
   color: var(--texto);
+  z-index: 1001;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
-  }
-
-  nav {
-    display: none;
-  }
-
-  nav.activo {
-    display: block;
     position: absolute;
-    top: 80px;
-    right: 20px;
+    top: 15px;
+    right: 15px;
+  }
+
+  #menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 60px;
+    right: 10px;
     background: white;
-    padding: 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    width: 180px;
+    padding: 10px 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+    z-index: 999;
+  }
+
+  #menu.activo {
+    transform: translateX(0);
+    display: flex;
   }
 
   .menu {
     flex-direction: column;
+    width: 100%;
     gap: 0;
+    padding: 0;
   }
 
   .menu li {
     width: 100%;
   }
 
-  .menu a,
-  .selector-idioma-menu {
-    display: flex;
-    align-items: center;
-    padding: 10px 15px;
-    border-bottom: 1px solid var(--gris);
+  .menu a {
+    display: block;
+    padding: 8px 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+    font-weight: normal;
+    transition: background-color 0.3s, color 0.3s;
   }
 
-  .selector-idioma-menu {
-    justify-content: flex-start;
-    gap: 8px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  .selector-idioma-menu:last-child {
+  .menu a:last-child {
     border-bottom: none;
   }
 
+  .menu a:hover {
+    background-color: var(--gris);
+    color: var(--verde);
+  }
+
+  .menu .activo {
+    color: var(--verde);
+    font-weight: 600;
+    background-color: transparent;
+    position: relative;
+  }
+
+  .menu .activo::after {
+    content: '';
+    position: absolute;
+    left: 15px;
+    bottom: 3px;
+    width: 40px;
+    height: 2px;
+    background-color: var(--verde);
+  }
+
+  .selector-idioma-menu {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    border-top: 1px solid #eee;
+    margin-top: 5px;
+    width: 100%;
+  }
+
+  .selector-idioma-icon {
+    width: 18px;
+    height: 18px;
+  }
+
   .selector-idioma {
-    padding: 8px 24px 8px 0px;
+    font-size: 0.9rem;
+    background-image: url('https://i.postimg.cc/4yN2kqj2/flecha-select.png');
+    background-position: right 0.3rem center;
+    background-size: 0.5rem;
+    padding-right: 1.3rem;
+  }
+
+  .logo {
+    max-height: 60px;
+  }
+
+  .site-header .contenedor {
+    padding: 10px 15px;
+  }
+
+  #menu .menu a.activo {
+    padding-left: 15px;
   }
 
   #contacto h2 {
     font-size: 2rem;
   }
-}
 
-@media (max-width: 480px) {
   .formulario-contacto {
     padding: 20px;
   }
