@@ -3,85 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inicio - Senderos del Cesar</title>
+  <title>Contacto - Exploraconmigo</title>
   <link rel="stylesheet" href="CONTACTO.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-  <!-- Header -->
   <header class="site-header">
     <div class="contenedor flex">
-      <!-- Logo con enlace a inicio -->
       <a href="index.html">
         <img src="LOGOS/Logoprincipal.png" alt="Logo Exploraconmigo" class="logo" />
       </a>
 
-      <!-- Botón hamburguesa -->
       <button class="hamburger" id="hamburger">
         <i class="fas fa-bars"></i>
       </button>
 
-      <!-- Menú de navegación -->
-      <nav id="menu">
+      <nav id="menu" aria-label="Menú principal">
         <ul class="menu">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="destinos.html">Destinos</a></li>
-          <li><a href="tours.html">Tours</a></li>
-          <li><a href="galeria.html">Galería</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="index.html" data-i18n="menu-inicio">Inicio</a></li>
+          <li><a href="destinos.html" data-i18n="menu-destinos">Destinos</a></li>
+          <li><a href="tours.html" data-i18n="menu-tours">Tours</a></li>
+          <li><a href="galeria.html" data-i18n="menu-galeria">Galería</a></li>
+          <li><a href="contacto.html" class="activo" data-i18n="menu-contacto">Contacto</a></li>
+          <li class="selector-idioma-menu">
+            <img src="https://i.postimg.cc/vTmjsWf6/tierra.png" alt="Idioma" class="selector-idioma-icon" />
+            <select id="selector-idioma" onchange="cambiarIdioma()" class="selector-idioma">
+              <option value="es">Español</option>
+              <option value="en">English</option>
+            </select>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Main -->
   <main>
     <section id="contacto">
       <div class="contenedor">
-        <h2>Contáctanos</h2>
-        <p>¿Tienes alguna pregunta o quieres personalizar tu aventura? ¡Escríbenos!</p>
+        <h2 data-i18n="titulo-contacto">Contáctanos</h2>
+        <p data-i18n="parrafo-contacto">¿Tienes alguna pregunta o quieres personalizar tu aventura? ¡Escríbenos!</p>
         <form action="#" method="POST" class="formulario-contacto">
-          <input type="text" name="nombre" placeholder="Tu Nombre" required />
-          <input type="email" name="email" placeholder="Tu Email" required />
-          <textarea name="mensaje" placeholder="Tu Mensaje" rows="5" required></textarea>
-          <button type="submit" class="boton-primario">Enviar Mensaje</button>
+          <input type="text" name="nombre" placeholder="Tu Nombre" required data-i18n-placeholder="placeholder-nombre" />
+          <input type="email" name="email" placeholder="Tu Email" required data-i18n-placeholder="placeholder-email" />
+          <textarea name="mensaje" placeholder="Tu Mensaje" rows="5" required data-i18n-placeholder="placeholder-mensaje"></textarea>
+          <button type="submit" class="boton-primario" data-i18n="boton-enviar">Enviar Mensaje</button>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>©️ 2025 Turismo de Naturaleza. Todos los derechos reservados.</p>
-    <div class="footer__social">
-      <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://wa.me/573001112233" target="_blank" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-      </a>
+  <footer class="site-footer">
+    <div class="contenedor">
+      <p data-i18n="footer-derechos">&copy; 2025 Turismo de Naturaleza. Todos los derechos reservados.</p>
+      <div class="redes-sociales">
+        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/573001112233" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
     </div>
   </footer>
 
-  <!-- Script -->
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const menu = document.getElementById('menu');
-    hamburger.addEventListener('click', () => {
-      menu.classList.toggle('activo');
-    });
-
-    // Enlace activo
-    const links = document.querySelectorAll('.menu a');
-    const current = window.location.pathname.split("/").pop();
-    links.forEach(link => {
-      if (link.getAttribute("href") === current) {
-        link.classList.add("activo");
+    const textos = {
+      es: {
+        "menu-inicio": "Inicio",
+        "menu-destinos": "Destinos",
+        "menu-tours": "Tours",
+        "menu-galeria": "Galería",
+        "menu-contacto": "Contacto",
+        "titulo-contacto": "Contáctanos",
+        "parrafo-contacto": "¿Tienes alguna pregunta o quieres personalizar tu aventura? ¡Escríbenos!",
+        "placeholder-nombre": "Tu Nombre",
+        "placeholder-email": "Tu Email",
+        "placeholder-mensaje": "Tu Mensaje",
+        "boton-enviar": "Enviar Mensaje",
+        "footer-derechos": "© 2025 Turismo de Naturaleza. Todos los derechos reservados."
+      },
+      en: {
+        "menu-inicio": "Home",
+        "menu-destinos": "Destinations",
+        "menu-tours": "Tours",
+        "menu-galeria": "Gallery",
+        "menu-contacto": "Contact",
+        "titulo-contacto": "Contact Us",
+        "parrafo-contacto": "Do you have a question or want to personalize your adventure? Write to us!",
+        "placeholder-nombre": "Your Name",
+        "placeholder-email": "Your Email",
+        "placeholder-mensaje": "Your Message",
+        "boton-enviar": "Send Message",
+        "footer-derechos": "© 2025 Nature Tourism. All rights reserved."
       }
+    };
+
+    function cambiarIdioma() {
+      const idioma = document.getElementById("selector-idioma").value;
+      localStorage.setItem("idioma", idioma);
+      aplicarTraduccion(idioma);
+    }
+
+    function aplicarTraduccion(idioma) {
+      const traducciones = textos[idioma];
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const clave = el.getAttribute("data-i18n");
+        if (clave in traducciones) el.textContent = traducciones[clave];
+      });
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+        const clave = el.getAttribute("data-i18n-placeholder");
+        if (clave in traducciones) el.placeholder = traducciones[clave];
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const idiomaGuardado = localStorage.getItem("idioma") || "es";
+      document.getElementById("selector-idioma").value = idiomaGuardado;
+      aplicarTraduccion(idiomaGuardado);
     });
   </script>
 

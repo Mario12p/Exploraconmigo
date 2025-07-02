@@ -24,11 +24,11 @@
 
       <nav id="menu" aria-label="Menú principal">
         <ul class="menu">
-          <li><a href="index.html" class="activo">Inicio</a></li>
-          <li><a href="destinos.html">Destinos</a></li>
-          <li><a href="tours.html">Tours</a></li>
-          <li><a href="galeria.html">Galería</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="index.html" class="activo" data-i18n="menu-inicio">Inicio</a></li>
+          <li><a href="destinos.html" data-i18n="menu-destinos">Destinos</a></li>
+          <li><a href="tours.html" data-i18n="menu-tours">Tours</a></li>
+          <li><a href="galeria.html" data-i18n="menu-galeria">Galería</a></li>
+          <li><a href="contacto.html" data-i18n="menu-contacto">Contacto</a></li>
           <li class="selector-idioma-menu">
             <img src="LOGOS/idioma.png" alt="Idioma" class="selector-idioma-icon" />
             <select id="selector-idioma" onchange="cambiarIdioma()" class="selector-idioma">
@@ -50,9 +50,9 @@
       </video>
       <div class="overlay">
         <div class="contenido-hero">
-          <h1 id="titulo-hero">Bienvenido <br> Explora conmigo</h1>
-          <p id="parrafo-hero">Vive experiencias únicas en contacto con la naturaleza</p>
-          <a href="tours.html" class="boton-primario" id="boton-hero">Explorar</a>
+          <h1 id="titulo-hero" data-i18n="titulo-hero">Bienvenido <br> Explora conmigo</h1>
+          <p id="parrafo-hero" data-i18n="parrafo-hero">Vive experiencias únicas en contacto con la naturaleza</p>
+          <a href="tours.html" class="boton-primario" id="boton-hero" data-i18n="boton-hero">Explorar</a>
         </div>
       </div>
     </section>
@@ -61,7 +61,7 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="contenedor">
-      <p>&copy; 2025 Turismo de Naturaleza. Todos los derechos reservados.</p>
+      <p data-i18n="footer-derechos">&copy; 2025 Turismo de Naturaleza. Todos los derechos reservados.</p>
       <div class="redes-sociales">
         <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
@@ -78,27 +78,54 @@
 
     const textos = {
       es: {
+        "menu-inicio": "Inicio",
+        "menu-destinos": "Destinos",
+        "menu-tours": "Tours",
+        "menu-galeria": "Galería",
+        "menu-contacto": "Contacto",
         "titulo-hero": "Bienvenido <br> Explora conmigo",
         "parrafo-hero": "Vive experiencias únicas en contacto con la naturaleza",
-        "boton-hero": "Explorar"
+        "boton-hero": "Explorar",
+        "footer-derechos": "© 2025 Turismo de Naturaleza. Todos los derechos reservados."
       },
       en: {
+        "menu-inicio": "Home",
+        "menu-destinos": "Destinations",
+        "menu-tours": "Tours",
+        "menu-galeria": "Gallery",
+        "menu-contacto": "Contact",
         "titulo-hero": "Welcome <br> Explore with me",
         "parrafo-hero": "Live unique experiences in contact with nature",
-        "boton-hero": "Explore"
+        "boton-hero": "Explore",
+        "footer-derechos": "© 2025 Nature Tourism. All rights reserved."
       }
     };
 
     function cambiarIdioma() {
       const idioma = document.getElementById("selector-idioma").value;
-      const traducciones = textos[idioma];
-      for (const id in traducciones) {
-        const el = document.getElementById(id);
-        if (el) {
-          id === "titulo-hero" ? el.innerHTML = traducciones[id] : el.textContent = traducciones[id];
-        }
-      }
+      localStorage.setItem("idioma", idioma);
+      aplicarTraduccion(idioma);
     }
+
+    function aplicarTraduccion(idioma) {
+      const traducciones = textos[idioma];
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const clave = el.getAttribute("data-i18n");
+        if (clave in traducciones) {
+          if (clave === "titulo-hero") {
+            el.innerHTML = traducciones[clave]; // conserva el <br>
+          } else {
+            el.textContent = traducciones[clave];
+          }
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const idiomaGuardado = localStorage.getItem("idioma") || "es";
+      document.getElementById("selector-idioma").value = idiomaGuardado;
+      aplicarTraduccion(idiomaGuardado);
+    });
   </script>
 
 </body>

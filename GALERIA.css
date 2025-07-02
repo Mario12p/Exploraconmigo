@@ -57,6 +57,7 @@ img {
   list-style: none;
   display: flex;
   gap: 40px;
+  margin-right: 30px;
 }
 
 .menu a {
@@ -69,6 +70,38 @@ img {
 .menu a.activo {
   color: var(--verde);
   border-bottom: 3px solid var(--verde);
+}
+
+/* Selector de idioma */
+.selector-idioma-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.selector-idioma-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.selector-idioma {
+  background: transparent;
+  border: none;
+  font-family: var(--fuente);
+  font-size: 16px;
+  color: var(--texto);
+  appearance: none;
+  padding: 4px 20px 4px 0;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg width="12" height="8" viewBox="0 0 12 8" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M1 1l5 5 5-5" stroke="%23333" stroke-width="2" fill="none" fill-rule="evenodd"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 12px 8px;
+  cursor: pointer;
+}
+
+.selector-idioma:focus {
+  outline: none;
 }
 
 /* Galería */
@@ -100,7 +133,7 @@ img {
   transform: scale(1.05);
 }
 
-/* Lightbox (lupa efecto ampliar) */
+/* Lightbox */
 .lightbox {
   display: none;
   position: fixed;
@@ -141,7 +174,6 @@ img {
 }
 
 /* Footer */
-/* Footer actualizado */
 .site-footer {
   background: var(--gris-oscuro);
   color: var(--gris-claro);
@@ -172,7 +204,6 @@ img {
   color: var(--verde);
   transform: scale(1.2);
 }
-
 
 /* Botón hamburguesa */
 .hamburger {
@@ -206,6 +237,10 @@ img {
   .menu {
     flex-direction: column;
     gap: 1rem;
+  }
+
+  .selector-idioma-menu {
+    margin-top: 1rem;
   }
 
   .galeria h2 {
