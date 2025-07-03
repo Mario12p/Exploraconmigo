@@ -7,7 +7,6 @@
   --fuente: 'Poppins', sans-serif;
 }
 
-/* RESET GENERAL */
 * {
   margin: 0;
   padding: 0;
@@ -43,7 +42,7 @@ img {
   align-items: center;
 }
 
-/* ========== HEADER ========== */
+/* ============ HEADER ============ */
 .site-header {
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -57,7 +56,6 @@ img {
   max-height: 80px;
 }
 
-/* ========== MENÚ ========== */
 #menu {
   display: flex;
   align-items: center;
@@ -82,7 +80,6 @@ img {
   border-bottom: 2px solid var(--verde);
 }
 
-/* ========== SELECTOR DE IDIOMA ========== */
 .selector-idioma-menu {
   display: flex;
   align-items: center;
@@ -104,20 +101,12 @@ img {
   cursor: pointer;
   padding-right: 24px;
   appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url('https://i.postimg.cc/4yN2kqj2/flecha-select.png');
+  background-image: url('https://i.postimg.cc/FzBGQ0PK/down-chevron.png');
   background-repeat: no-repeat;
   background-position: right 6px center;
   background-size: 12px;
-  font-weight: normal;
 }
 
-.selector-idioma:focus {
-  outline: none;
-}
-
-/* ========== HAMBURGUESA ========== */
 .hamburger {
   display: none;
   font-size: 1.8rem;
@@ -132,79 +121,239 @@ img {
   z-index: 1001;
 }
 
-/* ========== GALERÍA ========== */
-.galeria h2 {
+/* ============ ARTÍCULOS BLOG ============ */
+.articulos-inicio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.articulo {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.articulo img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.contenido-articulo {
+  padding: 20px;
+}
+
+.contenido-articulo h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.contenido-articulo p {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.fecha {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* ============ EXPERIENCIAS TARJETAS ============ */
+.experiencias h2 {
   text-align: center;
   font-size: 2.5rem;
   color: var(--verde);
-  margin: 40px 0 30px;
+  margin: 60px 0 40px;
+}
+
+.grid-experiencias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.experiencia-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.experiencia-card:hover {
+  transform: translateY(-5px);
+}
+
+.experiencia-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.experiencia-card .info {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.experiencia-card h3 {
+  font-size: 1.3rem;
+  color: var(--verde);
+  margin-bottom: 10px;
+}
+
+.experiencia-card p {
+  flex-grow: 1;
+  font-size: 0.95rem;
+  color: var(--texto);
+  margin-bottom: 15px;
+}
+
+.experiencia-card .btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: var(--verde);
+  color: white;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.experiencia-card .btn:hover {
+  background-color: var(--verde-hover);
+}
+
+/* ============ AVENTURAS NATURALES ============ */
+.aventuras {
+  margin-top: 60px;
+}
+
+.titulo-aventuras {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--texto);
+  margin-bottom: 10px;
+}
+
+.descripcion-aventuras {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 40px;
+  max-width: 700px;
+}
+
+.aventura-item {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: white;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  flex-wrap: wrap;
+}
+
+.aventura-item img {
+  flex: 1 1 300px;
+  border-radius: 16px;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.aventura-info {
+  flex: 1 1 300px;
+}
+
+.aventura-info h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--texto);
+}
+
+.aventura-info p {
+  width: 100%;             /* Ocupa todo el ancho disponible */
+  max-width: 600px;        /* Limita el ancho máximo en pantallas grandes */
+  line-height: 1.6;        /* Mejora la legibilidad del texto */
+  text-align: justify;     /* Justifica el texto */
+}
+
+/* ============ GALERÍA ESTILO DESEADO ============ */
+.galeria {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.galeria h2 {
+  font-size: 2.8rem;
+  color: #111;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.descripcion-galeria {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .grid-galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  grid-auto-rows: 250px; /* Base height for rows */
+  gap: 20px;
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto; /* Center the grid */
 }
 
-.grid-galeria img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
-  cursor: pointer;
+.grid-galeria .galeria-item {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* Needed for object-fit on image within */
 }
 
-.grid-galeria img:hover {
-  transform: scale(1.05);
-}
-
-/* ========== LIGHTBOX ========== */
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
+.grid-galeria .galeria-item img {
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.9);
-}
-
-.lightbox-content {
-  margin: auto;
+  object-fit: cover; /* Ensures images cover their container */
   display: block;
-  width: 80%;
-  max-width: 900px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
-  transition: 0.3s;
 }
 
-.close {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
+.grid-galeria .galeria-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-.close:hover {
-  color: var(--verde);
-  transform: scale(1.2);
+/* Specific sizing for the first image to span two rows and one column */
+.grid-galeria .item-grande {
+  grid-row: span 2; /* Spans 2 rows */
+  grid-column: span 1; /* Spans 1 column */
 }
 
-/* ========== FOOTER ========== */
+/* ============ FOOTER ============ */
 .site-footer {
   background: var(--gris-oscuro);
   color: var(--gris-claro);
   text-align: center;
   padding: 2rem 0;
+  margin-top: 60px;
 }
 
 .site-footer p {
@@ -230,7 +379,7 @@ img {
   transform: scale(1.2);
 }
 
-/* ========== RESPONSIVE ========== */
+/* ============ RESPONSIVE HEADER Y MENÚ ============ */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -288,5 +437,45 @@ img {
 
   .site-header .contenedor {
     padding: 10px 15px;
+  }
+
+  .aventura-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .aventura-info {
+    padding-top: 15px;
+  }
+
+  .aventura-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .aventura-info p {
+    font-size: 0.95rem;
+  }
+
+  /* Responsive for Gallery */
+  .grid-galeria {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    grid-auto-rows: 200px; /* Adjust row height for smaller screens */
+  }
+
+  .grid-galeria .item-grande {
+    grid-column: span 2; /* Span full width on smaller screens */
+    grid-row: span 1; /* Adjust row span for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-galeria {
+    grid-template-columns: 1fr; /* 1 column on very small screens */
+    grid-auto-rows: 180px;
+  }
+
+  .grid-galeria .item-grande {
+    grid-column: span 1; /* Ensure it's still 1 column span */
+    grid-row: span 1;
   }
 }

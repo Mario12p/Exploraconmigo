@@ -3,25 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Exploraconmigo - Galería</title>
+  <title>Exploraconmigo</title>
   <link rel="stylesheet" href="GALERIA.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-
   <header class="site-header">
     <div class="contenedor flex">
       <a href="index.html" class="logo-link">
         <img src="LOGOS/Logoprincipal.png" alt="Logo Exploraconmigo" class="logo" />
       </a>
-
       <button class="hamburger" id="hamburger" aria-label="Abrir menú">
         <i class="fas fa-bars"></i>
       </button>
-
-      <nav aria-label="Menú principal" id="menu" class="nav">
+      <nav id="menu" class="nav" aria-label="Menú principal">
         <ul class="menu">
           <li><a href="index.html" data-i18n="menu-inicio">Inicio</a></li>
           <li><a href="destinos.html" data-i18n="menu-destinos">Destinos</a></li>
@@ -31,7 +28,7 @@
         </ul>
         <div class="selector-idioma-menu">
           <img src="https://i.postimg.cc/vTmjsWf6/tierra.png" alt="Idioma" class="selector-idioma-icon" />
-          <select class="selector-idioma" id="selector-idioma" onchange="cambiarIdioma()">
+          <select id="selector-idioma" class="selector-idioma" onchange="cambiarIdioma()">
             <option value="es">Español</option>
             <option value="en">English</option>
           </select>
@@ -41,27 +38,72 @@
   </header>
 
   <main>
-    <section class="galeria">
-      <div class="contenedor">
-        <h2 data-i18n="titulo-galeria">Nuestra Galería de Fotos</h2>
-        <div class="grid-galeria">      
-          <img src="https://i.postimg.cc/d1SjVJrS/burro.jpg" alt="Burro simpático">
-          <img src="https://i.postimg.cc/G3K6CD4X/carpa.jpg" alt="Carpa">
-          <img src="https://i.postimg.cc/RhvFntmP/fuego.jpg" alt="Fuego">
-          <img src="https://i.postimg.cc/sgskdJcH/yo.jpg" alt="Yo">
-          <img src="https://i.postimg.cc/zvNjbx39/panela.jpg" alt="Panela">
-          <img src="https://i.postimg.cc/SNDrR74v/cacao.jpg" alt="Cacao">
-          <img src="https://i.postimg.cc/26RdM0dV/pi-a.jpg" alt="Piña">
-          <img src="https://i.postimg.cc/vTm4NnK4/caracoles.jpg" alt="Caracoles">
+    <section class="articulos-inicio contenedor">
+      <div class="articulo">
+        <img src="https://i.postimg.cc/rm9WKsdL/bosque.jpg">
+        <div class="contenido-articulo">
+          <h3>Explora los paisajes únicos del Cesar con Turismo de Naturaleza</h3>
+          <p>Descubre los tesoros naturales del Cesar, un destino lleno de biodiversidad y encanto.</p>
+          <span class="fecha">5/8/2025</span>
+        </div>
+      </div>
+      <div class="articulo">
+        <img src="https://i.postimg.cc/3NYXB64m/casa.jpg" alt="Turismo en Colombia">
+        <div class="contenido-articulo">
+          <h3>Vive experiencias de turismo de naturaleza únicas</h3>
+          <p>Desde las montañas del Cesar hasta sus pueblos llenos de historia, conecta con su entorno natural y cultural.</p>
+          <span class="fecha">7/1/2025</span>
         </div>
       </div>
     </section>
-  </main>
 
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img" alt="Imagen ampliada">
-  </div>
+    <section class="aventuras contenedor">
+      <h2 class="titulo-aventuras">Aventuras Naturales</h2>
+      <p class="descripcion-aventuras">Explora paisajes asombrosos y vive experiencias auténticas en Colombia.</p>
+      <div class="aventura-item">
+        <img src="https://i.postimg.cc/PJv9zg1K/personas.jpg" alt="Caminata ecológica">
+        <div class="aventura-info">
+          <h3>Caminatas Ecológicas</h3>
+          <p>
+            Disfruta de caminatas ecológicas guiadas a través de impresionantes reservas naturales, 
+            donde podrás conectar profundamente con la exuberante biodiversidad de estos entornos. 
+            Aprende de expertos locales sobre su flora y fauna únicas, mientras contribuyes a su conservación.
+          </p>
+
+        </div>
+      </div>
+      <div class="aventura-item">
+        <img src="https://i.postimg.cc/7Lgg7mC7/AVE.jpg" alt="Avistamiento de aves">
+        <div class="aventura-info">
+          <h3>Avistamiento de Aves</h3>
+        <p>
+            Sumérgete en la fascinante experiencia del avistamiento de aves, donde podrás admirar 
+            la diversidad alada de la región.
+        </p>
+            <p>
+              Es un espectáculo natural ideal para quienes desean conectar con la vida silvestre 
+              y capturar momentos inolvidables.
+            </p>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="galeria contenedor">
+      <h2>Galería</h2>
+      <p class="descripcion-galeria">Naturaleza, aventura, paisajes, experiencias auténticas y eco-turismo en Colombia.</p>
+      <div class="grid-galeria">
+        <div class="galeria-item item-grande"><img src="https://i.postimg.cc/pVsJq5ph/CArpa.jpg" alt="Carpa"></div>
+        <div class="galeria-item"><img src="https://i.postimg.cc/RZp0Y9wT/caballo.jpg" alt="Caballo"></div>
+        <div class="galeria-item"><img src="https://i.postimg.cc/W3B86Q9N/nosot.jpg" alt="Grupo"></div>
+        <div class="galeria-item"><img src="https://i.postimg.cc/gjPZSd30/casca.jpg" alt="Cascada"></div>
+        <div class="galeria-item"><img src="https://i.postimg.cc/G2dGLdSs/gusa.jpg" alt="Guía"></div>
+        <div class="galeria-item"><img src="https://i.postimg.cc/GmY66n8y/vaca.jpg" alt="Sendero"></div>
+        <div class="galeria-item"><img src="https://i.postimg.cc/1tgzpdT3/fuego.jpg" alt="Fogata"></div>
+        <div class="galeria-item"><img src="https://i.postimg.cc/wj0Dq7m8/Monta-a.jpg" alt="Montana"></div>
+      </div>
+    </section>
+  </main>
 
   <footer class="site-footer">
     <div class="contenedor">
@@ -75,7 +117,6 @@
   </footer>
 
   <script>
-    // Traducciones
     const textos = {
       es: {
         "menu-inicio": "Inicio",
@@ -83,7 +124,6 @@
         "menu-tours": "Tours",
         "menu-galeria": "Galería",
         "menu-contacto": "Contacto",
-        "titulo-galeria": "Nuestra Galería de Fotos",
         "footer-derechos": "© 2025 Turismo de Naturaleza. Todos los derechos reservados."
       },
       en: {
@@ -92,7 +132,6 @@
         "menu-tours": "Tours",
         "menu-galeria": "Gallery",
         "menu-contacto": "Contact",
-        "titulo-galeria": "Our Photo Gallery",
         "footer-derechos": "© 2025 Nature Tourism. All rights reserved."
       }
     };
@@ -107,67 +146,40 @@
       const traducciones = textos[idioma];
       document.querySelectorAll("[data-i18n]").forEach(el => {
         const clave = el.getAttribute("data-i18n");
-        if (clave in traducciones) {
-          el.textContent = traducciones[clave];
-        }
+        if (clave in traducciones) el.textContent = traducciones[clave];
       });
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      const idiomaGuardado = localStorage.getItem("idioma") || "es";
-      document.getElementById("selector-idioma").value = idiomaGuardado;
-      aplicarTraduccion(idiomaGuardado);
+      const idioma = localStorage.getItem("idioma") || "es";
+      document.getElementById("selector-idioma").value = idioma;
+      aplicarTraduccion(idioma);
 
-      // Menú hamburguesa
-      const hamburgerButton = document.getElementById('hamburger');
+      const btn = document.getElementById('hamburger');
       const menu = document.getElementById('menu');
 
-      hamburgerButton.addEventListener('click', () => {
+      btn.addEventListener('click', () => {
         menu.classList.toggle('activo');
-        hamburgerButton.querySelector('i').classList.toggle('fa-bars');
-        hamburgerButton.querySelector('i').classList.toggle('fa-times');
+        btn.querySelector('i').classList.toggle('fa-bars');
+        btn.querySelector('i').classList.toggle('fa-times');
       });
 
-      document.addEventListener('click', (event) => {
-        if (!menu.contains(event.target) && !hamburgerButton.contains(event.target) && menu.classList.contains('activo')) {
+      document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && !btn.contains(e.target) && menu.classList.contains('activo')) {
           menu.classList.remove('activo');
-          hamburgerButton.querySelector('i').classList.add('fa-bars');
-          hamburgerButton.querySelector('i').classList.remove('fa-times');
+          btn.querySelector('i').classList.add('fa-bars');
+          btn.querySelector('i').classList.remove('fa-times');
         }
       });
 
       menu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           menu.classList.remove('activo');
-          hamburgerButton.querySelector('i').classList.add('fa-bars');
-          hamburgerButton.querySelector('i').classList.remove('fa-times');
+          btn.querySelector('i').classList.add('fa-bars');
+          btn.querySelector('i').classList.remove('fa-times');
         });
       });
     });
-
-    // Lightbox
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const images = document.querySelectorAll('.grid-galeria img');
-    const close = document.querySelector('.close');
-
-    images.forEach(img => {
-      img.addEventListener('click', () => {
-        lightbox.style.display = 'block';
-        lightboxImg.src = img.src;
-      });
-    });
-
-    close.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-    });
-
-    lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-      }
-    });
   </script>
-
 </body>
 </html>
