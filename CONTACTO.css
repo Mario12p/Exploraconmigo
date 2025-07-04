@@ -8,11 +8,15 @@
   --fuente: 'Poppins', sans-serif;
 }
 
-/* RESET GENERAL */
+/* ========== Reset ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
 }
 
 body {
@@ -20,8 +24,22 @@ body {
   background: var(--gris);
   color: var(--texto);
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* ========== Global ========== */
 a {
   text-decoration: none;
   color: inherit;
@@ -38,7 +56,7 @@ img {
   padding: 20px;
 }
 
-/* HEADER */
+/* ========== Header ========== */
 .site-header {
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -58,7 +76,7 @@ img {
   height: 80px;
 }
 
-/* MENÚ DE NAVEGACIÓN */
+/* ========== Menú ========== */
 #menu {
   display: flex;
   align-items: center;
@@ -73,8 +91,8 @@ img {
 
 .menu a {
   font-weight: 600;
-  padding: .5rem;
-  transition: color .3s;
+  padding: 0.5rem;
+  transition: color 0.3s;
 }
 
 .menu a:hover,
@@ -83,7 +101,7 @@ img {
   border-bottom: 2px solid var(--verde);
 }
 
-/* SELECTOR DE IDIOMA */
+/* Selector de idioma */
 .selector-idioma-menu {
   display: flex;
   align-items: center;
@@ -94,31 +112,29 @@ img {
 .selector-idioma-icon {
   width: 20px;
   height: 20px;
+  content: url("https://i.postimg.cc/vTmjsWf6/tierra.png");
 }
 
 .selector-idioma {
-  padding: 0;
-  font-size: 0.9rem;
+  font-family: var(--fuente);
+  font-size: 0.95rem;
+  background: transparent;
   border: none;
-  background: none;
   color: var(--texto);
   cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  padding-right: 24px;
   appearance: none;
   background-image: url('https://i.postimg.cc/FzBGQ0PK/down-chevron.png');
   background-repeat: no-repeat;
-  background-position: right 0.5rem center;
-  background-size: 0.6rem;
-  padding-right: 1.5rem;
-  font-weight: normal;
+  background-position: right 6px center;
+  background-size: 12px;
 }
 
 .selector-idioma:focus {
   outline: none;
 }
 
-/* FORMULARIO DE CONTACTO */
+/* ========== Contacto ========== */
 #contacto {
   padding: 60px 20px;
   text-align: center;
@@ -178,7 +194,7 @@ img {
   transform: translateY(-2px);
 }
 
-/* FOOTER */
+/* ========== Footer ========== */
 .site-footer {
   background: var(--gris-oscuro);
   color: var(--gris-claro);
@@ -207,7 +223,7 @@ img {
   transform: scale(1.2);
 }
 
-/* MENÚ HAMBURGUESA */
+/* ========== Menú Hamburguesa ========== */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -218,7 +234,7 @@ img {
   z-index: 1001;
 }
 
-/* RESPONSIVE */
+/* ========== Responsive ========== */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -324,10 +340,6 @@ img {
 
   .site-header .contenedor {
     padding: 10px 15px;
-  }
-
-  #menu .menu a.activo {
-    padding-left: 15px;
   }
 
   #contacto h2 {

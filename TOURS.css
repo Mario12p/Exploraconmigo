@@ -1,23 +1,27 @@
 :root {
   --verde: #28a745;
   --verde-hover: #218838;
-  --gris: #f4f4f4;
+  --gris-claro: #f4f4f4;
   --gris-oscuro: #222;
   --texto: #333;
-  --gris-claro: #ccc;
   --fuente: 'Poppins', sans-serif;
 }
 
+/* ========== Reset & Base ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+html, body {
   font-family: var(--fuente);
-  background-color: #f9f9f9;
+  line-height: 1.6;
   color: var(--texto);
+  background: var(--gris-claro);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -25,6 +29,24 @@ a {
   color: inherit;
 }
 
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* ========== Contenedor General ========== */
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ========== Títulos ========== */
 h1 {
   text-align: center;
   margin: 2rem 0;
@@ -32,12 +54,7 @@ h1 {
   font-size: 2rem;
 }
 
-.contenedor {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
+/* ========== Grid de Tours ========== */
 .grid-tours {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -45,6 +62,7 @@ h1 {
   padding-bottom: 3rem;
 }
 
+/* ========== Tarjetas de Tours ========== */
 .tour-card {
   background-color: white;
   border-radius: 12px;
@@ -98,14 +116,14 @@ h1 {
   background-color: var(--verde-hover);
 }
 
-/* Header */
+/* ========== Header ========== */
 .site-header {
-  background-color: white;
-  padding: 1rem 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 10;
+  padding: 10px 0;
 }
 
 .site-header .contenedor {
@@ -115,24 +133,27 @@ h1 {
 }
 
 .logo {
-  height: 50px;
+  max-height: 80px;
 }
 
+/* ========== Navegación ========== */
 .nav {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  position: relative;
 }
 
 .nav ul.menu {
-  display: flex;
-  gap: 1.2rem;
   list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
 
 .nav ul.menu li a {
-  font-weight: 500;
-  padding: 0.3rem 0.5rem;
+  font-weight: 600;
+  padding: 0.5rem;
   transition: color 0.3s;
 }
 
@@ -142,30 +163,45 @@ h1 {
   border-bottom: 2px solid var(--verde);
 }
 
+/* ========== Selector de Idioma ========== */
 .selector-idioma-menu {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 4px;
 }
 
 .selector-idioma-icon {
+  width: 20px;
   height: 20px;
+  content: url("https://i.postimg.cc/vTmjsWf6/tierra.png");
 }
 
 .selector-idioma {
-  padding: 0.3rem 0.5rem;
-  border-radius: 6px;
-  border: 1px solid var(--gris-claro);
   font-family: var(--fuente);
+  font-size: 0.95rem;
+  background: transparent;
+  border: none;
+  color: var(--texto);
+  cursor: pointer;
+  padding-right: 24px;
+  appearance: none;
+  background-image: url('https://i.postimg.cc/FzBGQ0PK/down-chevron.png');
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  background-size: 12px;
 }
 
-/* Footer */
+.selector-idioma:focus {
+  outline: none;
+}
+
+/* ========== Footer ========== */
 .site-footer {
   background-color: var(--gris-oscuro);
   color: white;
   padding: 2rem 1rem;
   text-align: center;
-  margin-top: 3rem;
+  margin-top: auto;
 }
 
 .site-footer .redes-sociales {
@@ -183,42 +219,83 @@ h1 {
   color: var(--verde);
 }
 
-/* Responsive */
+/* ========== Botón Hamburguesa ========== */
 .hamburger {
   display: none;
+  font-size: 1.8rem;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--texto);
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 1001;
 }
 
+/* ========== Responsive ========== */
 @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
   .nav {
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    background-color: white;
-    flex-direction: column;
-    gap: 1rem;
     display: none;
-    padding: 1rem 0;
   }
 
   .nav.activo {
     display: flex;
-  }
-
-  .hamburger {
-    display: block;
-    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    margin: 0 20px;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
   }
 
   .nav ul.menu {
     flex-direction: column;
     align-items: center;
+    gap: 0;
+  }
+
+  .nav ul.menu li {
+    width: 100%;
+  }
+
+  .nav ul.menu li a {
+    display: block;
+    width: 100%;
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+  }
+
+  .nav ul.menu li a:last-child {
+    border-bottom: none;
   }
 
   .selector-idioma-menu {
     justify-content: center;
+    width: 100%;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+  }
+}
+
+@media (max-width: 480px) {
+  .boton-secundario {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
   }
 }

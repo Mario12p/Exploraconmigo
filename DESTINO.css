@@ -7,11 +7,15 @@
   --fuente: 'Poppins', sans-serif;
 }
 
-/* ========== Reset & Base ========== */
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  height: 100%;
 }
 
 body {
@@ -19,6 +23,17 @@ body {
   line-height: 1.6;
   color: var(--texto);
   background: var(--gris-claro);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
 }
 
 a {
@@ -38,11 +53,12 @@ a {
   align-items: center;
 }
 
-/* ========== Selector de Idioma ========== */
+/* Idioma Selector */
 .selector-idioma-menu {
   display: flex;
   align-items: center;
   gap: 4px;
+  position: relative;
 }
 
 .selector-idioma-icon {
@@ -60,8 +76,6 @@ a {
   cursor: pointer;
   padding-right: 24px;
   appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   background-image: url('https://i.postimg.cc/FzBGQ0PK/down-chevron.png');
   background-repeat: no-repeat;
   background-position: right 6px center;
@@ -72,13 +86,13 @@ a {
   outline: none;
 }
 
-/* ========== Header ========== */
+/* Header */
 .site-header {
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
   padding: 10px 0;
 }
 
@@ -105,23 +119,18 @@ a {
   border-bottom: 2px solid var(--verde);
 }
 
-/* ========== Sección Mapa ========== */
+/* Sección Mapa */
 .seccion-mapa {
+  padding: 3rem 1rem;
   background: white;
-  padding: 60px 0;
 }
 
 .mapa-box {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 2rem;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 60px;
-  border-radius: 12px;
-  background: #fff;
-  padding: 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .info-mapa {
@@ -129,74 +138,59 @@ a {
 }
 
 .info-mapa h2 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-  color: var(--texto);
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .info-mapa p {
   font-size: 1.1rem;
-  color: #555;
+  line-height: 1.5;
 }
 
 .mapa-embed {
-  flex: 2 1 700px;
-  height: 450px;
-  border-radius: 12px;
-  overflow: hidden;
+  flex: 1 1 500px;
+  min-height: 300px;
 }
 
 .mapa-embed iframe {
   width: 100%;
   height: 100%;
-  border: none;
-  border-radius: 12px;
+  border: 0;
+  border-radius: 10px;
 }
 
-/* ========== Naturaleza ========== */
+/* Sección Naturaleza */
 .seccion-naturaleza {
-  background: white;
-  padding: 40px 0 20px;
+  background: var(--gris-claro);
+  padding: 3rem 1rem;
+  text-align: center;
 }
 
 .titulo-naturaleza {
-  font-size: 2.8rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .descripcion-naturaleza {
-  text-align: center;
   font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 40px;
+  margin-bottom: 2rem;
 }
 
 .collage-naturaleza {
   display: grid;
-  grid-template-areas:
-    "img1 img2 img3"
-    "img4 img2 img5";
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 350px 350px;
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
 }
 
 .collage-naturaleza img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  border-radius: 10px;
   object-fit: cover;
-  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.img1 { grid-area: img1; }
-.img2 { grid-area: img2; }
-.img3 { grid-area: img3; }
-.img4 { grid-area: img4; }
-.img5 { grid-area: img5; }
-
-/* ========== Footer ========== */
+/* Footer */
 .site-footer {
   background: var(--gris-oscuro);
   color: var(--gris-claro);
@@ -213,6 +207,7 @@ a {
   margin-top: 1.5rem;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -227,39 +222,21 @@ a {
   transform: scale(1.2);
 }
 
-/* ========== Menú Hamburguesa ========== */
+/* Menú Hamburguesa */
 .hamburger {
   display: none;
-  font-size: 2rem;
+  font-size: 1.8rem;
   background: none;
   border: none;
   cursor: pointer;
   color: var(--texto);
   position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
+  top: 18px;
+  right: 18px;
   z-index: 1001;
 }
 
-/* ========== Responsive ========== */
-@media (max-width: 992px) {
-  .mapa-box {
-    flex-direction: column;
-  }
-
-  .mapa-embed {
-    width: 100%;
-    height: 300px;
-  }
-
-  .info-mapa {
-    width: 100%;
-    text-align: center;
-    padding: 0;
-  }
-}
-
+/* Responsive */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -276,15 +253,17 @@ a {
     right: 0;
     background: white;
     padding: 1rem;
-    width: 100%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    border-radius: 12px;
     z-index: 1000;
   }
 
   .menu {
     flex-direction: column;
-    width: 100%;
+    align-items: flex-start;
+    gap: 0;
   }
 
   .menu li {
@@ -293,9 +272,10 @@ a {
 
   .menu a {
     display: block;
+    width: 100%;
     padding: 12px 10px;
-    font-size: 0.95rem;
     border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
   }
 
   .menu a:last-child {
@@ -303,34 +283,35 @@ a {
   }
 
   .selector-idioma-menu {
-    padding-top: 10px;
-    border-top: 1px solid #eee;
-    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 12px 10px;
     width: 100%;
+    border-top: 1px solid #eee;
+    margin-top: 10px;
   }
 
-  .logo {
-    max-height: 60px;
+  .mapa-box {
+    flex-direction: column;
+  }
+
+  .collage-naturaleza {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
 }
 
 @media (max-width: 480px) {
-  .titulo-naturaleza {
+  .boton-primario {
+    font-size: 0.95rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .contenido-hero h1 {
     font-size: 2rem;
   }
 
-  .descripcion-naturaleza {
+  .contenido-hero p {
     font-size: 1rem;
-  }
-
-  .collage-naturaleza {
-    grid-template-areas:
-      "img1"
-      "img2"
-      "img3"
-      "img4"
-      "img5";
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 200px);
   }
 }

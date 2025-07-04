@@ -16,8 +16,6 @@
 
 html, body {
   height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 body {
@@ -25,6 +23,8 @@ body {
   line-height: 1.6;
   color: var(--texto);
   background: var(--gris-claro);
+  display: flex;
+  flex-direction: column;
 }
 
 main {
@@ -53,6 +53,7 @@ a {
   display: flex;
   align-items: center;
   gap: 4px;
+  position: relative;
 }
 
 .selector-idioma-icon {
@@ -176,13 +177,12 @@ a {
   transform: translateY(-3px);
 }
 
-/* ========== Footer ========== */
+/* ========== Footer FIJO AL FINAL ========== */
 .site-footer {
   background: var(--gris-oscuro);
   color: var(--gris-claro);
   text-align: center;
   padding: 2rem 0;
-  margin-top: auto;
 }
 
 .site-footer p {
@@ -218,9 +218,8 @@ a {
   cursor: pointer;
   color: var(--texto);
   position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
+  top: 18px;
+  right: 18px;
   z-index: 1001;
 }
 
@@ -241,9 +240,10 @@ a {
     right: 0;
     background: white;
     padding: 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    width: 100%;
-    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    border-radius: 12px;
     z-index: 1000;
   }
 
@@ -270,10 +270,13 @@ a {
   }
 
   .selector-idioma-menu {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 12px 10px;
     width: 100%;
-    padding: 10px 10px 0;
     border-top: 1px solid #eee;
-    justify-content: flex-start;
+    margin-top: 10px;
   }
 }
 
