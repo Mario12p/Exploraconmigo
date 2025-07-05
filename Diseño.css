@@ -27,6 +27,10 @@ body {
   flex-direction: column;
 }
 
+body.index .selector-idioma-menu {
+  display: flex;
+}
+
 main {
   flex: 1;
 }
@@ -48,9 +52,9 @@ a {
   align-items: center;
 }
 
-/* ========== Idioma Selector ========== */
+/* ========== Selector de Idioma ========== */
 .selector-idioma-menu {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 4px;
   position: relative;
@@ -59,7 +63,6 @@ a {
 .selector-idioma-icon {
   width: 20px;
   height: 20px;
-  content: url("https://i.postimg.cc/vTmjsWf6/tierra.png");
 }
 
 .selector-idioma {
@@ -177,7 +180,7 @@ a {
   transform: translateY(-3px);
 }
 
-/* ========== Footer FIJO AL FINAL ========== */
+/* ========== Footer ========== */
 .site-footer {
   background: var(--gris-oscuro);
   color: var(--gris-claro);
@@ -209,7 +212,7 @@ a {
   transform: scale(1.2);
 }
 
-/* ========== Menú Hamburguesa ========== */
+/* ========== Menú Hamburguesa Responsive ========== */
 .hamburger {
   display: none;
   font-size: 1.8rem;
@@ -217,20 +220,27 @@ a {
   border: none;
   cursor: pointer;
   color: var(--texto);
-  position: absolute;
-  top: 18px;
-  right: 18px;
   z-index: 1001;
 }
 
-/* ========== Responsive ========== */
+.hamburger i {
+  font-size: 1.8rem;
+}
+
 @media (max-width: 768px) {
   .hamburger {
     display: block;
+    position: absolute;
+    top: 28px;
+    right: 20px;
   }
 
   nav {
     display: none;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 0.3s ease;
   }
 
   nav.activo {
@@ -238,12 +248,14 @@ a {
     position: absolute;
     top: 100%;
     right: 0;
+    width: 90%;
+    margin: 0 5%;
     background: white;
-    padding: 1rem;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-    width: calc(100% - 40px);
-    margin: 0 20px;
     border-radius: 12px;
+    padding: 1rem;
+    opacity: 1;
+    transform: scaleY(1);
     z-index: 1000;
   }
 
@@ -263,6 +275,11 @@ a {
     padding: 12px 10px;
     border-bottom: 1px solid #eee;
     font-size: 0.95rem;
+    transition: background 0.3s;
+  }
+
+  .menu a:hover {
+    background-color: #f9f9f9;
   }
 
   .menu a:last-child {
@@ -270,7 +287,7 @@ a {
   }
 
   .selector-idioma-menu {
-    display: flex;
+    display: flex !important;
     align-items: center;
     gap: 5px;
     padding: 12px 10px;

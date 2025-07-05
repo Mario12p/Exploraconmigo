@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -11,37 +11,29 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header class="site-header">
     <div class="contenedor flex">
       <a href="index.html">
-        <img src="LOGOS/Logoprincipal.png" alt="Logo Exploraconmigo" class="logo" height="80" />
+        <img src="LOGOS/Logoprincipal.png" alt="Logo Exploraconmigo" class="logo" />
       </a>
-      <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
-      <nav aria-label="Menú principal" id="menu">
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
+      <nav id="menu" aria-label="Menú principal">
         <ul class="menu">
           <li><a href="index.html" data-i18n="menu-inicio">Inicio</a></li>
           <li><a href="destinos.html" class="activo" data-i18n="menu-destinos">Destinos</a></li>
           <li><a href="tours.html" data-i18n="menu-tours">Tours</a></li>
           <li><a href="galeria.html" data-i18n="menu-galeria">Galería</a></li>
           <li><a href="contacto.html" data-i18n="menu-contacto">Contacto</a></li>
-          <li class="selector-idioma-menu">
-            <img class="selector-idioma-icon" src="LOGOS/idioma.png" alt="Idioma" />
-            <select id="selector-idioma" onchange="cambiarIdioma()" class="selector-idioma">
-              <option value="es">Español</option>
-              <option value="en">English</option>
-            </select>
-          </li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Contenido Principal -->
+
   <main>
-    <!-- Sección Mapa Atánquez -->
+  
     <section class="seccion-mapa">
-      <div class="contenedor mapa-box">
+      <div class="contenedor">
         <div class="info-mapa">
           <h2 data-i18n="titulo-atanquez">¿Dónde está ubicado?</h2>
           <p data-i18n="desc-atanquez">Atánquez está ubicado en la Sierra Nevada de Santa Marta, en el departamento del Cesar, Colombia...</p>
@@ -52,9 +44,8 @@
       </div>
     </section>
 
-    <!-- Sección Mapa Manaure -->
     <section class="seccion-mapa">
-      <div class="contenedor mapa-box">
+      <div class="contenedor">
         <div class="info-mapa">
           <h2 data-i18n="titulo-manaure">¿Dónde está ubicado?</h2>
           <p data-i18n="desc-manaure">Manaure está ubicado en las estribaciones de la Sierra Nevada de Santa Marta, también en el Cesar, Colombia...</p>
@@ -65,93 +56,33 @@
       </div>
     </section>
 
-    <!-- Sección Naturaleza -->
+   
     <section class="seccion-naturaleza">
       <div class="contenedor">
         <h2 class="titulo-naturaleza" data-i18n="titulo-naturaleza">Naturaleza</h2>
         <p class="descripcion-naturaleza" data-i18n="descripcion-naturaleza">Explora Colombia a través de experiencias auténticas y sostenibles.</p>
         <div class="collage-naturaleza">
-          <img src="https://i.postimg.cc/VNBnYXL4/sicla.jpg" class="img1" />
-          <img src="https://i.postimg.cc/Dw23mT2h/sha.jpg" class="img2" />
-          <img src="https://i.postimg.cc/JzycNy75/Nativa.jpg" class="img3" />
-          <img src="https://i.postimg.cc/FRGL5msK/casca.jpg" class="img4" />
-          <img src="https://i.postimg.cc/y65gCLys/personas.jpg" class="img5" />
+          <img src="https://i.postimg.cc/VNBnYXL4/sicla.jpg" class="img1" alt="Ciclismo en la naturaleza" />
+          <img src="https://i.postimg.cc/Dw23mT2h/sha.jpg" class="img2" alt="Senderismo por la sierra" />
+          <img src="https://i.postimg.cc/JzycNy75/Nativa.jpg" class="img3" alt="Cultura indígena" />
+          <img src="https://i.postimg.cc/FRGL5msK/casca.jpg" class="img4" alt="Cascada natural" />
+          <img src="https://i.postimg.cc/y65gCLys/personas.jpg" class="img5" alt="Grupo de turistas" />
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="contenedor">
       <p data-i18n="footer-derechos">&copy; 2025 Turismo de Naturaleza. Todos los derechos reservados.</p>
       <div class="redes-sociales">
-        <a href="https://www.facebook.com/exploraconmigo" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/exploraconmigo" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/573001234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/exploraconmigo" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/exploraconmigo" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/573001234567" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </footer>
-
-  <!-- Scripts -->
-  <script>
-    const textos = {
-      es: {
-        "menu-inicio": "Inicio",
-        "menu-destinos": "Destinos",
-        "menu-tours": "Tours",
-        "menu-galeria": "Galería",
-        "menu-contacto": "Contacto",
-        "titulo-naturaleza": "Naturaleza",
-        "descripcion-naturaleza": "Explora Colombia a través de experiencias auténticas y sostenibles.",
-        "titulo-atanquez": "¿Dónde está ubicado?",
-        "desc-atanquez": "Atánquez está ubicado en la Sierra Nevada de Santa Marta, en el departamento del Cesar, Colombia...",
-        "titulo-manaure": "¿Dónde está ubicado?",
-        "desc-manaure": "Manaure está ubicado en las estribaciones de la Sierra Nevada de Santa Marta, también en el Cesar, Colombia...",
-        "footer-derechos": "© 2025 Turismo de Naturaleza. Todos los derechos reservados."
-      },
-      en: {
-        "menu-inicio": "Home",
-        "menu-destinos": "Destinations",
-        "menu-tours": "Tours",
-        "menu-galeria": "Gallery",
-        "menu-contacto": "Contact",
-        "titulo-naturaleza": "Nature",
-        "descripcion-naturaleza": "Explore Colombia through authentic and sustainable experiences.",
-        "titulo-atanquez": "Where is it located?",
-        "desc-atanquez": "Atánquez is located in the Sierra Nevada de Santa Marta, in the department of Cesar, Colombia...",
-        "titulo-manaure": "Where is it located?",
-        "desc-manaure": "Manaure is located in the foothills of the Sierra Nevada de Santa Marta, also in Cesar, Colombia...",
-        "footer-derechos": "© 2025 Nature Tourism. All rights reserved."
-      }
-    };
-
-    function cambiarIdioma() {
-      const idioma = document.getElementById("selector-idioma").value;
-      localStorage.setItem("idiomaSeleccionado", idioma);
-      aplicarTraduccion(idioma);
-    }
-
-    function aplicarTraduccion(idioma) {
-      const traducciones = textos[idioma];
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const clave = el.getAttribute("data-i18n");
-        if (clave in traducciones) {
-          el.textContent = traducciones[clave];
-        }
-      });
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const idiomaGuardado = localStorage.getItem("idiomaSeleccionado") || "es";
-      document.getElementById("selector-idioma").value = idiomaGuardado;
-      aplicarTraduccion(idiomaGuardado);
-
-      document.getElementById('hamburger').addEventListener('click', () => {
-        document.getElementById('menu').classList.toggle('activo');
-      });
-    });
-  </script>
-
+  <script src="traduccion.js"></script>
+  <script src="menu.js"></script>
 </body>
 </html>

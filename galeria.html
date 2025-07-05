@@ -26,13 +26,6 @@
           <li><a href="galeria.html" class="activo" data-i18n="menu-galeria">Galería</a></li>
           <li><a href="contacto.html" data-i18n="menu-contacto">Contacto</a></li>
         </ul>
-        <div class="selector-idioma-menu">
-          <img src="https://i.postimg.cc/vTmjsWf6/tierra.png" alt="Idioma" class="selector-idioma-icon" />
-          <select id="selector-idioma" class="selector-idioma" onchange="cambiarIdioma()">
-            <option value="es">Español</option>
-            <option value="en">English</option>
-          </select>
-        </div>
       </nav>
     </div>
   </header>
@@ -40,58 +33,46 @@
   <main>
     <section class="articulos-inicio contenedor">
       <div class="articulo">
-        <img src="https://i.postimg.cc/rm9WKsdL/bosque.jpg">
+        <img src="https://i.postimg.cc/rm9WKsdL/bosque.jpg" alt="Bosque">
         <div class="contenido-articulo">
-          <h3>Explora los paisajes únicos del Cesar con Turismo de Naturaleza</h3>
-          <p>Descubre los tesoros naturales del Cesar, un destino lleno de biodiversidad y encanto.</p>
+          <h3 data-i18n="articulo1_titulo">Explora los paisajes únicos del Cesar con Turismo de Naturaleza</h3>
+          <p data-i18n="articulo1_desc">Descubre los tesoros naturales del Cesar, un destino lleno de biodiversidad y encanto.</p>
           <span class="fecha">5/8/2025</span>
         </div>
       </div>
       <div class="articulo">
         <img src="https://i.postimg.cc/3NYXB64m/casa.jpg" alt="Turismo en Colombia">
         <div class="contenido-articulo">
-          <h3>Vive experiencias de turismo de naturaleza únicas</h3>
-          <p>Desde las montañas del Cesar hasta sus pueblos llenos de historia, conecta con su entorno natural y cultural.</p>
+          <h3 data-i18n="articulo2_titulo">Vive experiencias de turismo de naturaleza únicas</h3>
+          <p data-i18n="articulo2_desc">Desde las montañas del Cesar hasta sus pueblos llenos de historia, conecta con su entorno natural y cultural.</p>
           <span class="fecha">7/1/2025</span>
         </div>
       </div>
     </section>
 
     <section class="aventuras contenedor">
-      <h2 class="titulo-aventuras">Aventuras Naturales</h2>
-      <p class="descripcion-aventuras">Explora paisajes asombrosos y vive experiencias auténticas en Colombia.</p>
+      <h2 class="titulo-aventuras" data-i18n="aventuras_titulo">Aventuras Naturales</h2>
+      <p class="descripcion-aventuras" data-i18n="aventuras_desc">Explora paisajes asombrosos y vive experiencias auténticas en Colombia.</p>
       <div class="aventura-item">
         <img src="https://i.postimg.cc/PJv9zg1K/personas.jpg" alt="Caminata ecológica">
         <div class="aventura-info">
-          <h3>Caminatas Ecológicas</h3>
-          <p>
-            Disfruta de caminatas ecológicas guiadas a través de impresionantes reservas naturales, 
-            donde podrás conectar profundamente con la exuberante biodiversidad de estos entornos. 
-            Aprende de expertos locales sobre su flora y fauna únicas, mientras contribuyes a su conservación.
-          </p>
-
+          <h3 data-i18n="aventura1_titulo">Caminatas Ecológicas</h3>
+          <p data-i18n="aventura1_desc">Disfruta de caminatas ecológicas guiadas a través de impresionantes reservas naturales, donde podrás conectar profundamente con la exuberante biodiversidad de estos entornos. Aprende de expertos locales sobre su flora y fauna únicas, mientras contribuyes a su conservación.</p>
         </div>
       </div>
       <div class="aventura-item">
         <img src="https://i.postimg.cc/7Lgg7mC7/AVE.jpg" alt="Avistamiento de aves">
         <div class="aventura-info">
-          <h3>Avistamiento de Aves</h3>
-        <p>
-            Sumérgete en la fascinante experiencia del avistamiento de aves, donde podrás admirar 
-            la diversidad alada de la región.
-        </p>
-            <p>
-              Es un espectáculo natural ideal para quienes desean conectar con la vida silvestre 
-              y capturar momentos inolvidables.
-            </p>
-
+          <h3 data-i18n="aventura2_titulo">Avistamiento de Aves</h3>
+          <p data-i18n="aventura2_desc1">Sumérgete en la fascinante experiencia del avistamiento de aves, donde podrás admirar la diversidad alada de la región.</p>
+          <p data-i18n="aventura2_desc2">Es un espectáculo natural ideal para quienes desean conectar con la vida silvestre y capturar momentos inolvidables.</p>
         </div>
       </div>
     </section>
 
     <section class="galeria contenedor">
-      <h2>Galería</h2>
-      <p class="descripcion-galeria">Naturaleza, aventura, paisajes, experiencias auténticas y eco-turismo en Colombia.</p>
+      <h2 data-i18n="galeria_titulo">Galería</h2>
+      <p class="descripcion-galeria" data-i18n="galeria_desc">Naturaleza, aventura, paisajes, experiencias auténticas y eco-turismo en Colombia.</p>
       <div class="grid-galeria">
         <div class="galeria-item item-grande"><img src="https://i.postimg.cc/pVsJq5ph/CArpa.jpg" alt="Carpa"></div>
         <div class="galeria-item"><img src="https://i.postimg.cc/RZp0Y9wT/caballo.jpg" alt="Caballo"></div>
@@ -100,7 +81,7 @@
         <div class="galeria-item"><img src="https://i.postimg.cc/G2dGLdSs/gusa.jpg" alt="Guía"></div>
         <div class="galeria-item"><img src="https://i.postimg.cc/GmY66n8y/vaca.jpg" alt="Sendero"></div>
         <div class="galeria-item"><img src="https://i.postimg.cc/1tgzpdT3/fuego.jpg" alt="Fogata"></div>
-        <div class="galeria-item"><img src="https://i.postimg.cc/wj0Dq7m8/Monta-a.jpg" alt="Montana"></div>
+        <div class="galeria-item"><img src="https://i.postimg.cc/wj0Dq7m8/Monta-a.jpg" alt="Montaña"></div>
       </div>
     </section>
   </main>
@@ -116,70 +97,8 @@
     </div>
   </footer>
 
-  <script>
-    const textos = {
-      es: {
-        "menu-inicio": "Inicio",
-        "menu-destinos": "Destinos",
-        "menu-tours": "Tours",
-        "menu-galeria": "Galería",
-        "menu-contacto": "Contacto",
-        "footer-derechos": "© 2025 Turismo de Naturaleza. Todos los derechos reservados."
-      },
-      en: {
-        "menu-inicio": "Home",
-        "menu-destinos": "Destinations",
-        "menu-tours": "Tours",
-        "menu-galeria": "Gallery",
-        "menu-contacto": "Contact",
-        "footer-derechos": "© 2025 Nature Tourism. All rights reserved."
-      }
-    };
-
-    function cambiarIdioma() {
-      const idioma = document.getElementById("selector-idioma").value;
-      localStorage.setItem("idioma", idioma);
-      aplicarTraduccion(idioma);
-    }
-
-    function aplicarTraduccion(idioma) {
-      const traducciones = textos[idioma];
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const clave = el.getAttribute("data-i18n");
-        if (clave in traducciones) el.textContent = traducciones[clave];
-      });
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const idioma = localStorage.getItem("idioma") || "es";
-      document.getElementById("selector-idioma").value = idioma;
-      aplicarTraduccion(idioma);
-
-      const btn = document.getElementById('hamburger');
-      const menu = document.getElementById('menu');
-
-      btn.addEventListener('click', () => {
-        menu.classList.toggle('activo');
-        btn.querySelector('i').classList.toggle('fa-bars');
-        btn.querySelector('i').classList.toggle('fa-times');
-      });
-
-      document.addEventListener('click', (e) => {
-        if (!menu.contains(e.target) && !btn.contains(e.target) && menu.classList.contains('activo')) {
-          menu.classList.remove('activo');
-          btn.querySelector('i').classList.add('fa-bars');
-          btn.querySelector('i').classList.remove('fa-times');
-        }
-      });
-
-      menu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          menu.classList.remove('activo');
-          btn.querySelector('i').classList.add('fa-bars');
-          btn.querySelector('i').classList.remove('fa-times');
-        });
-      });
-    });
-  </script>
+  <!-- Script para traducción y menú -->
+  <script src="traduccion.js"></script>
+  <script src="menu.js"></script>
 </body>
 </html>

@@ -14,26 +14,16 @@
   box-sizing: border-box;
 }
 
-html {
+html, body {
   height: 100%;
-}
-
-body {
   font-family: var(--fuente);
-  line-height: 1.6;
+  background-color: var(--gris-claro);
   color: var(--texto);
-  background: var(--gris-claro);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  line-height: 1.6;
 }
 
 main {
-  flex: 1 0 auto;
-}
-
-footer {
-  flex-shrink: 0;
+  flex: 1;
 }
 
 a {
@@ -53,64 +43,46 @@ a {
   align-items: center;
 }
 
-/* Idioma Selector */
-.selector-idioma-menu {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  position: relative;
-}
+/* ===================== */
+/* HEADER Y NAVEGACIÓN */
+/* ===================== */
 
-.selector-idioma-icon {
-  width: 20px;
-  height: 20px;
-  content: url("https://i.postimg.cc/vTmjsWf6/tierra.png");
-}
-
-.selector-idioma {
-  font-family: var(--fuente);
-  font-size: 0.95rem;
-  background: transparent;
-  border: none;
-  color: var(--texto);
-  cursor: pointer;
-  padding-right: 24px;
-  appearance: none;
-  background-image: url('https://i.postimg.cc/FzBGQ0PK/down-chevron.png');
-  background-repeat: no-repeat;
-  background-position: right 6px center;
-  background-size: 12px;
-}
-
-.selector-idioma:focus {
-  outline: none;
-}
-
-/* Header */
 .site-header {
   background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
   position: sticky;
   top: 0;
-  z-index: 10;
-  padding: 10px 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
   max-height: 80px;
 }
 
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: var(--texto);
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 28px;
+  z-index: 1100;
+}
+
 .menu {
   list-style: none;
   display: flex;
   gap: 2rem;
-  align-items: center;
 }
 
 .menu a {
-  font-weight: 600;
   padding: 0.5rem;
-  transition: color 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .menu a:hover,
@@ -119,22 +91,17 @@ a {
   border-bottom: 2px solid var(--verde);
 }
 
-/* Sección Mapa */
-.seccion-mapa {
-  padding: 3rem 1rem;
-  background: white;
-}
+/* ===================== */
+/* SECCIONES */
+/* ===================== */
 
-.mapa-box {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
-  justify-content: space-between;
+.seccion-mapa {
+  background: white;
+  padding: 3rem 1rem;
 }
 
 .info-mapa {
-  flex: 1 1 400px;
+  margin-bottom: 1.5rem;
 }
 
 .info-mapa h2 {
@@ -144,22 +111,20 @@ a {
 
 .info-mapa p {
   font-size: 1.1rem;
-  line-height: 1.5;
 }
 
 .mapa-embed {
-  flex: 1 1 500px;
-  min-height: 300px;
+  width: 100%;
+  min-height: 400px;
 }
 
 .mapa-embed iframe {
   width: 100%;
   height: 100%;
-  border: 0;
+  border: none;
   border-radius: 10px;
 }
 
-/* Sección Naturaleza */
 .seccion-naturaleza {
   background: var(--gris-claro);
   padding: 3rem 1rem;
@@ -190,7 +155,10 @@ a {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer */
+/* ===================== */
+/* FOOTER */
+/* ===================== */
+
 .site-footer {
   background: var(--gris-oscuro);
   color: var(--gris-claro);
@@ -207,14 +175,13 @@ a {
   margin-top: 1.5rem;
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 2rem;
 }
 
 .redes-sociales a {
   font-size: 1.8rem;
-  transition: color 0.3s, transform 0.3s;
   color: var(--gris-claro);
+  transition: color 0.3s, transform 0.3s;
 }
 
 .redes-sociales a:hover {
@@ -222,21 +189,10 @@ a {
   transform: scale(1.2);
 }
 
-/* Menú Hamburguesa */
-.hamburger {
-  display: none;
-  font-size: 1.8rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--texto);
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  z-index: 1001;
-}
+/* ===================== */
+/* RESPONSIVE MENU */
+/* ===================== */
 
-/* Responsive */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -244,6 +200,10 @@ a {
 
   nav {
     display: none;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 0.3s ease;
   }
 
   nav.activo {
@@ -251,12 +211,14 @@ a {
     position: absolute;
     top: 100%;
     right: 0;
+    width: 90%;
+    margin: 0 5%;
     background: white;
-    padding: 1rem;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-    width: calc(100% - 40px);
-    margin: 0 20px;
     border-radius: 12px;
+    padding: 1rem;
+    opacity: 1;
+    transform: scaleY(1);
     z-index: 1000;
   }
 
@@ -276,24 +238,15 @@ a {
     padding: 12px 10px;
     border-bottom: 1px solid #eee;
     font-size: 0.95rem;
+    transition: background 0.3s;
+  }
+
+  .menu a:hover {
+    background-color: #f9f9f9;
   }
 
   .menu a:last-child {
     border-bottom: none;
-  }
-
-  .selector-idioma-menu {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 12px 10px;
-    width: 100%;
-    border-top: 1px solid #eee;
-    margin-top: 10px;
-  }
-
-  .mapa-box {
-    flex-direction: column;
   }
 
   .collage-naturaleza {
@@ -302,16 +255,11 @@ a {
 }
 
 @media (max-width: 480px) {
-  .boton-primario {
-    font-size: 0.95rem;
-    padding: 0.75rem 1.5rem;
+  .titulo-naturaleza {
+    font-size: 1.5rem;
   }
 
-  .contenido-hero h1 {
-    font-size: 2rem;
-  }
-
-  .contenido-hero p {
+  .descripcion-naturaleza {
     font-size: 1rem;
   }
 }

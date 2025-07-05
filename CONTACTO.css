@@ -1,14 +1,13 @@
 :root {
   --verde: #28a745;
   --verde-hover: #218838;
-  --gris: #f4f4f4;
+  --gris-claro: #f4f4f4;
   --gris-oscuro: #222;
   --texto: #333;
-  --gris-claro: #ccc;
   --fuente: 'Poppins', sans-serif;
 }
 
-/* ========== Reset ========== */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -21,15 +20,9 @@ html, body {
 
 body {
   font-family: var(--fuente);
-  background: var(--gris);
+  background: var(--gris-claro);
   color: var(--texto);
   line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -39,7 +32,6 @@ main {
   flex: 1;
 }
 
-/* ========== Global ========== */
 a {
   text-decoration: none;
   color: inherit;
@@ -52,11 +44,18 @@ img {
 
 .contenedor {
   max-width: 1200px;
+  width: 100%;
   margin: auto;
   padding: 20px;
 }
 
-/* ========== Header ========== */
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Header */
 .site-header {
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -66,17 +65,11 @@ img {
   padding: 10px 0;
 }
 
-.flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .logo {
-  height: 80px;
+  max-height: 80px;
 }
 
-/* ========== Menú ========== */
+/* Menú */
 #menu {
   display: flex;
   align-items: center;
@@ -87,6 +80,7 @@ img {
   list-style: none;
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
 .menu a {
@@ -101,40 +95,18 @@ img {
   border-bottom: 2px solid var(--verde);
 }
 
-/* Selector de idioma */
-.selector-idioma-menu {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin-left: auto;
-}
-
-.selector-idioma-icon {
-  width: 20px;
-  height: 20px;
-  content: url("https://i.postimg.cc/vTmjsWf6/tierra.png");
-}
-
-.selector-idioma {
-  font-family: var(--fuente);
-  font-size: 0.95rem;
-  background: transparent;
+/* Botón hamburguesa */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
   border: none;
-  color: var(--texto);
   cursor: pointer;
-  padding-right: 24px;
-  appearance: none;
-  background-image: url('https://i.postimg.cc/FzBGQ0PK/down-chevron.png');
-  background-repeat: no-repeat;
-  background-position: right 6px center;
-  background-size: 12px;
+  color: var(--texto);
+  z-index: 1001;
 }
 
-.selector-idioma:focus {
-  outline: none;
-}
-
-/* ========== Contacto ========== */
+/* Contacto */
 #contacto {
   padding: 60px 20px;
   text-align: center;
@@ -194,7 +166,7 @@ img {
   transform: translateY(-2px);
 }
 
-/* ========== Footer ========== */
+/* Footer */
 .site-footer {
   background: var(--gris-oscuro);
   color: var(--gris-claro);
@@ -223,24 +195,13 @@ img {
   transform: scale(1.2);
 }
 
-/* ========== Menú Hamburguesa ========== */
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--texto);
-  z-index: 1001;
-}
-
-/* ========== Responsive ========== */
+/* Responsive */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
     position: absolute;
     top: 15px;
-    right: 15px;
+    right: 20px;
   }
 
   #menu {
@@ -248,20 +209,17 @@ img {
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    top: 60px;
-    right: 10px;
+    top: 100%;
+    right: 0;
+    width: 100%;
     background: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    border-radius: 5px;
-    width: 180px;
-    padding: 10px 0;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-out;
-    z-index: 999;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 10px 10px;
+    z-index: 1000;
   }
 
   #menu.activo {
-    transform: translateX(0);
     display: flex;
   }
 
@@ -269,7 +227,6 @@ img {
     flex-direction: column;
     width: 100%;
     gap: 0;
-    padding: 0;
   }
 
   .menu li {
@@ -278,60 +235,14 @@ img {
 
   .menu a {
     display: block;
-    padding: 8px 15px;
+    width: 100%;
+    padding: 12px 10px;
     border-bottom: 1px solid #eee;
     font-size: 0.95rem;
-    font-weight: normal;
-    transition: background-color 0.3s, color 0.3s;
   }
 
   .menu a:last-child {
     border-bottom: none;
-  }
-
-  .menu a:hover {
-    background-color: var(--gris);
-    color: var(--verde);
-  }
-
-  .menu .activo {
-    color: var(--verde);
-    font-weight: 600;
-    background-color: transparent;
-    position: relative;
-  }
-
-  .menu .activo::after {
-    content: '';
-    position: absolute;
-    left: 15px;
-    bottom: 3px;
-    width: 40px;
-    height: 2px;
-    background-color: var(--verde);
-  }
-
-  .selector-idioma-menu {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 8px 15px;
-    border-top: 1px solid #eee;
-    margin-top: 5px;
-    width: 100%;
-  }
-
-  .selector-idioma-icon {
-    width: 18px;
-    height: 18px;
-  }
-
-  .selector-idioma {
-    font-size: 0.9rem;
-    background-image: url('https://i.postimg.cc/4yN2kqj2/flecha-select.png');
-    background-position: right 0.3rem center;
-    background-size: 0.5rem;
-    padding-right: 1.3rem;
   }
 
   .logo {
@@ -350,7 +261,31 @@ img {
     padding: 20px;
   }
 
+  .redes-sociales {
+    gap: 1.5rem;
+  }
+
   .redes-sociales a {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #contacto {
+    padding: 40px 10px;
+  }
+
+  .formulario-contacto {
+    padding: 15px;
+  }
+
+  .formulario-contacto input,
+  .formulario-contacto textarea {
+    font-size: 0.95rem;
+  }
+
+  .boton-primario {
+    padding: 12px;
+    font-size: 0.95rem;
   }
 }
