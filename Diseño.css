@@ -7,7 +7,6 @@
   --fuente: 'Poppins', sans-serif;
 }
 
-/* ========== Reset & Base ========== */
 * {
   margin: 0;
   padding: 0;
@@ -25,10 +24,6 @@ body {
   background: var(--gris-claro);
   display: flex;
   flex-direction: column;
-}
-
-body.index .selector-idioma-menu {
-  display: flex;
 }
 
 main {
@@ -52,7 +47,10 @@ a {
   align-items: center;
 }
 
-/* ========== Selector de Idioma ========== */
+body.index .selector-idioma-menu {
+  display: flex;
+}
+
 .selector-idioma-menu {
   display: none;
   align-items: center;
@@ -74,7 +72,7 @@ a {
   cursor: pointer;
   padding-right: 24px;
   appearance: none;
-  background-image: url('https://i.postimg.cc/FzBGQ0PK/down-chevron.png');
+  background-image: url('https://i.postimg.cc/pd575vJC/flecha-hacia-abajo.png');
   background-repeat: no-repeat;
   background-position: right 6px center;
   background-size: 12px;
@@ -84,7 +82,6 @@ a {
   outline: none;
 }
 
-/* ========== Header ========== */
 .site-header {
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -117,7 +114,6 @@ a {
   border-bottom: 2px solid var(--verde);
 }
 
-/* ========== Fondo GIF Hero ========== */
 .gif-hero {
   position: relative;
   width: 100%;
@@ -180,17 +176,42 @@ a {
   transform: translateY(-3px);
 }
 
-/* ========== Footer ========== */
 .site-footer {
   background: var(--gris-oscuro);
   color: var(--gris-claro);
   text-align: center;
-  padding: 2rem 0;
+  padding: 3rem 1rem;
+  font-family: var(--fuente);
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer-contenido {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  color: #fff;
 }
 
 .site-footer p {
-  margin: 0;
-  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: var(--gris-claro);
+}
+
+.creadores {
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.creadores strong {
+  font-size: 1.05rem;
+  font-weight: 100;
 }
 
 .redes-sociales {
@@ -199,6 +220,7 @@ a {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .redes-sociales a {
@@ -212,7 +234,6 @@ a {
   transform: scale(1.2);
 }
 
-/* ========== Menú Hamburguesa Responsive ========== */
 .hamburger {
   display: none;
   font-size: 1.8rem;

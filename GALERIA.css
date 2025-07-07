@@ -7,7 +7,6 @@
   --fuente: 'Poppins', sans-serif;
 }
 
-/* ========== RESET ========== */
 * {
   margin: 0;
   padding: 0;
@@ -22,6 +21,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 a {
@@ -34,7 +34,6 @@ img {
   display: block;
 }
 
-/* ========== CONTENEDOR GENERAL ========== */
 .contenedor {
   max-width: 1200px;
   width: 100%;
@@ -48,7 +47,6 @@ img {
   align-items: center;
 }
 
-/* ========== HEADER ========== */
 .site-header {
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -95,9 +93,11 @@ img {
   cursor: pointer;
   color: var(--texto);
   z-index: 1001;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
-/* ========== ARTÍCULOS BLOG ========== */
 .articulos-inicio {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -140,7 +140,6 @@ img {
   color: #888;
 }
 
-/* ========== AVENTURAS NATURALES ========== */
 .aventuras {
   margin-top: 60px;
 }
@@ -193,7 +192,6 @@ img {
   text-align: justify;
 }
 
-/* ========== GALERÍA ========== */
 .galeria {
   padding: 60px 20px;
   text-align: center;
@@ -245,31 +243,57 @@ img {
   grid-row: span 2;
 }
 
-/* ========== FOOTER ========== */
 .site-footer {
   background: var(--gris-oscuro);
   color: var(--gris-claro);
   text-align: center;
-  padding: 2rem 0;
-  margin-top: 60px;
+  padding: 3rem 1rem;
+  font-family: var(--fuente);
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer-contenido {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  color: #fff;
 }
 
 .site-footer p {
-  margin: 0;
-  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: var(--gris-claro);
+}
+
+.creadores {
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.creadores strong {
+  font-size: 1.05rem;
+  font-weight: 100;
 }
 
 .redes-sociales {
   margin-top: 1.5rem;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .redes-sociales a {
   font-size: 1.8rem;
-  color: var(--gris-claro);
   transition: color 0.3s, transform 0.3s;
+  color: var(--gris-claro);
 }
 
 .redes-sociales a:hover {
@@ -277,7 +301,6 @@ img {
   transform: scale(1.2);
 }
 
-/* ========== MENÚ RESPONSIVE ========== */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -286,31 +309,42 @@ img {
     font-size: 1.8rem;
     color: var(--texto);
     cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
   }
 
   #menu {
-    display: none;
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top center;
+    background: white;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    width: 300px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   #menu.activo {
-    display: block;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: 0;
-    background: white;
-    padding: 1rem;
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-    z-index: 1000;
-    width: 90%;
-    margin: 0 auto;
+    opacity: 1;
+    transform: translateX(-50%) scaleY(1);
   }
 
   .menu {
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
+    width: 100%;
   }
 
   .menu li {

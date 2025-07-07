@@ -4,11 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Exploraconmigo</title>
+  <link rel="icon" href="https://i.postimg.cc/SQLWQPCM/explorador-1.png" type="image/png" />
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="DESTINO.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body>
 
   <header class="site-header">
@@ -16,11 +20,13 @@
       <a href="index.html">
         <img src="LOGOS/Logoprincipal.png" alt="Logo Exploraconmigo" class="logo" />
       </a>
-      <button class="hamburger" id="hamburger" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <i class="fas fa-bars"></i>
+      </button>
       <nav id="menu" aria-label="Menú principal">
         <ul class="menu">
-          <li><a href="index.html" data-i18n="menu-inicio">Inicio</a></li>
-          <li><a href="destinos.html" class="activo" data-i18n="menu-destinos">Destinos</a></li>
+          <li><a href="index.html" class="activo" data-i18n="menu-inicio">Inicio</a></li>
+          <li><a href="destinos.html" data-i18n="menu-destinos">Destinos</a></li>
           <li><a href="tours.html" data-i18n="menu-tours">Tours</a></li>
           <li><a href="galeria.html" data-i18n="menu-galeria">Galería</a></li>
           <li><a href="contacto.html" data-i18n="menu-contacto">Contacto</a></li>
@@ -29,21 +35,28 @@
     </div>
   </header>
 
-
+  <!-- CONTENIDO PRINCIPAL -->
   <main>
-  
+
+    <!-- Sección: Atánquez -->
     <section class="seccion-mapa">
       <div class="contenedor">
         <div class="info-mapa">
           <h2 data-i18n="titulo-atanquez">¿Dónde está ubicado?</h2>
-          <p data-i18n="desc-atanquez">Atánquez está ubicado en la Sierra Nevada de Santa Marta, en el departamento del Cesar, Colombia...</p>
+          <p data-i18n="desc-atanquez">Atánquez está ubicado en la Sierra Nevada de Santa Marta, en el departamento del Cesar, Colombia</p>
         </div>
         <div class="mapa-embed">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15681.930041841535!2d-73.3672859163045!3d10.697217288050176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e8ace1f7329675b%3A0x97c616c6841e0062!2sAtanquez%2C%20Valledupar%2C%20Cesar!5e0!3m2!1ses-419!2sco!4v1751380934765!5m2!1ses-419!2sco" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15681.930041841535!2d-73.3672859163045!3d10.697217288050176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e8ace1f7329675b%3A0x97c616c6841e0062!2sAtanquez%2C%20Valledupar%2C%20Cesar!5e0!3m2!1ses-419!2sco!4v1751380934765!5m2!1ses-419!2sco" 
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de Atánquez"
+          ></iframe>
         </div>
       </div>
     </section>
 
+    <!-- Sección: Manaure -->
     <section class="seccion-mapa">
       <div class="contenedor">
         <div class="info-mapa">
@@ -51,38 +64,54 @@
           <p data-i18n="desc-manaure">Manaure está ubicado en las estribaciones de la Sierra Nevada de Santa Marta, también en el Cesar, Colombia...</p>
         </div>
         <div class="mapa-embed">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31395.54894248511!2d-73.01843448801147!3d10.386296809882168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e8a96f1e432eded%3A0x28797b25e05383f3!2sManaure%2C%20Cesar!5e0!3m2!1ses-419!2sco!4v1751380529992!5m2!1ses-419!2sco" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31395.54894248511!2d-73.01843448801147!3d10.386296809882168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e8a96f1e432eded%3A0x28797b25e05383f3!2sManaure%2C%20Cesar!5e0!3m2!1ses-419!2sco!4v1751380529992!5m2!1ses-419!2sco" 
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de Manaure"
+          ></iframe>
         </div>
       </div>
     </section>
 
-   
+    <!-- Sección: Naturaleza -->
     <section class="seccion-naturaleza">
       <div class="contenedor">
         <h2 class="titulo-naturaleza" data-i18n="titulo-naturaleza">Naturaleza</h2>
         <p class="descripcion-naturaleza" data-i18n="descripcion-naturaleza">Explora Colombia a través de experiencias auténticas y sostenibles.</p>
         <div class="collage-naturaleza">
-          <img src="https://i.postimg.cc/VNBnYXL4/sicla.jpg" class="img1" alt="Ciclismo en la naturaleza" />
-          <img src="https://i.postimg.cc/Dw23mT2h/sha.jpg" class="img2" alt="Senderismo por la sierra" />
-          <img src="https://i.postimg.cc/JzycNy75/Nativa.jpg" class="img3" alt="Cultura indígena" />
-          <img src="https://i.postimg.cc/FRGL5msK/casca.jpg" class="img4" alt="Cascada natural" />
-          <img src="https://i.postimg.cc/y65gCLys/personas.jpg" class="img5" alt="Grupo de turistas" />
+          <img src="https://i.postimg.cc/VNBnYXL4/sicla.jpg" alt="Ciclismo en la naturaleza" />
+          <img src="https://i.postimg.cc/Dw23mT2h/sha.jpg" alt="Senderismo por la sierra" />
+          <img src="https://i.postimg.cc/JzycNy75/Nativa.jpg" alt="Cultura indígena" />
+          <img src="https://i.postimg.cc/FRGL5msK/casca.jpg" alt="Cascada natural" />
+          <img src="https://i.postimg.cc/y65gCLys/personas.jpg" alt="Grupo de turistas" />
+          <img src="https://i.postimg.cc/SK6kwcYc/Ramon.jpg" alt="Ramon" />
         </div>
       </div>
     </section>
+
   </main>
 
-  <footer class="site-footer">
-    <div class="contenedor">
-      <p data-i18n="footer-derechos">&copy; 2025 Turismo de Naturaleza. Todos los derechos reservados.</p>
-      <div class="redes-sociales">
-        <a href="https://www.facebook.com/exploraconmigo" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/exploraconmigo" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/573001234567" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <!-- PIE DE PÁGINA -->
+<footer class="site-footer">
+    <div class="footer-contenido">
+      <h4>Exploraconmigo</h4>
+      <p>Descubre destinos únicos, vive nuevas experiencias y explora el mundo con nosotros.</p>
+ <div class="redes-sociales">
+        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/573246789262" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+      <div class="creadores">
+        <p>Desarrollado por <strong>Mario Cataño</strong> y <strong>Armando Orta</strong></p>
       </div>
     </div>
-  </footer>
+</footer>
+
+  <!-- Scripts -->
   <script src="traduccion.js"></script>
   <script src="menu.js"></script>
+
 </body>
 </html>

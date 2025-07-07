@@ -7,7 +7,6 @@
   --fuente: 'Poppins', sans-serif;
 }
 
-/* ========== Reset & Base ========== */
 * {
   margin: 0;
   padding: 0;
@@ -25,19 +24,13 @@ html, body {
   overflow-x: hidden;
 }
 
+main {
+  flex: 1;
+}
+
 a {
   text-decoration: none;
   color: inherit;
-}
-
-.wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1;
 }
 
 .contenedor {
@@ -54,7 +47,6 @@ h1 {
   font-size: 2rem;
 }
 
-/* ========== Grid de Tours ========== */
 .grid-tours {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -62,9 +54,8 @@ h1 {
   padding-bottom: 3rem;
 }
 
-/* ========== Tarjetas de Tours ========== */
 .tour-card {
-  background-color: white;
+  background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem;
@@ -104,7 +95,7 @@ h1 {
 
 .boton-secundario {
   background-color: var(--verde);
-  color: white;
+  color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   font-weight: bold;
@@ -116,9 +107,8 @@ h1 {
   background-color: var(--verde-hover);
 }
 
-/* ========== Header ========== */
 .site-header {
-  background: white;
+  background: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -139,7 +129,6 @@ h1 {
   max-height: 80px;
 }
 
-/* ========== Menú Desktop ========== */
 .nav {
   display: flex;
   align-items: center;
@@ -151,7 +140,6 @@ h1 {
   display: flex;
   gap: 2rem;
   align-items: center;
-  padding: 0;
 }
 
 .nav ul.menu li a {
@@ -166,31 +154,6 @@ h1 {
   border-bottom: 2px solid var(--verde);
 }
 
-/* ========== Footer ========== */
-.site-footer {
-  background-color: var(--gris-oscuro);
-  color: white;
-  padding: 2rem 1rem;
-  text-align: center;
-  margin-top: auto;
-}
-
-.site-footer .redes-sociales {
-  margin-top: 1rem;
-}
-
-.site-footer .redes-sociales a {
-  color: white;
-  margin: 0 0.5rem;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-}
-
-.site-footer .redes-sociales a:hover {
-  color: var(--verde);
-}
-
-/* ========== Botón Hamburguesa ========== */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -199,65 +162,114 @@ h1 {
   cursor: pointer;
   color: var(--texto);
   z-index: 1001;
-  position: relative;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
-.hamburger i {
-  font-size: 2rem;
+.site-footer {
+  background: var(--gris-oscuro);
+  color: var(--gris-claro);
+  text-align: center;
+  padding: 3rem 1rem;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* ========== Responsive (Hamburguesa) ========== */
+.footer-contenido {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.site-footer p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: var(--gris-claro);
+}
+
+.creadores {
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.creadores strong {
+  font-size: 1.05rem;
+  font-weight: 100;
+}
+
+.redes-sociales {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.redes-sociales a {
+  font-size: 1.8rem;
+  transition: color 0.3s, transform 0.3s;
+  color: var(--gris-claro);
+}
+
+.redes-sociales a:hover {
+  color: var(--verde);
+  transform: scale(1.2);
+}
+
 @media (max-width: 768px) {
   .hamburger {
     display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
   }
 
   .nav {
     position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: white;
-    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    margin: 10px auto;
-    padding: 1rem 0;
-    width: 92%;
-    max-width: 300px;
-    transition: all 0.3s ease;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%) scaleY(0);
+    background: #fff;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    width: 300px;
     opacity: 0;
-    transform: scaleY(0);
     transform-origin: top center;
     z-index: 1000;
     overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 1rem 0;
   }
 
   .nav.activo {
     opacity: 1;
-    transform: scaleY(1);
+    transform: translateX(-50%) scaleY(1);
   }
 
   .nav ul.menu {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    padding: 0 1.5rem;
     gap: 0;
   }
 
   .nav ul.menu li {
     width: 100%;
-    text-align: center;
+    text-align: left;
   }
 
   .nav ul.menu li a {
     display: block;
     width: 100%;
-    padding: 15px 0;
+    padding: 14px 0;
     font-weight: 600;
-    border-bottom: 1px solid #eee;
     font-size: 1rem;
+    color: var(--texto);
+    border-bottom: 1px solid #eee;
     transition: background 0.3s ease;
   }
 

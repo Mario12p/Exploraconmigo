@@ -7,14 +7,14 @@
   --fuente: 'Poppins', sans-serif;
 }
 
-/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   font-family: var(--fuente);
   background-color: var(--gris-claro);
@@ -42,10 +42,6 @@ a {
   justify-content: space-between;
   align-items: center;
 }
-
-/* ===================== */
-/* HEADER Y NAVEGACIÓN */
-/* ===================== */
 
 .site-header {
   background: white;
@@ -91,10 +87,6 @@ a {
   border-bottom: 2px solid var(--verde);
 }
 
-/* ===================== */
-/* SECCIONES */
-/* ===================== */
-
 .seccion-mapa {
   background: white;
   padding: 3rem 1rem;
@@ -112,17 +104,19 @@ a {
 .info-mapa p {
   font-size: 1.1rem;
 }
-
 .mapa-embed {
   width: 100%;
-  min-height: 400px;
+  aspect-ratio: 1 / 1;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .mapa-embed iframe {
   width: 100%;
   height: 100%;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .seccion-naturaleza {
@@ -141,57 +135,128 @@ a {
   margin-bottom: 2rem;
 }
 
-.collage-naturaleza {
+.collage-naturaleza { 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  grid-auto-rows: minmax(150px, auto);
 }
 
 .collage-naturaleza img {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  margin: 0 auto;
+  background-color: #f0f0f0;
 }
 
-/* ===================== */
-/* FOOTER */
-/* ===================== */
+.collage-naturaleza img:nth-child(1),
+.collage-naturaleza img:nth-child(2) {
+  grid-column: span 2;
+  height: 300px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
 
+.collage-naturaleza img:nth-child(n + 3) {
+  aspect-ratio: 1 / 1;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.collage-naturaleza img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.image-wrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  background-color: #f0f0f0;
+}
+.image-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease;
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+.image-wrapper:hover::after {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 .site-footer {
   background: var(--gris-oscuro);
   color: var(--gris-claro);
   text-align: center;
-  padding: 2rem 0;
+  padding: 3rem 1rem;
+  font-family: var(--fuente);
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer-contenido {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  color: #fff;
 }
 
 .site-footer p {
-  margin: 0;
-  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: var(--gris-claro);
+}
+
+.creadores {
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.creadores strong {
+  font-size: 1.05rem;
+  font-weight: 100;
 }
 
 .redes-sociales {
   margin-top: 1.5rem;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .redes-sociales a {
   font-size: 1.8rem;
-  color: var(--gris-claro);
   transition: color 0.3s, transform 0.3s;
+  color: var(--gris-claro);
 }
 
 .redes-sociales a:hover {
   color: var(--verde);
   transform: scale(1.2);
 }
-
-/* ===================== */
-/* RESPONSIVE MENU */
-/* ===================== */
 
 @media (max-width: 768px) {
   .hamburger {
@@ -250,7 +315,12 @@ a {
   }
 
   .collage-naturaleza {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .collage-naturaleza img:nth-child(1),
+  .collage-naturaleza img:nth-child(2) {
+    height: 250px;
   }
 }
 
@@ -261,5 +331,14 @@ a {
 
   .descripcion-naturaleza {
     font-size: 1rem;
+  }
+
+  .collage-naturaleza img:nth-child(1),
+  .collage-naturaleza img:nth-child(2) {
+    height: 220px;
+  }
+
+  .collage-naturaleza img:nth-child(n + 3) {
+    aspect-ratio: 1 / 1;
   }
 }

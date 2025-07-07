@@ -7,7 +7,6 @@
   --fuente: 'Poppins', sans-serif;
 }
 
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -16,9 +15,7 @@
 
 html, body {
   height: 100%;
-}
-
-body {
+  overflow-x: hidden;
   font-family: var(--fuente);
   background: var(--gris-claro);
   color: var(--texto);
@@ -55,21 +52,20 @@ img {
   align-items: center;
 }
 
-/* Header */
 .site-header {
-  background: white;
+  background: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
   padding: 10px 0;
+  width: 100%;
 }
 
 .logo {
   max-height: 80px;
 }
 
-/* Menú */
 #menu {
   display: flex;
   align-items: center;
@@ -95,7 +91,6 @@ img {
   border-bottom: 2px solid var(--verde);
 }
 
-/* Botón hamburguesa */
 .hamburger {
   display: none;
   font-size: 1.8rem;
@@ -104,9 +99,11 @@ img {
   cursor: pointer;
   color: var(--texto);
   z-index: 1001;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
-/* Contacto */
 #contacto {
   padding: 60px 20px;
   text-align: center;
@@ -119,7 +116,7 @@ img {
 }
 
 #contacto p {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   margin-bottom: 30px;
   color: #555;
 }
@@ -166,28 +163,57 @@ img {
   transform: translateY(-2px);
 }
 
-/* Footer */
 .site-footer {
   background: var(--gris-oscuro);
   color: var(--gris-claro);
   text-align: center;
-  padding: 2rem 0;
+  padding: 3rem 1rem;
+  font-family: var(--fuente);
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer-contenido {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  color: #fff;
 }
 
 .site-footer p {
-  margin-bottom: 1rem;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: var(--gris-claro);
+}
+
+.creadores {
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.creadores strong {
+  font-size: 1.05rem;
+  font-weight: 100;
 }
 
 .redes-sociales {
+  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
-  gap: 40px;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .redes-sociales a {
+  font-size: 1.8rem;
   color: var(--gris-claro);
-  font-size: 2rem;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: color 0.3s, transform 0.3s;
 }
 
 .redes-sociales a:hover {
@@ -195,38 +221,40 @@ img {
   transform: scale(1.2);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
-    position: absolute;
-    top: 15px;
-    right: 20px;
   }
 
   #menu {
-    display: none;
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top center;
+    background: #fff;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    padding: 1rem 1.5rem;
+    z-index: 1000;
+    width: 300px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    overflow: hidden;
     flex-direction: column;
     align-items: flex-start;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
-    background: white;
-    padding: 1rem 1.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    border-radius: 0 0 10px 10px;
-    z-index: 1000;
   }
 
   #menu.activo {
-    display: flex;
+    opacity: 1;
+    transform: translateX(-50%) scaleY(1);
   }
 
   .menu {
     flex-direction: column;
     width: 100%;
     gap: 0;
+    padding: 0 1rem;
   }
 
   .menu li {
@@ -236,9 +264,16 @@ img {
   .menu a {
     display: block;
     width: 100%;
-    padding: 12px 10px;
+    padding: 14px 0;
     border-bottom: 1px solid #eee;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--texto);
+    transition: background 0.3s ease;
+  }
+
+  .menu a:hover {
+    background: #f9f9f9;
   }
 
   .menu a:last-child {
@@ -251,6 +286,7 @@ img {
 
   .site-header .contenedor {
     padding: 10px 15px;
+    flex-wrap: wrap;
   }
 
   #contacto h2 {

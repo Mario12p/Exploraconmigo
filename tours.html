@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Exploraconmigo</title>
+  <title>Exploraconmigo - Tours</title>
+  <link rel="icon" href="https://i.postimg.cc/SQLWQPCM/explorador-1.png" type="image/png" />
   <link rel="stylesheet" href="TOURS.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="contenedor flex">
@@ -29,13 +31,12 @@
       </nav>
     </div>
   </header>
-
   <main>
     <section id="tours">
       <div class="contenedor">
         <h1 data-i18n="titulo">Tours de Aventura</h1>
+
         <div class="grid-tours">
-          <!-- Tour Cards -->
           <div class="tour-card">
             <img src="https://i.postimg.cc/yNWLQVh7/cierra.jpg" alt="Senderismo por la Sierra" />
             <h3 data-i18n="tour1_titulo">Senderismo por la Sierra</h3>
@@ -45,7 +46,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://i.postimg.cc/QdZ3p7hp/Whats-App-Image-2025-07-01-at-7-08-13-AM.jpg" alt="Parapente" />
+            <img src="https://i.postimg.cc/QdZ3p7hp/Whats-App-Image-2025-07-01-at-7-08-13-AM.jpg" alt="Parapente en Manaure" />
             <h3 data-i18n="tour2_titulo">Parapente</h3>
             <p data-i18n="tour2_desc">Vuela sobre Manaure y disfruta una experiencia inolvidable desde las alturas.</p>
             <span class="precio">$100.000 COP</span>
@@ -53,7 +54,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://i.postimg.cc/MpYk2KjR/ave.jpg" alt="Avistamiento de Aves" />
+            <img src="https://i.postimg.cc/MpYk2KjR/ave.jpg" alt="Avistamiento de aves" />
             <h3 data-i18n="tour3_titulo">Avistamiento de Aves</h3>
             <p data-i18n="tour3_desc">Descubre especies únicas con guías expertos en ornitología.</p>
             <span class="precio">$50.000 COP</span>
@@ -61,7 +62,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://i.postimg.cc/QMBqgfst/panela.jpg" alt="Fabricación de Panela" />
+            <img src="https://i.postimg.cc/QMBqgfst/panela.jpg" alt="Fabricación de panela" />
             <h3 data-i18n="tour4_titulo">Fabricación de Panela</h3>
             <p data-i18n="tour4_desc">Vive la tradición de lo dulce: aprende, participa y elabora tu propia panela artesanal.</p>
             <span class="precio">$30.000 COP</span>
@@ -69,7 +70,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://i.postimg.cc/NMB5G0Nc/exotico.jpg" alt="Animales Exóticos" />
+            <img src="https://i.postimg.cc/NMB5G0Nc/exotico.jpg" alt="Animales exóticos" />
             <h3 data-i18n="tour5_titulo">Animales Exóticos</h3>
             <p data-i18n="tour5_desc">Descubre de cerca la belleza y el misterio de los animales exóticos en su hábitat natural.</p>
             <span class="precio">$50.000 COP</span>
@@ -77,29 +78,36 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://i.postimg.cc/VNBnYXL4/sicla.jpg" alt="Ruta en Cicla" />
+            <img src="https://i.postimg.cc/VNBnYXL4/sicla.jpg" alt="Ruta en bicicleta" />
             <h3 data-i18n="tour6_titulo">Ruta en Cicla</h3>
             <p data-i18n="tour6_desc">Recorre caminos inolvidables y respira la libertad en cada pedaleo.</p>
             <span class="precio">$50.000 COP</span>
             <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
           </div>
+
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="contenedor">
-      <p data-i18n="footer-derechos">&copy; 2025 Turismo de Naturaleza. Todos los derechos reservados.</p>
-      <div class="redes-sociales">
-        <a href="https://www.facebook.com/exploraconmigo" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/exploraconmigo" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/573001234567" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <div class="footer-contenido">
+      <h4>Exploraconmigo</h4>
+      <p>Descubre destinos únicos, vive nuevas experiencias y explora el mundo con nosotros.</p>
+
+       <div class="redes-sociales">
+          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/573246789262" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+
+      <div class="creadores">
+        <p>Desarrollado por <strong>Mario Cataño</strong> y <strong>Armando Orta</strong></p>
       </div>
     </div>
   </footer>
-
   <script src="traduccion.js"></script>
   <script src="menu.js"></script>
+
 </body>
 </html>
