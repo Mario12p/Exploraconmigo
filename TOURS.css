@@ -47,6 +47,7 @@ h1 {
   font-size: 2rem;
 }
 
+/* Grid tours */
 .grid-tours {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -54,6 +55,7 @@ h1 {
   padding-bottom: 3rem;
 }
 
+/* Tarjetas */
 .tour-card {
   background-color: #fff;
   border-radius: 12px;
@@ -61,23 +63,23 @@ h1 {
   padding: 1rem;
   text-align: center;
   transition: transform 0.3s ease;
-  display: flex; /* Added for card internal layout */
-  flex-direction: column; /* Added for card internal layout */
+  display: flex;
+  flex-direction: column;
 }
 
 .tour-card:hover {
   transform: translateY(-5px);
 }
 
-/* NEW STYLES FOR THE CARD HEADER AND DETAILS */
+/* Cabecera de la tarjeta */
 .tour-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.8rem; /* Adjusted margin */
+  margin-bottom: 0.8rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid #eee; /* Light separator */
-  text-align: left; /* Ensure header content aligns left within its space */
+  border-bottom: 1px solid #eee;
+  text-align: left;
 }
 
 .tour-header .icon-text {
@@ -88,33 +90,32 @@ h1 {
 
 .icon-tour {
   font-size: 1.5rem;
-  color: var(--verde); /* Default icon color */
+  color: var(--verde);
 }
 
-/* Specific icon colors */
-.bike-icon { color: #28a745; } /* Green for bike */
-.mountain-icon { color: #8B4513; } /* Brown for mountain */
-.water-icon { color: #007bff; } /* Blue for water */
-.blue-icon { color: #17a2b8; } /* General blue for air activities */
-.green-icon { color: #28a745; } /* General green for nature/fauna */
-.brown-icon { color: #A0522D; } /* General brown for cultural/earthy */
-.purple-icon { color: #6f42c1; } /* General purple for exotic */
-
+/* Colores personalizados por ícono */
+.bike-icon { color: #28a745; }
+.mountain-icon { color: #8B4513; }
+.water-icon { color: #007bff; }
+.blue-icon { color: #17a2b8; }
+.green-icon { color: #28a745; }
+.brown-icon { color: #A0522D; }
+.purple-icon { color: #6f42c1; }
 
 .tour-header h3 {
   margin: 0;
-  font-size: 1.1rem; /* Adjust as needed */
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--texto);
 }
 
 .category {
-  font-size: 0.8rem; /* Slightly smaller */
+  font-size: 0.8rem;
   color: #666;
   background-color: var(--gris-claro);
-  padding: 0.2rem 0.5rem; /* Smaller padding */
+  padding: 0.2rem 0.5rem;
   border-radius: 5px;
-  white-space: nowrap; /* Prevent wrapping */
+  white-space: nowrap;
 }
 
 .tour-card img {
@@ -122,22 +123,23 @@ h1 {
   height: 180px;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 0.8rem; /* Adjusted margin */
+  margin-bottom: 0.8rem;
 }
 
+/* Detalles */
 .tour-details {
-  text-align: left; /* Align details to the left */
-  margin-bottom: 0.8rem; /* Adjusted margin */
-  flex-grow: 1; /* Allows details section to take available space */
+  text-align: left;
+  margin-bottom: 0.8rem;
+  flex-grow: 1;
 }
 
 .tour-details p {
-  margin: 0.3rem 0; /* Space between detail lines */
+  margin: 0.3rem 0;
   font-size: 0.9rem;
   color: #555;
   display: flex;
-  justify-content: space-between; /* Space out "Distancia:" and value */
-  padding-right: 0.5rem; /* Little padding on the right for alignment */
+  justify-content: space-between;
+  padding-right: 0.5rem;
 }
 
 .tour-details p span {
@@ -147,7 +149,7 @@ h1 {
 
 .tour-details .ranking {
   font-weight: bold;
-  color: var(--texto); /* Change color for ranking */
+  color: var(--texto);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -157,28 +159,20 @@ h1 {
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  color: #FFD700; /* Gold color for star */
-  font-size: 1.1rem; /* Adjust star size */
+  color: #FFD700;
+  font-size: 1.1rem;
 }
 
 .tour-details .ranking i.fa-star {
-  color: #FFD700; /* Gold color for star icon */
-  font-size: 1em; /* Ensures star scales with text */
+  color: #FFD700;
+  font-size: 1em;
 }
 
-.tour-short-desc { /* NEW STYLE */
+.tour-short-desc {
   font-size: 0.85rem;
   color: #666;
   margin-bottom: 1rem;
-  text-align: left; /* Align description to the left */
-}
-
-/* Remove these if price is no longer needed in the new design */
-.precio {
-  font-weight: bold;
-  color: var(--verde);
-  display: block;
-  margin-bottom: 1rem;
+  text-align: left;
 }
 
 .boton-secundario {
@@ -189,13 +183,14 @@ h1 {
   font-weight: bold;
   transition: background-color 0.3s ease;
   display: inline-block;
-  margin-top: auto; /* Pushes the button to the bottom of the card */
+  margin-top: auto;
 }
 
 .boton-secundario:hover {
   background-color: var(--verde-hover);
 }
 
+/* Header */
 .site-header {
   background: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -243,6 +238,7 @@ h1 {
   border-bottom: 2px solid var(--verde);
 }
 
+/* Botón hamburguesa */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -256,6 +252,7 @@ h1 {
   right: 20px;
 }
 
+/* Footer */
 .site-footer {
   background: var(--gris-oscuro);
   color: var(--gris-claro);
@@ -272,14 +269,12 @@ h1 {
 .site-footer h4 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
-  letter-spacing: 1px;
   color: #fff;
 }
 
 .site-footer p {
   margin: 0.5rem 0;
   font-size: 0.95rem;
-  color: var(--gris-claro);
 }
 
 .creadores {
@@ -289,7 +284,6 @@ h1 {
 }
 
 .creadores strong {
-  font-size: 1.05rem;
   font-weight: 100;
 }
 
@@ -312,6 +306,7 @@ h1 {
   transform: scale(1.2);
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -385,3 +380,4 @@ h1 {
     font-size: 1.6rem;
   }
 }
+
