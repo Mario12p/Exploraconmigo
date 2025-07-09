@@ -40,10 +40,13 @@
           <div class="tour-card">
             <div class="tour-header">
               <div class="icon-text">
-                <i class="fas fa-biking icon-tour bike-icon"></i> <h3 data-i18n="tour1_titulo">Ruta del Ciclista</h3>
+                <i class="fas fa-biking icon-tour bike-icon"></i>
+                <h3 data-i18n="tour1_titulo">Ruta del Ciclista</h3>
               </div>
-              <span class="category">Ciclismo</span> </div>
-            <img src="https://i.postimg.cc/VNBnYXL4/sicla.jpg" alt="Ruta del Ciclista" /> <div class="tour-details">
+              <span class="category">Ciclismo</span>
+            </div>
+            <img src="https://i.postimg.cc/VNBnYXL4/sicla.jpg" alt="Ruta del Ciclista" />
+            <div class="tour-details">
               <p>Distancia: <span>8,5 km</span></p>
               <p>Desnivel: <span>350 m</span></p>
               <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.0</span></p>
@@ -58,7 +61,8 @@
                 <i class="fas fa-mountain icon-tour mountain-icon"></i>
                 <h3 data-i18n="tour2_titulo">Sendero Sha</h3>
               </div>
-              <span class="category">Senderismo</span> </div>
+              <span class="category">Senderismo</span>
+            </div>
             <img src="https://i.postimg.cc/QdZ3p7hp/Whats-App-Image-2025-07-01-at-7-08-13-AM.jpg" alt="Sendero Sha" />
             <div class="tour-details">
               <p>Distancia: <span>9 km</span></p>
@@ -72,11 +76,13 @@
           <div class="tour-card">
             <div class="tour-header">
               <div class="icon-text">
-                <i class="fas fa-water icon-tour water-icon"></i> <h3 data-i18n="tour3_titulo">Cascada Viva</h3>
+                <i class="fas fa-water icon-tour water-icon"></i>
+                <h3 data-i18n="tour3_titulo">Cascada Viva</h3>
               </div>
               <span class="category">Naturaleza</span>
             </div>
-            <img src="https://i.postimg.cc/MpYk2KjR/ave.jpg" alt="Cascada Viva" /> <div class="tour-details">
+            <img src="https://i.postimg.cc/MpYk2KjR/ave.jpg" alt="Cascada Viva" />
+            <div class="tour-details">
               <p>Distancia: <span>6,5 km</span></p>
               <p>Desnivel: <span>280 m</span></p>
               <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 3.8</span></p>
@@ -124,7 +130,8 @@
           <div class="tour-card">
             <div class="tour-header">
               <div class="icon-text">
-                <i class="fas fa-seedling icon-tour brown-icon"></i> <h3 data-i18n="tour6_titulo">Fabricación de Panela</h3>
+                <i class="fas fa-seedling icon-tour brown-icon"></i>
+                <h3 data-i18n="tour6_titulo">Fabricación de Panela</h3>
               </div>
               <span class="category">Cultural</span>
             </div>
@@ -141,7 +148,8 @@
           <div class="tour-card">
             <div class="tour-header">
               <div class="icon-text">
-                <i class="fas fa-paw icon-tour purple-icon"></i> <h3 data-i18n="tour7_titulo">Animales Exóticos</h3>
+                <i class="fas fa-paw icon-tour purple-icon"></i>
+                <h3 data-i18n="tour7_titulo">Animales Exóticos</h3>
               </div>
               <span class="category">Fauna</span>
             </div>
@@ -158,9 +166,11 @@
           <div class="tour-card">
             <div class="tour-header">
               <div class="icon-text">
-                <i class="fas fa-cross icon-tour brown-icon"></i> <h3 data-i18n="tour7_titulo">Cerro de la Cruz</h3>
+                <i class="fas fa-cross icon-tour brown-icon"></i>
+                <h3 data-i18n="tour7_titulo">Cerro de la Cruz</h3>
               </div>
-              <span class="category">Senderismo Religioso</span> </div>
+              <span class="category">Senderismo Religioso</span>
+            </div>
             <img src="https://i.postimg.cc/wMcXw1rF/cruz.jpg" alt="Cerro de la Cruz" />
             <div class="tour-details">
               <p>Distancia: <span>3 Km</span></p>
@@ -174,7 +184,8 @@
           <div class="tour-card">
             <div class="tour-header">
               <div class="icon-text">
-                <i class="fas fa-biking icon-tour bike-icon"></i> <h3 data-i18n="tour8_titulo">Ruta en Cicla</h3>
+                <i class="fas fa-biking icon-tour bike-icon"></i>
+                <h3 data-i18n="tour8_titulo">Ruta en Cicla</h3>
               </div>
               <span class="category">Ciclismo</span>
             </div>
@@ -187,7 +198,6 @@
             <p class="tour-short-desc">Recorre caminos inolvidables y respira la libertad en cada pedaleo.</p>
             <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
           </div>
-
         </div>
       </div>
     </section>
