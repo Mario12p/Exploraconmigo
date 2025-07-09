@@ -1,226 +1,387 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Exploraconmigo - Tours</title>
-  <link rel="icon" href="https://i.postimg.cc/SQLWQPCM/explorador-1.png" type="image/png" />
-  <link rel="stylesheet" href="TOURS.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-</head>
+:root {
+  --verde: #28a745;
+  --verde-hover: #218838;
+  --gris-claro: #f4f4f4;
+  --gris-oscuro: #222;
+  --texto: #333;
+  --fuente: 'Poppins', sans-serif;
+}
 
-<body>
-  <header class="site-header">
-    <div class="contenedor flex">
-      <a href="index.html">
-        <img src="LOGOS/Logoprincipal.png" alt="Logo Exploraconmigo" class="logo" />
-      </a>
-      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
-        <i class="fas fa-bars"></i>
-      </button>
-      <nav id="menu" class="nav" aria-label="Menú principal">
-        <ul class="menu">
-          <li><a href="index.html" data-i18n="menu-inicio">Inicio</a></li>
-          <li><a href="destinos.html" data-i18n="menu-destinos">Destinos</a></li>
-          <li><a href="tours.html" class="activo" data-i18n="menu-tours">Tours</a></li>
-          <li><a href="galeria.html" data-i18n="menu-galeria">Galería</a></li>
-          <li><a href="contacto.html" data-i18n="menu-contacto">Contacto</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <main>
-    <section id="tours">
-      <div class="contenedor">
-        <h1 data-i18n="titulo">Tours de Aventura</h1>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        <div class="grid-tours">
-          <div class="tour-card">
-            <div class="tour-header">
-              <div class="icon-text">
-                <i class="fas fa-biking icon-tour bike-icon"></i>
-                <h3 data-i18n="tour1_titulo">Ruta del Ciclista</h3>
-              </div>
-              <span class="category">Ciclismo</span>
-            </div>
-            <img src="https://i.postimg.cc/VNBnYXL4/sicla.jpg" alt="Ruta del Ciclista" />
-            <div class="tour-details">
-              <p>Distancia: <span>8,5 km</span></p>
-              <p>Desnivel: <span>350 m</span></p>
-              <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.0</span></p>
-            </div>
-            <p class="tour-short-desc">Disfruta de un emocionante recorrido en bicicleta por senderos naturales.</p>
-            <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
-          </div>
+html, body {
+  font-family: var(--fuente);
+  line-height: 1.6;
+  color: var(--texto);
+  background: var(--gris-claro);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
 
-          <div class="tour-card">
-            <div class="tour-header">
-              <div class="icon-text">
-                <i class="fas fa-mountain icon-tour mountain-icon"></i>
-                <h3 data-i18n="tour2_titulo">Sendero Sha</h3>
-              </div>
-              <span class="category">Senderismo</span>
-            </div>
-            <img src="https://i.postimg.cc/QdZ3p7hp/Whats-App-Image-2025-07-01-at-7-08-13-AM.jpg" alt="Sendero Sha" />
-            <div class="tour-details">
-              <p>Distancia: <span>9 km</span></p>
-              <p>Desnivel: <span>400 m</span></p>
-              <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.2</span></p>
-            </div>
-            <p class="tour-short-desc">Explora caminos desafiantes entre montañas y paisajes espectaculares.</p>
-            <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
-          </div>
+main {
+  flex: 1;
+}
 
-          <div class="tour-card">
-            <div class="tour-header">
-              <div class="icon-text">
-                <i class="fas fa-water icon-tour water-icon"></i>
-                <h3 data-i18n="tour3_titulo">Cascada Viva</h3>
-              </div>
-              <span class="category">Naturaleza</span>
-            </div>
-            <img src="https://i.postimg.cc/MpYk2KjR/ave.jpg" alt="Cascada Viva" />
-            <div class="tour-details">
-              <p>Distancia: <span>6,5 km</span></p>
-              <p>Desnivel: <span>280 m</span></p>
-              <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 3.8</span></p>
-            </div>
-            <p class="tour-short-desc">Un tour refrescante para descubrir la impresionante belleza de la cascada.</p>
-            <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
-          </div>
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-          <div class="tour-card">
-            <div class="tour-header">
-              <div class="icon-text">
-                <i class="fas fa-parachute-box icon-tour blue-icon"></i>
-                <h3 data-i18n="tour4_titulo">Parapente</h3>
-              </div>
-              <span class="category">Aéreo</span>
-            </div>
-            <img src="https://i.postimg.cc/QdZ3p7hp/Whats-App-Image-2025-07-01-at-7-08-13-AM.jpg" alt="Parapente en Manaure" />
-            <div class="tour-details">
-              <p>Distancia: <span>Vuelo libre</span></p>
-              <p>Duración: <span>30 min</span></p>
-              <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.5</span></p>
-            </div>
-            <p class="tour-short-desc">Vuela sobre paisajes impresionantes y disfruta una experiencia inolvidable.</p>
-            <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
-          </div>
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
 
-          <div class="tour-card">
-            <div class="tour-header">
-              <div class="icon-text">
-                <i class="fas fa-dove icon-tour green-icon"></i>
-                <h3 data-i18n="tour5_titulo">Avistamiento de Aves</h3>
-              </div>
-              <span class="category">Fauna</span>
-            </div>
-            <img src="https://i.postimg.cc/MpYk2KjR/ave.jpg" alt="Avistamiento de aves" />
-            <div class="tour-details">
-              <p>Distancia: <span>3 km</span></p>
-              <p>Duración: <span>2 horas</span></p>
-              <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.3</span></p>
-            </div>
-            <p class="tour-short-desc">Descubre especies únicas con guías expertos en ornitología.</p>
-            <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
-          </div>
+h1 {
+  text-align: center;
+  margin: 2rem 0;
+  color: var(--verde);
+  font-size: 2rem;
+}
 
-          <div class="tour-card">
-            <div class="tour-header">
-              <div class="icon-text">
-                <i class="fas fa-seedling icon-tour brown-icon"></i>
-                <h3 data-i18n="tour6_titulo">Fabricación de Panela</h3>
-              </div>
-              <span class="category">Cultural</span>
-            </div>
-            <img src="https://i.postimg.cc/QMBqgfst/panela.jpg" alt="Fabricación de panela" />
-            <div class="tour-details">
-              <p>Distancia: <span>Finca local</span></p>
-              <p>Duración: <span>2 horas</span></p>
-              <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.1</span></p>
-            </div>
-            <p class="tour-short-desc">Aprende y participa en la elaboración artesanal de panela.</p>
-            <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
-          </div>
+.grid-tours {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
 
-          <div class="tour-card">
-            <div class="tour-header">
-              <div class="icon-text">
-                <i class="fas fa-paw icon-tour purple-icon"></i>
-                <h3 data-i18n="tour7_titulo">Animales Exóticos</h3>
-              </div>
-              <span class="category">Fauna</span>
-            </div>
-            <img src="https://i.postimg.cc/NMB5G0Nc/exotico.jpg" alt="Animales exóticos" />
-            <div class="tour-details">
-              <p>Distancia: <span>Reserva</span></p>
-              <p>Duración: <span>1.5 horas</span></p>
-              <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.4</span></p>
-            </div>
-            <p class="tour-short-desc">Descubre la belleza y el misterio de la fauna exótica local.</p>
-            <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
-          </div>
+.tour-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  display: flex; /* Added for card internal layout */
+  flex-direction: column; /* Added for card internal layout */
+}
 
-          <div class="tour-card">
-            <div class="tour-header">
-              <div class="icon-text">
-                <i class="fas fa-cross icon-tour brown-icon"></i>
-                <h3 data-i18n="tour7_titulo">Cerro de la Cruz</h3>
-              </div>
-              <span class="category">Senderismo Religioso</span>
-            </div>
-            <img src="https://i.postimg.cc/wMcXw1rF/cruz.jpg" alt="Cerro de la Cruz" />
-            <div class="tour-details">
-              <p>Distancia: <span>3 Km</span></p>
-              <p>Duración: <span>1 hora</span></p>
-              <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.4</span></p>
-            </div>
-            <p class="tour-short-desc">Camina por un sendero con 12 cruces, hasta la cima de la montaña, donde la vista es espectacular.</p>
-            <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
-          </div>
+.tour-card:hover {
+  transform: translateY(-5px);
+}
 
-          <div class="tour-card">
-            <div class="tour-header">
-              <div class="icon-text">
-                <i class="fas fa-biking icon-tour bike-icon"></i>
-                <h3 data-i18n="tour8_titulo">Ruta en Cicla</h3>
-              </div>
-              <span class="category">Ciclismo</span>
-            </div>
-            <img src="https://i.postimg.cc/VNBnYXL4/sicla.jpg" alt="Ruta en bicicleta" />
-            <div class="tour-details">
-              <p>Distancia: <span>10 km</span></p>
-              <p>Desnivel: <span>200 m</span></p>
-              <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.0</span></p>
-            </div>
-            <p class="tour-short-desc">Recorre caminos inolvidables y respira la libertad en cada pedaleo.</p>
-            <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+/* NEW STYLES FOR THE CARD HEADER AND DETAILS */
+.tour-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem; /* Adjusted margin */
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee; /* Light separator */
+  text-align: left; /* Ensure header content aligns left within its space */
+}
 
-  <footer class="site-footer">
-    <div class="footer-contenido">
-      <h4>Exploraconmigo</h4>
-      <p>Descubre destinos únicos, vive nuevas experiencias y explora el mundo con nosotros.</p>
+.tour-header .icon-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-        <div class="redes-sociales">
-          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://wa.me/573246789262" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      </div>
+.icon-tour {
+  font-size: 1.5rem;
+  color: var(--verde); /* Default icon color */
+}
 
-      <div class="creadores">
-        <p>Desarrollado por <strong>Mario Cataño</strong> y <strong>Armando Orta</strong></p>
-      </div>
-    </div>
-  </footer>
-  <script src="traduccion.js"></script>
-  <script src="menu.js"></script>
+/* Specific icon colors */
+.bike-icon { color: #28a745; } /* Green for bike */
+.mountain-icon { color: #8B4513; } /* Brown for mountain */
+.water-icon { color: #007bff; } /* Blue for water */
+.blue-icon { color: #17a2b8; } /* General blue for air activities */
+.green-icon { color: #28a745; } /* General green for nature/fauna */
+.brown-icon { color: #A0522D; } /* General brown for cultural/earthy */
+.purple-icon { color: #6f42c1; } /* General purple for exotic */
 
-</body>
-</html>
+
+.tour-header h3 {
+  margin: 0;
+  font-size: 1.1rem; /* Adjust as needed */
+  font-weight: 700;
+  color: var(--texto);
+}
+
+.category {
+  font-size: 0.8rem; /* Slightly smaller */
+  color: #666;
+  background-color: var(--gris-claro);
+  padding: 0.2rem 0.5rem; /* Smaller padding */
+  border-radius: 5px;
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.tour-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.8rem; /* Adjusted margin */
+}
+
+.tour-details {
+  text-align: left; /* Align details to the left */
+  margin-bottom: 0.8rem; /* Adjusted margin */
+  flex-grow: 1; /* Allows details section to take available space */
+}
+
+.tour-details p {
+  margin: 0.3rem 0; /* Space between detail lines */
+  font-size: 0.9rem;
+  color: #555;
+  display: flex;
+  justify-content: space-between; /* Space out "Distancia:" and value */
+  padding-right: 0.5rem; /* Little padding on the right for alignment */
+}
+
+.tour-details p span {
+  font-weight: 600;
+  color: var(--texto);
+}
+
+.tour-details .ranking {
+  font-weight: bold;
+  color: var(--texto); /* Change color for ranking */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tour-details .ranking span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #FFD700; /* Gold color for star */
+  font-size: 1.1rem; /* Adjust star size */
+}
+
+.tour-details .ranking i.fa-star {
+  color: #FFD700; /* Gold color for star icon */
+  font-size: 1em; /* Ensures star scales with text */
+}
+
+.tour-short-desc { /* NEW STYLE */
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 1rem;
+  text-align: left; /* Align description to the left */
+}
+
+/* Remove these if price is no longer needed in the new design */
+.precio {
+  font-weight: bold;
+  color: var(--verde);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.boton-secundario {
+  background-color: var(--verde);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-top: auto; /* Pushes the button to the bottom of the card */
+}
+
+.boton-secundario:hover {
+  background-color: var(--verde-hover);
+}
+
+.site-header {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.site-header .contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.logo {
+  max-height: 80px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav ul.menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav ul.menu li a {
+  font-weight: 600;
+  padding: 0.5rem;
+  transition: color 0.3s;
+}
+
+.nav ul.menu li a:hover,
+.nav ul.menu li a.activo {
+  color: var(--verde);
+  border-bottom: 2px solid var(--verde);
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--texto);
+  z-index: 1001;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.site-footer {
+  background: var(--gris-oscuro);
+  color: var(--gris-claro);
+  text-align: center;
+  padding: 3rem 1rem;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer-contenido {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.site-footer p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: var(--gris-claro);
+}
+
+.creadores {
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.creadores strong {
+  font-size: 1.05rem;
+  font-weight: 100;
+}
+
+.redes-sociales {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.redes-sociales a {
+  font-size: 1.8rem;
+  transition: color 0.3s, transform 0.3s;
+  color: var(--gris-claro);
+}
+
+.redes-sociales a:hover {
+  color: var(--verde);
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%) scaleY(0);
+    background: #fff;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    width: 300px;
+    opacity: 0;
+    transform-origin: top center;
+    z-index: 1000;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+  }
+
+  .nav.activo {
+    opacity: 1;
+    transform: translateX(-50%) scaleY(1);
+  }
+
+  .nav ul.menu {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1.5rem;
+    gap: 0;
+  }
+
+  .nav ul.menu li {
+    width: 100%;
+    text-align: left;
+  }
+
+  .nav ul.menu li a {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--texto);
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s ease;
+  }
+
+  .nav ul.menu li a:hover {
+    background: #f9f9f9;
+  }
+
+  .nav ul.menu li a:last-child {
+    border-bottom: none;
+  }
+
+  .site-header .contenedor {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .boton-secundario {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
