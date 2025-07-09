@@ -3,22 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <script src="https://kit.fontawesome.com/tu-kit.js" crossorigin="anonymous"></script>
-  <title>Exploraconmigo – Tours de Aventura</title>
+  <title>Exploraconmigo - Tours</title>
+  <link rel="icon" href="https://i.postimg.cc/SQLWQPCM/explorador-1.png" type="image/png" />
+  <link rel="stylesheet" href="TOURS.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body>
-  <!-- HEADER -->
   <header class="site-header">
     <div class="contenedor flex">
       <a href="index.html">
-        <img src="LOGOS/Logoprincipal.png" alt="Exploraconmigo" class="logo">
+        <img src="LOGOS/Logoprincipal.png" alt="Logo Exploraconmigo" class="logo" />
       </a>
       <button class="hamburger" id="hamburger" aria-label="Abrir menú">
         <i class="fas fa-bars"></i>
       </button>
       <nav id="menu" class="nav" aria-label="Menú principal">
-        <ul class="menu flex">
+        <ul class="menu">
           <li><a href="index.html" data-i18n="menu-inicio">Inicio</a></li>
           <li><a href="destinos.html" data-i18n="menu-destinos">Destinos</a></li>
           <li><a href="tours.html" class="activo" data-i18n="menu-tours">Tours</a></li>
@@ -28,84 +31,186 @@
       </nav>
     </div>
   </header>
-
-  <!-- MAIN -->
-  <main class="contenedor">
+  <main>
     <section id="tours">
-      <h1 data-i18n="titulo">Tours de Aventura</h1>
-      <div class="grid-tours">
-        <!-- Tour 1 -->
-        <div class="tour-card">
-          <div class="tour-header flex">
-            <div class="icon-text flex">
-              <i class="fas fa-biking icon-tour bike-icon"></i>
-              <h3 data-i18n="tour1_titulo">Ruta del Ciclista</h3>
-            </div>
-            <span class="category">Ciclismo</span>
-          </div>
-          <img src="https://i.postimg.cc/VNBnYXL4/sicla.jpg" alt="Ruta del Ciclista">
-          <div class="tour-details">
-            <p>Distancia: <span>8,5 km</span></p>
-            <p>Desnivel: <span>350 m</span></p>
-            <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.0</span></p>
-          </div>
-          <p class="tour-short-desc">Disfruta de un emocionante recorrido en bicicleta por senderos naturales.</p>
-          <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
-        </div>
+      <div class="contenedor">
+        <h1 data-i18n="titulo">Tours de Aventura</h1>
 
-        <!-- Tour 2 -->
-        <div class="tour-card">
-          <div class="tour-header flex">
-            <div class="icon-text flex">
-              <i class="fas fa-mountain icon-tour mountain-icon"></i>
-              <h3 data-i18n="tour2_titulo">Sendero Sha</h3>
+        <div class="grid-tours">
+          <div class="tour-card">
+            <div class="tour-header">
+              <div class="icon-text">
+                <i class="fas fa-biking icon-tour bike-icon"></i> <h3 data-i18n="tour1_titulo">Ruta del Ciclista</h3>
+              </div>
+              <span class="category">Ciclismo</span> </div>
+            <img src="https://i.postimg.cc/VNBnYXL4/sicla.jpg" alt="Ruta del Ciclista" /> <div class="tour-details">
+              <p>Distancia: <span>8,5 km</span></p>
+              <p>Desnivel: <span>350 m</span></p>
+              <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.0</span></p>
             </div>
-            <span class="category">Senderismo</span>
+            <p class="tour-short-desc">Disfruta de un emocionante recorrido en bicicleta por senderos naturales.</p>
+            <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
           </div>
-          <img src="https://i.postimg.cc/XYZ123/senda-sha.jpg" alt="Sendero Sha">
-          <div class="tour-details">
-            <p>Distancia: <span>5 km</span></p>
-            <p>Desnivel: <span>200 m</span></p>
-            <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.5</span></p>
-          </div>
-          <p class="tour-short-desc">Camina por paisajes únicos y disfruta de vistas espectaculares.</p>
-          <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
-        </div>
 
-        <!-- Tour 3 -->
-        <div class="tour-card">
-          <div class="tour-header flex">
-            <div class="icon-text flex">
-              <i class="fas fa-water icon-tour kayak-icon"></i>
-              <h3 data-i18n="tour3_titulo">Kayak en el Río</h3>
+          <div class="tour-card">
+            <div class="tour-header">
+              <div class="icon-text">
+                <i class="fas fa-mountain icon-tour mountain-icon"></i>
+                <h3 data-i18n="tour2_titulo">Sendero Sha</h3>
+              </div>
+              <span class="category">Senderismo</span> </div>
+            <img src="https://i.postimg.cc/QdZ3p7hp/Whats-App-Image-2025-07-01-at-7-08-13-AM.jpg" alt="Sendero Sha" />
+            <div class="tour-details">
+              <p>Distancia: <span>9 km</span></p>
+              <p>Desnivel: <span>400 m</span></p>
+              <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.2</span></p>
             </div>
-            <span class="category">Kayak</span>
+            <p class="tour-short-desc">Explora caminos desafiantes entre montañas y paisajes espectaculares.</p>
+            <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
           </div>
-          <img src="https://i.postimg.cc/ABC456/kayak-rio.jpg" alt="Kayak en el Río">
-          <div class="tour-details">
-            <p>Ruta: <span>Tramo de 12 km</span></p>
-            <p>Duración: <span>3 h</span></p>
-            <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.7</span></p>
+
+          <div class="tour-card">
+            <div class="tour-header">
+              <div class="icon-text">
+                <i class="fas fa-water icon-tour water-icon"></i> <h3 data-i18n="tour3_titulo">Cascada Viva</h3>
+              </div>
+              <span class="category">Naturaleza</span>
+            </div>
+            <img src="https://i.postimg.cc/MpYk2KjR/ave.jpg" alt="Cascada Viva" /> <div class="tour-details">
+              <p>Distancia: <span>6,5 km</span></p>
+              <p>Desnivel: <span>280 m</span></p>
+              <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 3.8</span></p>
+            </div>
+            <p class="tour-short-desc">Un tour refrescante para descubrir la impresionante belleza de la cascada.</p>
+            <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
           </div>
-          <p class="tour-short-desc">Una experiencia acuática divertida y segura para todos los niveles.</p>
-          <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
+
+          <div class="tour-card">
+            <div class="tour-header">
+              <div class="icon-text">
+                <i class="fas fa-parachute-box icon-tour blue-icon"></i>
+                <h3 data-i18n="tour4_titulo">Parapente</h3>
+              </div>
+              <span class="category">Aéreo</span>
+            </div>
+            <img src="https://i.postimg.cc/QdZ3p7hp/Whats-App-Image-2025-07-01-at-7-08-13-AM.jpg" alt="Parapente en Manaure" />
+            <div class="tour-details">
+              <p>Distancia: <span>Vuelo libre</span></p>
+              <p>Duración: <span>30 min</span></p>
+              <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.5</span></p>
+            </div>
+            <p class="tour-short-desc">Vuela sobre paisajes impresionantes y disfruta una experiencia inolvidable.</p>
+            <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
+          </div>
+
+          <div class="tour-card">
+            <div class="tour-header">
+              <div class="icon-text">
+                <i class="fas fa-dove icon-tour green-icon"></i>
+                <h3 data-i18n="tour5_titulo">Avistamiento de Aves</h3>
+              </div>
+              <span class="category">Fauna</span>
+            </div>
+            <img src="https://i.postimg.cc/MpYk2KjR/ave.jpg" alt="Avistamiento de aves" />
+            <div class="tour-details">
+              <p>Distancia: <span>3 km</span></p>
+              <p>Duración: <span>2 horas</span></p>
+              <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.3</span></p>
+            </div>
+            <p class="tour-short-desc">Descubre especies únicas con guías expertos en ornitología.</p>
+            <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
+          </div>
+
+          <div class="tour-card">
+            <div class="tour-header">
+              <div class="icon-text">
+                <i class="fas fa-seedling icon-tour brown-icon"></i> <h3 data-i18n="tour6_titulo">Fabricación de Panela</h3>
+              </div>
+              <span class="category">Cultural</span>
+            </div>
+            <img src="https://i.postimg.cc/QMBqgfst/panela.jpg" alt="Fabricación de panela" />
+            <div class="tour-details">
+              <p>Distancia: <span>Finca local</span></p>
+              <p>Duración: <span>2 horas</span></p>
+              <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.1</span></p>
+            </div>
+            <p class="tour-short-desc">Aprende y participa en la elaboración artesanal de panela.</p>
+            <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
+          </div>
+
+          <div class="tour-card">
+            <div class="tour-header">
+              <div class="icon-text">
+                <i class="fas fa-paw icon-tour purple-icon"></i> <h3 data-i18n="tour7_titulo">Animales Exóticos</h3>
+              </div>
+              <span class="category">Fauna</span>
+            </div>
+            <img src="https://i.postimg.cc/NMB5G0Nc/exotico.jpg" alt="Animales exóticos" />
+            <div class="tour-details">
+              <p>Distancia: <span>Reserva</span></p>
+              <p>Duración: <span>1.5 horas</span></p>
+              <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.4</span></p>
+            </div>
+            <p class="tour-short-desc">Descubre la belleza y el misterio de la fauna exótica local.</p>
+            <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
+          </div>
+
+          <div class="tour-card">
+            <div class="tour-header">
+              <div class="icon-text">
+                <i class="fas fa-cross icon-tour brown-icon"></i> <h3 data-i18n="tour7_titulo">Cerro de la Cruz</h3>
+              </div>
+              <span class="category">Senderismo Religioso</span> </div>
+            <img src="https://i.postimg.cc/wMcXw1rF/cruz.jpg" alt="Cerro de la Cruz" />
+            <div class="tour-details">
+              <p>Distancia: <span>3 Km</span></p>
+              <p>Duración: <span>1 hora</span></p>
+              <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.4</span></p>
+            </div>
+            <p class="tour-short-desc">Camina por un sendero con 12 cruces, hasta la cima de la montaña, donde la vista es espectacular.</p>
+            <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
+          </div>
+
+          <div class="tour-card">
+            <div class="tour-header">
+              <div class="icon-text">
+                <i class="fas fa-biking icon-tour bike-icon"></i> <h3 data-i18n="tour8_titulo">Ruta en Cicla</h3>
+              </div>
+              <span class="category">Ciclismo</span>
+            </div>
+            <img src="https://i.postimg.cc/VNBnYXL4/sicla.jpg" alt="Ruta en bicicleta" />
+            <div class="tour-details">
+              <p>Distancia: <span>10 km</span></p>
+              <p>Desnivel: <span>200 m</span></p>
+              <p class="ranking">Ranking: <span><i class="fas fa-star"></i> 4.0</span></p>
+            </div>
+            <p class="tour-short-desc">Recorre caminos inolvidables y respira la libertad en cada pedaleo.</p>
+            <a href="#" class="boton-secundario" data-i18n="reservar">Reservar Ahora</a>
+          </div>
+
         </div>
-      </div> <!-- .grid-tours -->
+      </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="contenedor">
-      <p>&copy; 2025 Exploraconmigo. Todos los derechos reservados.</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+    <div class="footer-contenido">
+      <h4>Exploraconmigo</h4>
+      <p>Descubre destinos únicos, vive nuevas experiencias y explora el mundo con nosotros.</p>
+
+        <div class="redes-sociales">
+          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/573246789262" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+
+      <div class="creadores">
+        <p>Desarrollado por <strong>Mario Cataño</strong> y <strong>Armando Orta</strong></p>
       </div>
     </div>
   </footer>
+  <script src="traduccion.js"></script>
+  <script src="menu.js"></script>
 
-  <script src="js/main.js"></script>
 </body>
 </html>
