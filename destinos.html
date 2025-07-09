@@ -6,7 +6,6 @@
   <title>Exploraconmigo</title>
   <link rel="icon" href="https://i.postimg.cc/SQLWQPCM/explorador-1.png" type="image/png" />
 
-  <!-- Estilos -->
   <link rel="stylesheet" href="DESTINO.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -25,8 +24,8 @@
       </button>
       <nav id="menu" aria-label="Menú principal">
         <ul class="menu">
-          <li><a href="index.html" class="activo" data-i18n="menu-inicio">Inicio</a></li>
-          <li><a href="destinos.html" data-i18n="menu-destinos">Destinos</a></li>
+          <li><a href="index.html" data-i18n="menu-inicio">Inicio</a></li>
+          <li><a href="destinos.html" class="activo" data-i18n="menu-destinos">Destinos</a></li>
           <li><a href="tours.html" data-i18n="menu-tours">Tours</a></li>
           <li><a href="galeria.html" data-i18n="menu-galeria">Galería</a></li>
           <li><a href="contacto.html" data-i18n="menu-contacto">Contacto</a></li>
@@ -35,10 +34,8 @@
     </div>
   </header>
 
-  <!-- CONTENIDO PRINCIPAL -->
   <main>
 
-    <!-- Sección: Atánquez -->
     <section class="seccion-mapa">
       <div class="contenedor">
         <div class="info-mapa">
@@ -56,7 +53,6 @@
       </div>
     </section>
 
-    <!-- Sección: Manaure -->
     <section class="seccion-mapa">
       <div class="contenedor">
         <div class="info-mapa">
@@ -74,44 +70,85 @@
       </div>
     </section>
 
-    <!-- Sección: Naturaleza -->
     <section class="seccion-naturaleza">
       <div class="contenedor">
         <h2 class="titulo-naturaleza" data-i18n="titulo-naturaleza">Naturaleza</h2>
-        <p class="descripcion-naturaleza" data-i18n="descripcion-naturaleza">Explora Colombia a través de experiencias auténticas y sostenibles.</p>
-        <div class="collage-naturaleza">
-          <img src="https://i.postimg.cc/VNBnYXL4/sicla.jpg" alt="Ciclismo en la naturaleza" />
-          <img src="https://i.postimg.cc/Dw23mT2h/sha.jpg" alt="Senderismo por la sierra" />
-          <img src="https://i.postimg.cc/JzycNy75/Nativa.jpg" alt="Cultura indígena" />
-          <img src="https://i.postimg.cc/FRGL5msK/casca.jpg" alt="Cascada natural" />
-          <img src="https://i.postimg.cc/y65gCLys/personas.jpg" alt="Grupo de turistas" />
-          <img src="https://i.postimg.cc/SK6kwcYc/Ramon.jpg" alt="Ramon" />
+        <p class="descripcion-naturaleza" data-i18n="descripcion-naturaleza">
+          Explora Colombia a través de experiencias auténticas y sostenibles.
+        </p>
+        <div class="fichas-naturaleza">
+
+          <div class="ficha-naturaleza">
+            <div class="info-ficha">
+              <div class="icono"><i class="fas fa-person-hiking"></i></div>
+              <div>
+                <h3>Ruta del Ciclista</h3>
+                <p>Senderismo</p>
+              </div>
+            </div>
+            <ul class="datos">
+              <li><strong>Distancia:</strong> 8,5 km</li>
+              <li><strong>Desnivel:</strong> 350 m</li>
+              <li><strong>Ranking:</strong> ⭐ 4.0</li>
+            </ul>
+            <img src="https://i.postimg.cc/VNBnYXL4/sicla.jpg" alt="Ciclismo en la naturaleza" />
+          </div>
+
+          <div class="ficha-naturaleza">
+            <div class="info-ficha">
+              <div class="icono"><i class="fas fa-mountain"></i></div>
+              <div>
+                <h3>Sendero Sha</h3>
+                <p>Montaña</p>
+              </div>
+            </div>
+            <ul class="datos">
+              <li><strong>Distancia:</strong> 9 km</li>
+              <li><strong>Desnivel:</strong> 400 m</li>
+              <li><strong>Ranking:</strong> ⭐ 4.2</li>
+            </ul>
+            <img src="https://i.postimg.cc/Dw23mT2h/sha.jpg" alt="Senderismo por la sierra" />
+          </div>
+
+          <div class="ficha-naturaleza">
+            <div class="info-ficha">
+              <div class="icono"><i class="fas fa-water"></i></div>
+              <div>
+                <h3>Cascada Viva</h3>
+                <p>Naturaleza</p>
+              </div>
+            </div>
+            <ul class="datos">
+              <li><strong>Distancia:</strong> 6,5 km</li>
+              <li><strong>Desnivel:</strong> 280 m</li>
+              <li><strong>Ranking:</strong> ⭐ 3.8</li>
+            </ul>
+            <img src="https://i.postimg.cc/FRGL5msK/casca.jpg" alt="Cascada natural" />
+          </div>
+
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- PIE DE PÁGINA -->
-<footer class="site-footer">
+  <footer class="site-footer">
     <div class="footer-contenido">
       <h4>Exploraconmigo</h4>
       <p>Descubre destinos únicos, vive nuevas experiencias y explora el mundo con nosotros.</p>
- <div class="redes-sociales">
+      <div class="redes-sociales">
         <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://wa.me/573246789262" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-</div>
-
+      </div>
       <div class="creadores">
         <p>Desarrollado por <strong>Mario Cataño</strong> y <strong>Armando Orta</strong></p>
       </div>
     </div>
-</footer>
+  </footer>
 
-  <!-- Scripts -->
   <script src="traduccion.js"></script>
-  <script src="menu.js"></script>
+  <script src="menu.js"></script> 
 
 </body>
 </html>

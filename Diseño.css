@@ -151,14 +151,23 @@ body.index .selector-idioma-menu {
   padding: 0 20px;
 }
 
+.contenido-hero h1,
+.contenido-hero p,
+.contenido-hero a {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
 .contenido-hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  animation-delay: 0.2s;
 }
 
 .contenido-hero p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
+  animation-delay: 0.5s;
 }
 
 .boton-primario {
@@ -169,11 +178,23 @@ body.index .selector-idioma-menu {
   background: var(--verde);
   border-radius: 5px;
   transition: background 0.3s, transform 0.3s;
+  animation-delay: 0.8s;
 }
 
 .boton-primario:hover {
   background: var(--verde-hover);
   transform: translateY(-3px);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .site-footer {
@@ -248,6 +269,11 @@ body.index .selector-idioma-menu {
   font-size: 1.8rem;
 }
 
+/* 👇 Nueva clase para bloquear scroll cuando menú está abierto */
+.no-scroll {
+  overflow: hidden;
+}
+
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -270,7 +296,7 @@ body.index .selector-idioma-menu {
     top: 100%;
     right: 0;
     width: 90%;
-    margin: 0 5%;
+    margin: 10px 5%;
     background: white;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     border-radius: 12px;

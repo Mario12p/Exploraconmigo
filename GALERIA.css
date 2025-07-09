@@ -98,6 +98,77 @@ img {
   right: 20px;
 }
 
+/* --- Nueva sección Hero (destacada) --- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* Ajusta la altura según tus preferencias */
+  background: url('https://i.postimg.cc/SxLrgtBk/pente.jpg') no-repeat center center/cover; /* Reemplaza con tu imagen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden; /* Asegura que la imagen de fondo no se desborde */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Capa oscura semitransparente */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-titulo {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-descripcion {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-descripcion strong {
+  color: var(--verde); /* Resalta palabras clave con el color verde */
+  font-weight: 700;
+}
+
+.btn-contacto {
+  display: inline-block;
+  background-color: var(--verde);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-contacto:hover {
+  background-color: var(--verde-hover);
+  transform: translateY(-3px);
+}
+/* --- Fin Nueva sección Hero --- */
+
 .articulos-inicio {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -192,6 +263,7 @@ img {
   text-align: justify;
 }
 
+/* --- Carrusel de Galería (Última versión con object-fit: contain) --- */
 .galeria {
   padding: 60px 20px;
   text-align: center;
@@ -212,36 +284,92 @@ img {
   margin: auto;
 }
 
-.grid-galeria {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 250px;
-  gap: 20px;
-  max-width: 1200px;
+.carrusel-contenedor {
+  position: relative;
+  max-width: 900px; /* Ancho máximo del carrusel */
   margin: 0 auto;
-}
-
-.grid-galeria .galeria-item {
-  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+
+  /* Define la relación de aspecto del carrusel */
+  height: 0;
+  padding-bottom: 56.25%; /* Ejemplo: 16:9 de proporción (900px ancho -> 506.25px alto) */
+  /* Ajusta este porcentaje:
+      - 50% para 2:1 (fotos muy panorámicas)
+      - 66.67% para 3:2 (fotos de cámara)
+      - 75% para 4:3 (fotos más antiguas o estándar)
+      - 100% para 1:1 (cuadrado)
+      Elige el que mejor se adapte a la mayoría de tus imágenes. */
 }
 
-.grid-galeria .galeria-item img {
+.carrusel {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
-.grid-galeria .galeria-item:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  display: flex; /* Usamos flexbox para centrar la imagen */
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* Color de fondo para el "relleno" cuando object-fit: contain */
+  border-radius: 16px; /* Asegura que el color de fondo también tenga bordes redondeados */
 }
 
-.grid-galeria .item-grande {
-  grid-row: span 2;
+.slide.active {
+  opacity: 1;
+  z-index: 1;
 }
+
+.slide img {
+  max-width: 100%; /* La imagen no excederá el ancho de su contenedor */
+  max-height: 100%; /* La imagen no excederá la altura de su contenedor */
+  object-fit: contain; /* **¡Este es el cambio clave!** Muestra la imagen completa, sin recortar. */
+  object-position: center; /* Centra la imagen dentro del slide */
+  border-radius: 0; /* No necesitas border-radius aquí si el slide ya lo tiene y la imagen se ajusta */
+  display: block; /* Asegura que la imagen se comporte como un bloque para centrado */
+  /* Si las imágenes se ven borrosas, la razón es la baja resolución de las imágenes originales, no el CSS.
+      Asegúrate de usar imágenes de alta calidad (ej. al menos 1200px de ancho para un carrusel de 900px). */
+}
+
+.controles {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 20px;
+  z-index: 10;
+}
+
+.controles button {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+  outline: none;
+}
+
+.controles button:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+}
+/* --- Fin Carrusel de Galería --- */
 
 .site-footer {
   background: var(--gris-oscuro);
@@ -367,20 +495,78 @@ img {
   .menu a:last-child {
     border-bottom: none;
   }
+
+  /* Ajustes responsivos para el carrusel */
+  .carrusel-contenedor {
+    padding-bottom: 70%; /* Un poco más alto para tabletas */
+  }
+
+  .controles button {
+    padding: 10px 15px;
+    font-size: 1.3rem;
+  }
+
+  /* Ajustes responsivos para la nueva sección Hero */
+  .hero {
+    height: 50vh; /* Un poco más pequeña en tabletas */
+  }
+
+  .hero-titulo {
+    font-size: 2.8rem;
+  }
+
+  .hero-descripcion {
+    font-size: 1.1rem;
+  }
+
+  .btn-contacto {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .grid-galeria {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 180px;
-  }
-
-  .grid-galeria .item-grande {
-    grid-row: span 1;
-  }
-
   .articulos-inicio {
     grid-template-columns: 1fr;
     padding: 0 10px;
+  }
+
+  /* Carrusel en móviles pequeños */
+  .carrusel-contenedor {
+    padding-bottom: 85%; /* Más alto para móviles para priorizar la visualización completa */
+    border-radius: 10px;
+  }
+
+  .controles button {
+    padding: 8px 12px;
+    font-size: 1.1rem;
+  }
+
+  .galeria h2 {
+    font-size: 2rem;
+  }
+
+  .descripcion-galeria {
+    font-size: 0.9rem;
+  }
+
+  /* Ajustes responsivos para la nueva sección Hero en móviles */
+  .hero {
+    height: 40vh; /* Aún más pequeña en móviles */
+  }
+
+  .hero-titulo {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-descripcion {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .btn-contacto {
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 }

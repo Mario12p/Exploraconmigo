@@ -32,6 +32,18 @@
   </header>
 
   <main>
+    <section class="hero">
+      <div class="hero-content contenedor">
+        <h1 class="hero-titulo" data-i18n="hero_titulo">¡Explora el Cesar con Nosotros!</h1>
+        <p class="hero-descripcion" data-i18n="hero_descripcion">
+          Somos Exploraconmigo, tu empresa de turismo dedicada a abrir las puertas a las 
+          aventuras más inolvidables y a la naturaleza vibrante del Cesar. Con nosotros, te 
+          conectarás profundamente con paisajes únicos, vivirás experiencias auténticas y
+          descubrirás la verdadera magia del ecoturismo en nuestra hermosa región.
+        </p>
+        <a href="contacto.html" class="btn-contacto" data-i18n="hero_cta">¡Planifica tu aventura hoy!</a>
+      </div>
+    </section>
     <section class="articulos-inicio contenedor">
       <div class="articulo">
         <img src="https://i.postimg.cc/rm9WKsdL/bosque.jpg" alt="Bosque">
@@ -73,16 +85,42 @@
 
     <section class="galeria contenedor">
       <h2 data-i18n="galeria_titulo">Galería</h2>
-      <p class="descripcion-galeria" data-i18n="galeria_desc">Naturaleza, aventura, paisajes, experiencias auténticas y eco-turismo en Colombia.</p>
-      <div class="grid-galeria">
-        <div class="galeria-item item-grande"><img src="https://i.postimg.cc/pVsJq5ph/CArpa.jpg" alt="Carpa"></div>
-        <div class="galeria-item"><img src="https://i.postimg.cc/RZp0Y9wT/caballo.jpg" alt="Caballo"></div>
-        <div class="galeria-item"><img src="https://i.postimg.cc/W3B86Q9N/nosot.jpg" alt="Grupo"></div>
-        <div class="galeria-item"><img src="https://i.postimg.cc/gjPZSd30/casca.jpg" alt="Cascada"></div>
-        <div class="galeria-item"><img src="https://i.postimg.cc/G2dGLdSs/gusa.jpg" alt="Guía"></div>
-        <div class="galeria-item"><img src="https://i.postimg.cc/GmY66n8y/vaca.jpg" alt="Sendero"></div>
-        <div class="galeria-item"><img src="https://i.postimg.cc/1tgzpdT3/fuego.jpg" alt="Fogata"></div>
-        <div class="galeria-item"><img src="https://i.postimg.cc/wj0Dq7m8/Monta-a.jpg" alt="Montaña"></div>
+      <p class="descripcion-galeria" data-i18n="galeria_desc">
+        Naturaleza, aventura, paisajes, experiencias auténticas y eco-turismo en Colombia.
+      </p>
+
+      <div class="carrusel-contenedor">
+        <div class="carrusel">
+          <div class="slide active">
+            <img src="https://i.postimg.cc/pVsJq5ph/CArpa.jpg" alt="Carpa">
+          </div>
+          <div class="slide">
+            <img src="https://i.postimg.cc/RZp0Y9wT/caballo.jpg" alt="Caballo">
+          </div>
+          <div class="slide">
+            <img src="https://i.postimg.cc/W3B86Q9N/nosot.jpg" alt="Grupo">
+          </div>
+          <div class="slide">
+            <img src="https://i.postimg.cc/gjPZSd30/casca.jpg" alt="Cascada">
+          </div>
+          <div class="slide">
+            <img src="https://i.postimg.cc/G2dGLdSs/gusa.jpg" alt="Guía">
+          </div>
+          <div class="slide">
+            <img src="https://i.postimg.cc/GmY66n8y/vaca.jpg" alt="Sendero">
+          </div>
+          <div class="slide">
+            <img src="https://i.postimg.cc/1tgzpdT3/fuego.jpg" alt="Fogata">
+          </div>
+          <div class="slide">
+            <img src="https://i.postimg.cc/wj0Dq7m8/Monta-a.jpg" alt="Montaña">
+          </div>
+        </div>
+
+        <div class="controles">
+          <button class="prev" aria-label="Anterior">&#10094;</button>
+          <button class="next" aria-label="Siguiente">&#10095;</button>
+        </div>
       </div>
     </section>
   </main>
@@ -92,17 +130,45 @@
       <h4>Exploraconmigo</h4>
       <p>Descubre destinos únicos, vive nuevas experiencias y explora el mundo con nosotros.</p>
       <div class="redes-sociales">
-        <div class="redes-sociales">
         <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://wa.me/573246789262" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        </div>
+      </div>
       <div class="creadores">
         <p>Desarrollado por <strong>Mario Cataño</strong> y <strong>Armando Orta</strong></p>
       </div>
     </div>
   </footer>
+
   <script src="traduccion.js"></script>
   <script src="menu.js"></script>
+  <script>
+    const slides = document.querySelectorAll('.carrusel .slide');
+    const prev = document.querySelector('.carrusel-contenedor .prev');
+    const next = document.querySelector('.carrusel-contenedor .next');
+    let index = 0;
+
+    function mostrarSlide(i) {
+      slides.forEach((slide, idx) => {
+        slide.classList.remove('active');
+        if (idx === i) slide.classList.add('active');
+      });
+    }
+
+    prev.addEventListener('click', () => {
+      index = (index > 0) ? index - 1 : slides.length - 1;
+      mostrarSlide(index);
+    });
+
+    next.addEventListener('click', () => {
+      index = (index < slides.length - 1) ? index + 1 : 0;
+      mostrarSlide(index);
+    });
+
+    setInterval(() => {
+      index = (index < slides.length - 1) ? index + 1 : 0;
+      mostrarSlide(index);
+    }, 5000); // Cambia de imagen cada 5 segundos
+  </script>
 </body>
 </html>

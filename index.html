@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Exploraconmigo</title>
 
+  <!-- SEO y metadata -->
+  <meta name="description" content="Explora destinos naturales únicos con Exploraconmigo. Vive experiencias increíbles en Colombia." />
+  <meta name="author" content="Mario Cataño, Armando Orta" />
+  <meta name="keywords" content="Turismo, Naturaleza, Colombia, Viajes, Tours, Aventuras" />
+
+  <!-- Estilos y recursos -->
   <link rel="stylesheet" href="Diseño.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -13,19 +19,16 @@
 </head>
 
 <body class="index">
-
   <header class="site-header">
     <div class="contenedor flex">
       <a href="index.html">
         <img src="LOGOS/Logoprincipal.png" alt="Logo Exploraconmigo" class="logo" />
       </a>
 
-    
-      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" role="button">
         <i class="fas fa-bars"></i>
       </button>
 
- 
       <nav id="menu" aria-label="Menú principal">
         <ul class="menu">
           <li><a href="index.html" class="activo" data-i18n="menu-inicio">Inicio</a></li>
@@ -45,7 +48,6 @@
     </div>
   </header>
 
-
   <main>
     <div class="gif-hero">
       <img src="GIFS/montañas.gif" alt="Fondo naturaleza" />
@@ -59,7 +61,6 @@
     </div>
   </main>
 
- 
   <footer class="site-footer">
     <div class="footer-contenido">
       <h4>Exploraconmigo</h4>
@@ -73,12 +74,39 @@
 
       <div class="creadores">
         <p>Desarrollado por <strong>Mario Cataño</strong> y <strong>Armando Orta</strong></p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">© 2025 Exploraconmigo. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
 
- 
+  <!-- Scripts -->
   <script src="traduccion.js"></script>
-  <script src="menu.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btnMenu = document.getElementById("hamburger");
+      const navMenu = document.getElementById("menu");
+      const icon = btnMenu?.querySelector("i");
+
+      if (btnMenu && navMenu && icon) {
+        btnMenu.addEventListener("click", () => {
+          navMenu.classList.toggle("activo");
+          icon.classList.toggle("fa-bars");
+          icon.classList.toggle("fa-times");
+          document.body.classList.toggle("no-scroll");
+        });
+
+        document.querySelectorAll(".menu a").forEach(link => {
+          link.addEventListener("click", () => {
+            if (window.innerWidth <= 768) {
+              navMenu.classList.remove("activo");
+              icon.classList.add("fa-bars");
+              icon.classList.remove("fa-times");
+              document.body.classList.remove("no-scroll");
+            }
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
