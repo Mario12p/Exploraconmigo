@@ -93,10 +93,10 @@ h1 {
 
 /* Specific icon colors */
 .bike-icon { color: #28a745; } /* Green for bike */
-.mountain-icon { color: #8B4513; } /* Brown for mountain */
+.mountain-icon { color: #8B4513; } /* Brown for mountain/hiking */
 .water-icon { color: #007bff; } /* Blue for water */
 .blue-icon { color: #17a2b8; } /* General blue for air activities */
-.green-icon { color: #28a745; } /* General green for nature/fauna */
+.green-icon { color: #28a745; } /* General green for nature/fauna/camp */
 .brown-icon { color: #A0522D; } /* General brown for cultural/earthy */
 .purple-icon { color: #6f42c1; } /* General purple for exotic */
 
@@ -119,10 +119,13 @@ h1 {
 
 .tour-card img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: 180px; /* Altura fija para todas las imágenes */
+  object-fit: contain; /* Asegura que la imagen se vea completa */
   border-radius: 8px;
   margin-bottom: 0.8rem; /* Adjusted margin */
+  display: block; /* Elimina espacio extra bajo la imagen */
+  background-color: #f0f0f0; /* Fondo si la imagen no cubre todo el espacio */
+  padding: 5px; /* Pequeño padding si el object-fit: contain deja bordes */
 }
 
 .tour-details {
